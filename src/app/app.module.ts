@@ -23,6 +23,7 @@ import { RaceDetailsComponent } from './home/calendar/details/race-details.compo
 import { PostService } from './services/post.service';
 import { InterceptorService } from './services/interceptor.service';
 import { UserInformationComponent } from './user/profile/user-information/user-information.component';
+import { MyPublicationsComponent } from './user/profile/my-publications/my-publications.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UserInformationComponent } from './user/profile/user-information/user-i
     DetailsComponent,
     ConstructorsComponent,
     RaceDetailsComponent,
-    UserInformationComponent
+    UserInformationComponent,
+    MyPublicationsComponent
 
   ],
   imports: [

@@ -9,6 +9,7 @@ import { DriversComponent } from './home/drivers/drivers.component';
 import { MainComponent } from './home/main/main.component';
 import { RouteResolver } from './resolvers/route.resolver';
 import { LoginComponent } from './user/login/login.component';
+import { MyPublicationsComponent } from './user/profile/my-publications/my-publications.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { UserInformationComponent } from './user/profile/user-information/user-information.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -55,6 +56,11 @@ const routes: Routes = [
   {
     path: 'profile/my-account',
     component: UserInformationComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile/my-publications',
+    component: MyPublicationsComponent,
     canActivate: [AuthGuard]
   },
   {
