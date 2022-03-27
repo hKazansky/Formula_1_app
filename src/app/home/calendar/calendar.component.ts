@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ICalendar } from 'src/app/interfaces/calendar';
 import { IRace } from 'src/app/interfaces/race';
 import { CalendarService } from 'src/app/services/calendar.service';
-import { DriversService } from 'src/app/services/drivers.service';
-
-
 
 @Component({
   selector: 'app-calendar',
