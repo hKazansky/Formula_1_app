@@ -44,6 +44,7 @@
 
 #title-input {
   border-style: solid;
+  border-radius: .5rem;
   border-width: 0.1rem;
   border-color: black;
   height: 50%;
@@ -70,6 +71,7 @@
   
   #description-input {
     border-style: solid;
+    border-radius: .5rem;
     border-width: 0.1rem;
     border-color: black;
     height: 100%;
