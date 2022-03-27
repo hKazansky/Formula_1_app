@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+.outline-div {
+  font-family: "Righteous", cursive;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  background: white;
+  border-radius: 30px;
+  /* box-shadow: 12px 12px 22px grey; */
+}
+img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.btn1 {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn1:hover {
+  background: white;
+  border: 1px solid;
+  color: black;
+}
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-style: solid;
+  border-color: black;
+  border-width: 0.1rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-left: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.outline-div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.sign-in-div {
+  border-style: solid;
+  border-bottom: none;
+  border-top-width: 0.1rem;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 1rem;
+  border-color: red;
+  /* border-right: none; */
+}
+.background {
+  background-color: grey;
+  height: 100vh;
+}
+.mini-nav-auth {
+  background-color: black;
+  height: 5rem;
+  text-align: center;
+  padding-top: 3rem;
+  font-family: "Righteous", cursive;
+  margin-bottom: 1.5rem;
+}
+.mini-login-nav {
+  color: white;
+  padding-right: 4rem;
+  text-decoration: none;
+}
+.mini-login-nav:hover {
+  color: red;
+}
+.mini-register-nav {
+  color: white;
+  text-decoration: none;
+}
+.mini-register-nav:hover {
+  color: red;
+}

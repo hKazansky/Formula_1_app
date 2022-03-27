@@ -1,0 +1,87 @@
+<div class="background">
+  <div class="mini-nav-auth">
+    <a class="mini-login-nav" routerLink="/login">SIGN IN</a>
+    <a class="mini-register-nav" routerLink="/register">REGISTER</a>
+  </div>
+  <div class="outline-div">
+    <section class="Form my-4 mx-5" style="width: 50%">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <img
+              src="https://images.unsplash.com/photo-1633272274726-501cfaecf28e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-7 px-5 pt-5">
+            <h2
+              class="font-weight-bold py-3"
+              style="font-family: Righteous, cursive"
+            >
+              REGISTER
+            </h2>
+            <div class="register-div"></div>
+
+            <h5 style="font-family: Righteous, cursive">Create new account</h5>
+            <form
+              [formGroup]="form"
+              (ngSubmit)="onSubmitRegister()"
+              action=""
+              method="post"
+            >
+              <div class="form-row">
+                <div class="col-lg-7" style="width: auto">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="form-control my-3 p-3"
+                    id="email"
+                    formControlName="email"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7" style="width: auto">
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      class="form-control my-3 p-3"
+                      id="password"
+                      formControlName="password"
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7" style="width: auto">
+                    <input
+                      type="password"
+                      placeholder="Repeat password"
+                      class="form-control my-3 p-3"
+                      id="rePass"
+                      formControlName="rePass"
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                    <button
+                      type="submit"
+                      class="btn1 mt-3 mb-5"
+                      style="font-family: monospace"
+                    >
+                      Register
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p class="bottom-p">
+                Already have an account ?
+                <a style="color: red" routerLink="/login">Login here</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

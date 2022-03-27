@@ -1,0 +1,165 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
+.title-div {
+  font-family: "Righteous", cursive;
+}
+.overlay {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10%;
+  padding-top: 0.1%;
+  justify-content: center;
+}
+.under-cover-text-div {
+  font-family: "Righteous", cursive;
+  font-weight: bold;
+  text-align: center;
+}
+#title {
+  font-weight: bold;
+}
+
+.additional-info {
+  border-style: solid;
+  border-width: 0.1rem;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  border-color: grey0;
+}
+
+.driver-nationality-flag {
+  margin-top: 1rem;
+  width: 3.5rem;
+  padding-bottom: 5rem;
+}
+.style-card:hover {
+  border-color: red;
+}
+.link-wrapper {
+  text-decoration: none;
+}
+.cover-div {
+  background-image: url("https://images.unsplash.com/photo-1612548539960-006191e492c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  height: 16rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -35rem;
+}
+.title-text {
+  margin-top: 5rem;
+  height: 10rem;
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 25%;
+  font-family: "Orbitron", sans-serif;
+  align-items: center;
+}
+.drivers-cards-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Orbitron", sans-serif;
+  padding-left: 10%;
+}
+.driver-card {
+  border-style: solid;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 1rem;
+  width: 30rem;
+  height: 24rem;
+  margin: 1rem;
+}
+
+.listing-standing {
+  display: flex;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 0.1rem;
+  width: 28rem;
+  height: 4.5rem;
+}
+.rank {
+  font-size: 250%;
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+.points-wrapper {
+  text-align: end;
+  margin-left: 21rem;
+}
+
+.points {
+  font-size: 150%;
+  font-weight: bold;
+}
+.pts {
+  border-style: solid;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: rgb(15, 15, 15);
+  width: 4rem;
+  text-align: center;
+}
+
+.driver-info-wrapper {
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: grey;
+  border-width: 0.1rem;
+  height: 4rem;
+  display: flex;
+  width: 28rem;
+}
+
+.driver-name-div {
+  display: flex;
+}
+
+.decorator {
+  border-style: solid;
+  height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+.driver-name {
+  height: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 150%;
+  display: flex;
+  width: 15rem;
+}
+
+.flag-image {
+  height: 2rem;
+  width: 3rem;
+  margin-left: 7rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+.driver-image {
+  margin-top: 1rem;
+  height: 15rem;
+}
+
+#driver-team-name {
+  color: black;
+  margin-left: 1rem;
+  font-size: 85%;
+}
+
+#driver-image {
+  padding-left: 50%;
+}

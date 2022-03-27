@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400&family=Righteous&family=Work+Sans&display=swap");
+
+.nav-item {
+  color: grey;
+}
+.nav-item:hover {
+  color: black;
+}
+.nav-item:active {
+  color: black;
+}
+
+.nav-link {
+  color: silver;
+}
+.nav-link:hover {
+  color: black;
+}
+.active {
+  color: black;
+  text-decoration: overline;
+}

@@ -1,0 +1,359 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
+.title-div {
+  font-family: "Righteous", cursive;
+}
+.cover {
+  width: 100%;
+  height: 15rem;
+  background-image: url("https://images.unsplash.com/photo-1593693044238-f14e5b164e75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position-y: -30rem;
+}
+.race-div {
+  width: 100%;
+  height: 30rem;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 1rem;
+  text-align: center;
+}
+.track-image {
+  width: 8rem;
+  height: 12vh;
+  position: relative;
+}
+.track-image-wrapper {
+  display: flex;
+  width: 9%;
+  height: 6rem;
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  border-top-right-radius: 0.8rem;
+  border-left: none;
+  border-bottom: none;
+  border-width: 0.02cm;
+  position: relative;
+  margin-left: 6rem;
+}
+.track-image-wrapper:hover {
+  border-color: red;
+}
+.track-name {
+  color: white;
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+  text-align: left;
+  margin-left: 6rem;
+}
+.header-race-name {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.03cm;
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+}
+.track-flag {
+  width: 4rem;
+  padding-top: 0.5rem;
+}
+
+.practices-wrapper {
+  display: flex;
+  height: 4rem;
+  width: 80rem;
+  text-align: center;
+  border-style: solid;
+  border-bottom-color: grey;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-width: 0.02cm;
+  margin-left: 20rem;
+  position: relative;
+  /* right: -11.9%; */
+  font-family: "Orbitron", sans-serif;
+}
+
+.details-wrapper {
+  display: block;
+  align-items: center;
+  text-align: center;
+  margin-left: 7%;
+  padding-top: 1.5rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+.upcoming-race-text {
+  color: white;
+  text-align: left;
+  margin-left: 11.9rem;
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+  position: relative;
+  padding-top: 2rem;
+  right: 26rem;
+}
+.race {
+  /* font-family: "Righteous", cursive; */
+  /* font-family: "Orbitron", sans-serif; */
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  position: relative;
+  padding-top: 2rem;
+  left: -26rem;
+}
+.qualifying {
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  position: relative;
+  padding-top: 2rem;
+  right: 7%;
+}
+.practice-1 {
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  position: relative;
+  padding-top: 2rem;
+  left: 14rem;
+}
+.practice-2 {
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  position: relative;
+  padding-top: 2rem;
+  left: 7rem;
+}
+.practice-3 {
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  position: relative;
+  padding-top: 2rem;
+  right: 0.5rem;
+}
+.practices-info-wrapper {
+  display: flex;
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+}
+
+/* TESTING NEW CSS STYLES */
+.race-info-div-details {
+  color: white;
+  /* width: cm; */
+  height: 3cm;
+  margin-left: 5.5rem;
+  border-width: 0.02cm;
+  border-left: none;
+  border-bottom: none;
+  color: white;
+  width: 4cm;
+  height: 3cm;
+  margin-left: 5.5rem;
+  margin-top: 0.5rem;
+  border-top-right-radius: 7px;
+  justify-content: start;
+}
+#date-span-race {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  font-weight: bold;
+}
+#time-span-race {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+}
+.qualify-div-details {
+  border-width: 0.02cm;
+  border-left: none;
+  border-bottom: none;
+  color: white;
+  width: 4cm;
+  height: 3cm;
+  margin-left: 5.5rem;
+  margin-top: 0.5rem;
+  border-top-right-radius: 7px;
+  justify-content: start;
+}
+.date-span-qualify {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  font-weight: bold;
+}
+
+.time-span-qualify {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+}
+.first-practice-div-details {
+  border-width: 0.02cm;
+  border-left: none;
+  border-bottom: none;
+  color: white;
+  width: 4cm;
+  height: 3cm;
+  margin-left: 5.5rem;
+  margin-top: 0.5rem;
+  border-top-right-radius: 7px;
+  justify-content: start;
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+}
+.date-span-first-practice {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  /* letter-spacing: 0.9rem; */
+  font-weight: bold;
+}
+.time-span-first-practice {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+}
+
+.second-practice-div-details {
+  border-width: 0.02cm;
+  border-left: none;
+  border-bottom: none;
+  color: white;
+  width: 4cm;
+  height: 3cm;
+  margin-left: 5.5rem;
+  margin-top: 0.5rem;
+  border-top-right-radius: 7px;
+  justify-content: start;
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+}
+
+.date-span-second-practice {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  /* letter-spacing: 0.9rem; */
+  font-weight: bold;
+}
+.time-span-second-practice {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+}
+
+.third-practice-div-details {
+  border-width: 0.02cm;
+  border-left: none;
+  border-bottom: none;
+  color: white;
+  width: 4cm;
+  height: 3cm;
+  margin-left: 5.5rem;
+  margin-top: 0.5rem;
+  border-top-right-radius: 7px;
+  justify-content: start;
+  /* font-family: "Righteous", cursive; */
+  font-family: "Orbitron", sans-serif;
+}
+
+.date-span-third-practice {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  /* letter-spacing: 0.9rem; */
+  font-weight: bold;
+}
+.time-span-third-practice {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  position: relative;
+  display: flex;
+  color: white;
+  font-size: 75%;
+  letter-spacing: 0.09rem;
+  font-weight: bold;
+}
+
+#map {
+  height: 30rem;
+}
+
+.container {
+  width: 30rem;
+  height: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  overflow: hidden;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  margin-top: -1.5rem;
+}
+
+.countdown {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.countdown .num {
+  margin-top: 3rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+.countdown .txt {
+  font-size: 12px;
+  text-transform: uppercase;
+}

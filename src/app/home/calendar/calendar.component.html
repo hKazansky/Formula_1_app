@@ -1,0 +1,41 @@
+<div class="cover"></div>
+<div class="bg-image-title">
+  <div class="title-div">
+    <h1 class="h1-title">F1 SCHEDULE 2022</h1>
+    <p class="p-title">
+      2022 FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR
+    </p>
+  </div>
+</div>
+
+<div *ngIf="calendar">
+  <div class="wrapper">
+    <div *ngFor="let race of calendar">
+      <div class="card-element">
+        <a class="a-wrapper" routerLink="/race/details/{{ race.round }}">
+          <div class="card-element-body">
+            <div class="card-header">
+              <img
+                class="track-flag"
+                src="assets/track-flags/{{ race.Circuit.Location.country }}.png"
+                alt=""
+              />
+              <h5 class="card-title">{{ race.Circuit.Location.country }}</h5>
+            </div>
+
+            <span class="card-text">
+              FORMULA 1 {{ race.raceName }} {{ race.season }}
+            </span>
+            <div class="img-div">
+              <img
+                src="assets/images/{{ race.Circuit.circuitId }}.png"
+                class="card-img-top"
+                alt="circuit-img"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

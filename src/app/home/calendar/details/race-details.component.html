@@ -1,0 +1,171 @@
+<!-- <button (click)="getRace()">Check Race Details</button> -->
+<button (click)="getDriversStandings()">Get Drivers</button>
+
+<div *ngIf="raceDetails">
+  <div *ngFor="let race of raceDetails">
+    <div class="cover">
+      <div
+        class="cover-text-wrapper"
+        style="text-align: center; padding-top: 3rem"
+      >
+        <h1
+          style="color: white; opacity: 100; font-size: 60px; font-weight: bold"
+        >
+          {{ race?.Circuit?.Location?.country }}
+        </h1>
+        <h1 style="color: white; opacity: 100; font-size: 50px">
+          {{ race?.season }}
+        </h1>
+      </div>
+    </div>
+
+    <div class="under-cover-div">
+      <h3 id="under-cover-text">RACE WEEKEND</h3>
+    </div>
+
+    <div class="content-wrapper">
+      <h4 id="content-race-name-title">FORMULA 1 {{ race?.raceName }}</h4>
+
+      <div class="middle-wrapper">
+        <div class="race-details-wrapper">
+          <div class="race-details-inner-wrapper">
+            <div class="race-details">
+              <div class="race-date">
+                <span>RACE</span>
+                <span>{{ race?.date }}</span>
+              </div>
+              <div class="race-time">
+                <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
+                <span>Time: {{ race?.time }}</span>
+              </div>
+            </div>
+            <div class="qualify-details">
+              <div class="qualify-date">
+                <span>QUALIFY</span>
+                <span>{{ race?.Qualifying?.date }}</span>
+              </div>
+              <div class="qualify-time">
+                <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
+                <span>Time: {{ race?.Qualifying?.time }}</span>
+              </div>
+            </div>
+            <div class="practice-3-details">
+              <div class="practice-3-date">
+                <span>PRACTICE 3</span>
+                <span>{{ race?.ThirdPractice?.date }}</span>
+              </div>
+              <div class="practice-3-time">
+                <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
+                <span>Time: {{ race?.ThirdPractice?.time }}</span>
+              </div>
+            </div>
+            <div class="practice-2-details">
+              <div class="practice-2-date">
+                <span>PRACTICE 2</span>
+                <span>{{ race?.SecondPractice?.date }}</span>
+              </div>
+              <div class="practice-2-time">
+                <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
+                <span>Time: {{ race?.SecondPractice?.time }}</span>
+              </div>
+            </div>
+            <div class="practice-1-details">
+              <div class="practice-1-date">
+                <span>PRACTICE 1</span>
+                <span>{{ race?.FirstPractice?.date }}</span>
+              </div>
+              <div class="practice-1-time">
+                <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
+                <span>Time: {{ race?.FirstPractice?.time }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="race-circuit-wrapper">
+          <div class="circuit-info">
+            <span>Location: {{ race?.Circuit?.Location?.locality }}</span>
+            <a id="wikipediaURL" href="{{ race?.url }}"> > Circuit Info</a>
+          </div>
+          <div class="race-circuit-image">
+            <img
+              id="circuit-image"
+              src="/assets/images/{{ race?.Circuit?.circuitId }}.png"
+              alt="track-image"
+            />
+          </div>
+        </div>
+      </div>
+      <h4 id="drivers-standings-title">Drivers Standings</h4>
+      <div class="drivers-standings">
+        <div *ngIf="standings" style="display: flex;">
+          <div
+            class="for-loop-drivers-div"
+            *ngFor="let driver of standings.slice(0, 3)"
+          >
+            <div
+              id="driver-box-wrapper-link"
+              routerLink="/drivers/details/{{ driver.Driver.driverId }}"
+            >
+              <div class="driver-box">
+                <div class="driver-image">
+                  <img
+                    src="/assets/drivers/{{ driver.Driver.driverId }}.png"
+                    alt="driver-image"
+                  />
+                  <h1 id="driver-position">{{ driver.position }}</h1>
+                </div>
+                <div class="driver-info">
+                  <div class="first-name-flag">
+                    <h5 id="first-name">{{ driver.Driver.givenName }}</h5>
+                    <img
+                      id="flag"
+                      src="/assets/flags/{{ driver.Driver.nationality }}.jpg"
+                      alt="flag-image"
+                    />
+                  </div>
+                  <h2 id="family-name">{{ driver.Driver.familyName }}</h2>
+                  <div class="additional-info">
+                    <span id="constructor-name">{{
+                      driver.Constructors[0].name
+                    }}</span>
+                    <span>Points: {{ driver.points }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="no-standings-div" *ngIf="standings === undefined">
+          <h2>The standings will be displayed after the race is finished.</h2>
+        </div>
+
+      </div>
+      <div *ngIf="standings">
+        <div *ngFor="let driver of standings.slice(3)">
+          <div
+            routerLink="/drivers/details/{{ driver.Driver.driverId }}"
+            class="outer-additional-info-div"
+          >
+            <div class="inner-additional-info-div">
+              <span id="driver-position-span">{{ driver.position }}</span>
+
+              <span style="padding-right: 0.5rem; padding-left: 0.5rem">{{
+                driver.Driver.givenName
+              }}</span>
+              <span style="padding-right: 2rem; font-weight: bold">{{
+                driver.Driver.familyName
+              }}</span>
+              <span style="font-size: 70%; padding-top: 0.3rem; width: 10rem">{{
+                driver.Constructors[0].name
+              }}</span>
+            </div>
+            <span style="margin-left: 65rem; font-size: 90%; font-weight: bold"
+              >PTS: {{ driver.points }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

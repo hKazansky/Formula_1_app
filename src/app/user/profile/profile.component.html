@@ -1,0 +1,7 @@
+<div style="text-align: center; margin-top: 10%">
+  <form [formGroup]="form" (ngSubmit)="onSubmitCreatePost()" method="post" action="">
+    <input type="text" placeholder="Title" formControlName="title"/>
+    <input type="text" placeholder="Description" formControlName="description"/>
+    <button type="submit">Make a post</button>
+  </form>
+</div>

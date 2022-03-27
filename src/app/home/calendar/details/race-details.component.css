@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Righteous&family=Work+Sans&display=swap");
+/* font-family: 'Work Sans', sans-serif; */
+.cover {
+  background-image: url("https://images.unsplash.com/photo-1591153569217-af4aca034ab5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+  height: 30rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -17rem;
+  font-family: "Orbitron", sans-serif;
+}
+.under-cover-div {
+  background-color: black;
+  text-align: center;
+  height: 7rem;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  padding-top: 4rem;
+}
+
+#under-cover-text {
+  display: flex;
+  width: 18rem;
+  margin-left: 52rem;
+  border-color: red;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 0.1rem;
+  font-weight: bold;
+  padding-left: 9px;
+}
+
+.content-wrapper {
+  font-family: "Orbitron", sans-serif;
+  background-color: rgb(218, 216, 216);
+  height: 100vh;
+}
+
+#content-race-name-title {
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-top: 5rem;
+  padding-left: 10rem;
+}
+
+.middle-wrapper {
+  height: 40rem;
+  display: flex;
+  padding-top: 0.5rem;
+}
+
+.race-details-wrapper {
+  border-style: solid;
+  border-color: red;
+  height: 30rem;
+  width: 55rem;
+  margin-left: 10rem;
+  border-left: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border-width: 0.5rem;
+}
+.race-circuit-wrapper {
+  border-style: solid;
+  border-color: black;
+  height: 20rem;
+  width: 20rem;
+  margin-left: 10rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-width: 0.2rem;
+  align-items: center;
+}
+
+.race-details-inner-wrapper {
+  margin-top: 1.5rem;
+}
+
+.race-details {
+  display: flex;
+  border-style: solid;
+  border-color: rgb(219, 218, 218);
+  width: 53.5rem;
+  height: 5rem;
+  background-color: rgb(219, 218, 218);
+  margin-bottom: 0.3rem;
+  border-radius: 0.5rem;
+}
+.qualify-details {
+  display: flex;
+  border-style: solid;
+  border-color: rgb(219, 218, 218);
+  width: 53.5rem;
+  height: 5rem;
+  background-color: rgb(219, 218, 218);
+  margin-bottom: 0.3rem;
+  border-radius: 0.5rem;
+}
+.practice-3-details {
+  display: flex;
+  border-style: solid;
+  border-color: rgb(219, 218, 218);
+  width: 53.5rem;
+  height: 5rem;
+  background-color: rgb(219, 218, 218);
+  margin-bottom: 0.3rem;
+  border-radius: 0.5rem;
+}
+.practice-2-details {
+  display: flex;
+  border-style: solid;
+  border-color: rgb(219, 218, 218);
+  width: 53.5rem;
+  height: 5rem;
+  background-color: rgb(219, 218, 218);
+  margin-bottom: 0.3rem;
+  border-radius: 0.5rem;
+}
+.practice-1-details {
+  display: flex;
+  border-style: solid;
+  border-color: rgb(219, 218, 218);
+  width: 53.5rem;
+  height: 5rem;
+  background-color: rgb(219, 218, 218);
+  margin-bottom: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.race-date {
+  display: grid;
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-style: solid;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-width: 0.1rem;
+  width: 15rem;
+  font-weight: bold;
+}
+.race-time {
+  display: grid;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+.qualify-date {
+  display: grid;
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-style: solid;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-width: 0.1rem;
+
+  width: 15rem;
+  font-weight: bold;
+}
+.qualify-time {
+  display: grid;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+.practice-3-date {
+  display: grid;
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-style: solid;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-width: 0.1rem;
+
+  width: 15rem;
+  font-weight: bold;
+}
+.practice-3-time {
+  display: grid;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+.practice-2-date {
+  display: grid;
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-style: solid;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-width: 0.1rem;
+
+  width: 15rem;
+  font-weight: bold;
+}
+.practice-2-time {
+  display: grid;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+.practice-1-date {
+  display: grid;
+  margin-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-style: solid;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-width: 0.1rem;
+
+  width: 15rem;
+  font-weight: bold;
+}
+.practice-1-time {
+  display: grid;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+.circuit-info {
+  display: grid;
+  margin-top: 1rem;
+  margin-left: 0.9rem;
+  border-style: solid;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-width: 0.1rem;
+  height: 6rem;
+  width: 18rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+#wikipediaURL {
+  margin-top: -2rem;
+  color: rgb(3, 90, 3);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#wikipediaURL:hover {
+  color: red;
+}
+
+.race-circuit-image {
+  text-align: center;
+  margin-top: -1rem;
+}
+
+#circuit-image {
+  width: 17rem;
+  height: 13rem;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.drivers-standings {
+  /* border-style: solid; */
+  height: 30rem;
+  width: 80rem;
+  display: flex;
+  margin-left: 15%;
+  /* border-color: red; */
+  align-items: center;
+  padding-left: 4rem;
+}
+.for-loop-drivers-div {
+  display: flex;
+  margin-top: -5rem;
+}
+
+.driver-box {
+  border-style: solid;
+  border-color: black;
+  border-radius: 3rem;
+  border-width: 0.2rem;
+  height: 25rem;
+  width: 23.25rem;
+  margin: 0.5rem;
+}
+
+.driver-image {
+  /* border-style: solid; */
+  /* border-color: blue; */
+  height: 15rem;
+  width: 23.25rem;
+  text-align: center;
+  padding-left: 4rem;
+  display: flex;
+}
+
+.driver-info {
+  /* border-style: solid; */
+  /* border-color: blue; */
+  height: 10rem;
+  width: 23.25rem;
+}
+
+.first-name-flag {
+  display: flex;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  /* border-style: solid; */
+  /* border-color: yellow; */
+}
+
+#flag {
+  width: 4rem;
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+#family-name {
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+.additional-info {
+  padding-top: 0.5rem;
+  padding-right: 1.5rem;
+  text-align: end;
+  display: grid;
+}
+
+#constructor-name {
+  font-weight: bold;
+}
+
+#driver-position {
+  font-weight: bolder;
+}
+
+#drivers-standings-title {
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-left: 50rem;
+  padding-bottom: 1rem;
+}
+
+.no-standings-div {
+  width: 100%;
+  height: 20rem;
+  text-align: center;
+  padding-top: -10rem;
+}
+#driver-box-wrapper-link {
+  text-decoration: none;
+  color: black;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+}
+.driver-box:hover {
+  border-color: red;
+}
+
+.outer-additional-info-div {
+  border-style: solid;
+  background-color: #fff;
+  border-color: rgb(66, 66, 66);
+  border-radius: 1rem;
+  height: 4.5rem;
+  width: 71rem;
+  margin-left: 23rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.outer-additional-info-div:hover{
+  border-color: rgb(255, 0, 0);
+}
+.inner-additional-info-div {
+  display: flex;
+  padding-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+#driver-position-span {
+  padding-right: 1rem;
+  font-weight: bold;
+  border-style: solid;
+  border-color: black;
+  border-width: .3rem;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  padding-right: 0.7rem;
+}
+ 
