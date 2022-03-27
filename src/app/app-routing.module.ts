@@ -10,6 +10,7 @@ import { MainComponent } from './home/main/main.component';
 import { RouteResolver } from './resolvers/route.resolver';
 import { LoginComponent } from './user/login/login.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { UserInformationComponent } from './user/profile/user-information/user-information.component';
 import { RegisterComponent } from './user/register/register.component';
 
 const routes: Routes = [
@@ -49,6 +50,11 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile/my-account',
+    component: UserInformationComponent,
     canActivate: [AuthGuard]
   },
   {
