@@ -56,7 +56,6 @@
     cursor: pointer;
 }
 
-#my-account-link:active{
-  border-color: red;
-  color: yellow;
+.active{
+  color: red;
 }
