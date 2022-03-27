@@ -39,12 +39,13 @@
   border-left: none;
   border-right: none;
   border-color: red;
+  border-width: 0.2rem;
   width: 20%;
 }
 
 #title-input {
   border-style: solid;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border-width: 0.1rem;
   border-color: black;
   height: 50%;
@@ -60,35 +61,36 @@
 }
 
 #description {
-    font-weight: bold;
-    border-style: solid;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color: red;
-    width: 50%;
-  }
-  
-  #description-input {
-    border-style: solid;
-    border-radius: .5rem;
-    border-width: 0.1rem;
-    border-color: black;
-    height: 100%;
-    width: 100%;
-    margin-top: 1rem;
-  }
+  font-weight: bold;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: red;
+  border-width: 0.2rem;
+  width: 50%;
+}
 
-  .button{
-      margin-top: 4rem;
-      background-color: black;
-      color: white;
-      border-radius: .4rem;
-      border-style: none;
-      height: 2.5rem;
-      width: 10rem;
-  }
+#description-input {
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  border-color: black;
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
+}
 
-  .button:hover{
-      background-color: rgb(230, 0, 0);
-  }
+.button {
+  margin-top: 4rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.4rem;
+  border-style: none;
+  height: 2.5rem;
+  width: 10rem;
+}
+
+.button:hover {
+  background-color: rgb(230, 0, 0);
+}
