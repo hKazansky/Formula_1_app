@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
+.card {
+  align-items: center;
+  margin-top: 3rem;
+  font-family: "Orbitron", sans-serif;
+  border: none;
+}
+
+.publication-wrapper {
+  display: flex;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 1rem;
+  width: 60%;
+  height: 7%;
+}
+.title-description-wrapper {
+  width: 80%;
+  display: grid;
+}
+.go-to-link {
+  padding-top: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.go-to-link:hover{
+    color: red;
+}
+
+#title {
+  font-weight: 800;
+  font-size: 130%;
+  margin-left: 1rem;
+}
+#description {
+  margin-left: 1rem;
+}
+
+.publication-wrapper:hover {
+  border-color: black;
+}
