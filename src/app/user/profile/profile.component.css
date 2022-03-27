@@ -27,7 +27,7 @@
   height: 6rem;
   border-width: 0.3rem;
   padding-right: 3rem;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   margin-right: 3rem;
   padding-left: 3rem;
 }
@@ -42,20 +42,42 @@
   border-left: none;
   border-right: none;
   border-color: grey;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
+  height: 6rem;
+  border-width: 0.3rem;
+  margin-right: 3rem;
+}
+
+#create-publication-link {
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1rem;
+  padding-top: 4rem;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: grey;
+  margin-top: 0.7rem;
   height: 6rem;
   border-width: 0.3rem;
 }
 
-#my-account-link:hover{
-    border-color: white;
-    cursor: pointer;
-}
-#my-publications-link:hover{
-    border-color: white;
-    cursor: pointer;
+#my-account-link:hover {
+  border-color: white;
+  cursor: pointer;
 }
 
-.active{
+#my-publications-link:hover {
+  border-color: white;
+  cursor: pointer;
+}
+
+#create-publication-link:hover {
+  border-color: white;
+  cursor: pointer;
+}
+
+.active {
   color: red;
 }

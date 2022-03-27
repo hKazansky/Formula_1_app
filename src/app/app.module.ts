@@ -24,6 +24,7 @@ import { PostService } from './services/post.service';
 import { InterceptorService } from './services/interceptor.service';
 import { UserInformationComponent } from './user/profile/user-information/user-information.component';
 import { MyPublicationsComponent } from './user/profile/my-publications/my-publications.component';
+import { CreatePublicationComponent } from './user/profile/create-publication/create-publication.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MyPublicationsComponent } from './user/profile/my-publications/my-publi
     ConstructorsComponent,
     RaceDetailsComponent,
     UserInformationComponent,
-    MyPublicationsComponent
+    MyPublicationsComponent,
+    CreatePublicationComponent
 
   ],
   imports: [
