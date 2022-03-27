@@ -1,13 +1,13 @@
 <app-profile></app-profile>
-<form class="card">
+<form class="card" [formGroup]="form" (ngSubmit)="onSubmitCreatePost()" method="post">
   <span id="text">Create a topic that you're interested in</span>
   <div class="title-wrapper">
     <div id="title">Topic title</div>
-    <input id="title-input" type="text" />
+    <input id="title-input" type="text" formControlName="title" />
   </div>
   <div class="description-wrapper">
     <div id="description">Tell us more about the topic</div>
-    <input id="description-input" type="text" />
+    <input id="description-input" type="text" formControlName="description" />
   </div>
   <button class="button" type="submit">SUBMIT</button>
 </form>
