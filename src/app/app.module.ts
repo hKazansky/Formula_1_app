@@ -22,6 +22,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { RaceDetailsComponent } from './home/calendar/details/race-details.component';
 import { PostService } from './services/post.service';
 import { InterceptorService } from './services/interceptor.service';
+import { UserInformationComponent } from './user/profile/user-information/user-information.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { InterceptorService } from './services/interceptor.service';
     CalendarComponent,
     DetailsComponent,
     ConstructorsComponent,
-    RaceDetailsComponent
+    RaceDetailsComponent,
+    UserInformationComponent
 
   ],
   imports: [
