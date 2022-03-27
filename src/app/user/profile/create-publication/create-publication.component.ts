@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PostService } from './../../../services/post.service'
+import { PostService } from '../../../services/post.service'
 @Component({
   selector: 'app-create-publication',
   templateUrl: './create-publication.component.html',
