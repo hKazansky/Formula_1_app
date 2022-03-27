@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
+.card {
+  height: 70vh;
+  border-style: solid;
+  border-color: black;
+  border-radius: 1rem;
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 2rem;
+  align-items: center;
+  font-family: "Orbitron", sans-serif;
+}
+
+.title-text {
+  border-style: solid;
+  border-color: grey;
+  border-width: 0.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 90%;
+  margin-top: 1rem;
+  text-align: start;
+}
+
+#title-text-span {
+  font-weight: 800;
+  font-size: 180%;
+}
+
+.name-text {
+  width: 90%;
+  height: 4.5rem;
+  border-style: solid;
+  border-color: grey;
+  border-width: 0.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 3rem;
+  display: flex;
+}
+
+#name-div {
+  height: 4rem;
+  display: grid;
+  width: 100%;
+}
+
+#name-text-span {
+  font-weight: 800;
+  font-size: 130%;
+}
+
+#username-span {
+  font-size: 90%;
+}
+
+#edit-div-1 {
+  font-weight: bold;
+  font-size: 80%;
+  padding-top: 0.2rem;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 2rem;
+  border-color: red;
+}
+
+.birthday-text {
+  width: 90%;
+  height: 4.5rem;
+  border-style: solid;
+  border-color: grey;
+  border-width: 0.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 3rem;
+  display: flex;
+}
+
+#birthday-div {
+  height: 4rem;
+  display: grid;
+  width: 100%;
+}
+
+#birthday-text-span {
+  font-weight: 800;
+  font-size: 130%;
+}
+
+#birthday-date-span {
+  font-size: 90%;
+}
+
+.country-text {
+  width: 90%;
+  height: 4.5rem;
+  border-style: solid;
+  border-color: grey;
+  border-width: 0.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 3rem;
+  display: flex;
+}
+#country-div {
+  height: 4rem;
+  display: grid;
+  width: 100%;
+}
+
+#country-text-span {
+  font-weight: 800;
+  font-size: 130%;
+}
+
+#country-span {
+  font-size: 90%;
+}
+
+.team-text {
+  width: 90%;
+  height: 4.5rem;
+  border-style: solid;
+  border-color: grey;
+  border-width: 0.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 3rem;
+  display: flex;
+}
+
+#team-div {
+  height: 4rem;
+  display: grid;
+  width: 100%;
+}
+
+#favourite-team-text-span {
+  font-weight: 800;
+  font-size: 130%;
+}
+
+#favourite-team-span {
+  font-size: 90%;
+}
