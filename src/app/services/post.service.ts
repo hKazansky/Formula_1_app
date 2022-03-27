@@ -6,9 +6,14 @@ import { HttpClient } from '@angular/common/http';
 export class PostService {
 
   constructor(private http: HttpClient) { }
+
   createPost(body: any) {
 
     return this.http.post<any>('http://localhost:3000/create', body)
+  }
+
+  getUserPosts() {
+    return this.http.get<any>('http://localstorage:3000/user-posts')
   }
 
 }

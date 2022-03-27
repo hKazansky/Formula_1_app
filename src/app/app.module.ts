@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -21,10 +20,10 @@ import { AuthGuard } from './guards/auth.guard';
 import { RaceDetailsComponent } from './home/calendar/details/race-details.component';
 import { PostService } from './services/post.service';
 import { InterceptorService } from './services/interceptor.service';
-import { ProfileComponent } from './user/profile/profile.component';
-import { UserInformationComponent } from './user/profile/user-information/user-information.component';
-import { MyPublicationsComponent } from './user/profile/my-publications/my-publications.component';
-import { CreatePublicationComponent } from './user/profile/create-publication/create-publication.component';
+import { ProfileComponent } from './home/profile/profile.component';
+import { UserInformationComponent } from './home/profile/user-information/user-information.component';
+import { MyPublicationsComponent } from './home/profile/my-publications/my-publications.component';
+import { CreatePublicationComponent } from './home/profile/create-publication/create-publication.component';
 
 @NgModule({
   declarations: [

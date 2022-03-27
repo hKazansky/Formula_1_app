@@ -9,10 +9,10 @@ import { DriversComponent } from './home/drivers/drivers.component';
 import { MainComponent } from './home/main/main.component';
 import { RouteResolver } from './resolvers/route.resolver';
 import { LoginComponent } from './user/login/login.component';
-import { CreatePublicationComponent } from './user/profile/create-publication/create-publication.component';
-import { MyPublicationsComponent } from './user/profile/my-publications/my-publications.component';
-import { ProfileComponent } from './user/profile/profile.component';
-import { UserInformationComponent } from './user/profile/user-information/user-information.component';
+import { CreatePublicationComponent } from './home/profile/create-publication/create-publication.component';
+import { MyPublicationsComponent } from './home/profile/my-publications/my-publications.component';
+import { ProfileComponent } from './home/profile/profile.component';
+import { UserInformationComponent } from './home/profile/user-information/user-information.component';
 import { RegisterComponent } from './user/register/register.component';
 
 const routes: Routes = [
