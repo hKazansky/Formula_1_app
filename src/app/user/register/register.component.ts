@@ -15,6 +15,7 @@ export class RegisterComponent {
     "email": new FormControl('', [Validators.pattern(/[a-z]+@[a-z]+.[a-z]+/), Validators.required]),
     "password": new FormControl('', [Validators.minLength(3), Validators.required]),
     "fullname": new FormControl('', [Validators.minLength(3), Validators.required]),
+    "birthday": new FormControl('', [Validators.minLength(3), Validators.required]),
     "country": new FormControl('', [Validators.minLength(3), Validators.required]),
     "team": new FormControl('', [Validators.minLength(3), Validators.required]),
     "rePass": new FormControl('', [Validators.minLength(3), Validators.required]),
