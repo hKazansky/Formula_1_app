@@ -1,6 +1,6 @@
 <div *ngIf="currentPost">
   <form class="post-wrapper">
-    <div class="post-image"></div>
+    <div class="post-image" style="background-image: url('{{currentPost.imageUrl}}');"></div>
     <div class="post-card">
       <div id="title-section">
           <h2 id="h2-title">{{currentPost.title}}</h2>

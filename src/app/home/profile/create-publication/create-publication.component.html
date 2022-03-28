@@ -1,4 +1,5 @@
 <app-profile></app-profile>
+<div class="outer-wrapper">
 <form class="card" [formGroup]="form" (ngSubmit)="onSubmitCreatePost()" method="post">
   <span id="text">Create a topic that you're interested in</span>
   <div class="title-wrapper">
@@ -9,5 +10,10 @@
     <div id="description">Tell us more about the topic</div>
     <input id="description-input" type="text" formControlName="description" placeholder="Add description" />
   </div>
+  <div class="image-wrapper">
+    <div id="image">Upload image</div>
+    <input id="image-input" type="text" formControlName="imageUrl" placeholder="Upload picture https://..." />
+  </div>
   <button class="button" type="submit">SUBMIT</button>
 </form>
+</div>

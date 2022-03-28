@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
+.outer-wrapper{
+  height: 100vh;
+}
+
 .card {
-  height: 50vh;
+  height: 80vh;
   border-style: solid;
   border-color: black;
   border-radius: 1rem;
@@ -82,7 +86,7 @@
 }
 
 .button {
-  margin-top: 4rem;
+  margin-top: 2rem;
   background-color: black;
   color: white;
   border-radius: 0.4rem;
@@ -93,4 +97,21 @@
 
 .button:hover {
   background-color: rgb(230, 0, 0);
+}
+
+.image-wrapper{
+  margin-top: 4rem;
+  width: 90%;
+  height: 10%;
+}
+
+
+#image-input {
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  border-color: black;
+  height: 50%;
+  width: 100%;
+  margin-top: 1rem;
 }
