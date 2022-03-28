@@ -7,17 +7,19 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./my-publications.component.css']
 })
 export class MyPublicationsComponent implements OnInit {
-
+  allUserPosts: any[] = [];
+  userPosts: any[] = [];
+  
   constructor(private service: PostService) { }
 
   ngOnInit(): void {
-    this.userPosts()
+    this.getUserPosts()
   }
 
-
-  userPosts(){
-    this.service.getUserPosts().subscribe(data => console.log(data))
+  getUserPosts() {
+    this.service.getAllPublications().subscribe(data => {
+      this.allUserPosts = data;
+      this.userPosts = this.allUserPosts.filter(post => post.author.email === localStorage.getItem('email'));
+    })
   }
-
-
 }

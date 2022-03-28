@@ -41,7 +41,7 @@ import { CreatePublicationComponent } from './home/profile/create-publication/cr
     RaceDetailsComponent,
     UserInformationComponent,
     MyPublicationsComponent,
-    CreatePublicationComponent
+    CreatePublicationComponent,
 
   ],
   imports: [
@@ -57,12 +57,12 @@ import { CreatePublicationComponent } from './home/profile/create-publication/cr
     ConstructorsService,
     RegisterService,
     PostService,
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
       multi: true
     },
-    AuthGuard,
   ],
   bootstrap: [AppComponent],
 })
