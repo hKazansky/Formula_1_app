@@ -18,7 +18,7 @@ export class CreatePublicationComponent {
 
   onSubmitCreatePost() {
     this.service.createPost(this.form.value).subscribe()
-    this.router.navigate(['/'])
+    this.router.navigate(['/profile/my-publications'])
 
   }
 
