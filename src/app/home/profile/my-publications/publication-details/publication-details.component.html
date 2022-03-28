@@ -1,0 +1,21 @@
+<div *ngIf="currentPost">
+  <form class="post-wrapper">
+    <div class="post-image"></div>
+    <div class="post-card">
+      <div id="title-section">
+          <h2 id="h2-title">{{currentPost.title}}</h2>
+      </div>
+      <div id="description-section">
+          <p id="p-description">{{currentPost.description}}</p>
+      </div>
+      <div class="add-comment-section">
+        <input
+          id="comment-input"
+          type="text"
+          placeholder="Tell us what you think..."
+        />
+        <button type="submit" class="button">ADD COMMENT</button>
+      </div>
+    </div>
+  </form>
+</div>
