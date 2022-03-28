@@ -14,6 +14,7 @@ import { MyPublicationsComponent } from './home/profile/my-publications/my-publi
 import { ProfileComponent } from './home/profile/profile.component';
 import { UserInformationComponent } from './home/profile/user-information/user-information.component';
 import { RegisterComponent } from './user/register/register.component';
+import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,11 @@ const routes: Routes = [
   {
     path: 'profile/my-publications',
     component: MyPublicationsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile/my-publications/:postId',
+    component: PublicationDetailsComponent,
     canActivate: [AuthGuard]
   },
   {

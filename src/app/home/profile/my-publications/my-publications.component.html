@@ -7,7 +7,7 @@
           <span id="title">{{ post.title }}</span>
           <span id="description">{{ post.description.slice(0, 20) }}...</span>
         </div>
-        <span class="go-to-link">VIEW PUBLICATION></span>
+        <span class="go-to-link" routerLink="/profile/my-publications/{{post._id}}">VIEW PUBLICATION></span>
       </div>
     </div>
   </div>

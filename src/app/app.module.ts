@@ -25,6 +25,7 @@ import { UserInformationComponent } from './home/profile/user-information/user-i
 import { MyPublicationsComponent } from './home/profile/my-publications/my-publications.component';
 import { CreatePublicationComponent } from './home/profile/create-publication/create-publication.component';
 import { UserService } from './services/user.service';
+import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,8 @@ import { UserService } from './services/user.service';
     UserInformationComponent,
     MyPublicationsComponent,
     CreatePublicationComponent,
+    PublicationDetailsComponent,
+    
 
   ],
   imports: [
