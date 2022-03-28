@@ -24,6 +24,7 @@ import { ProfileComponent } from './home/profile/profile.component';
 import { UserInformationComponent } from './home/profile/user-information/user-information.component';
 import { MyPublicationsComponent } from './home/profile/my-publications/my-publications.component';
 import { CreatePublicationComponent } from './home/profile/create-publication/create-publication.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { CreatePublicationComponent } from './home/profile/create-publication/cr
     RegisterService,
     PostService,
     AuthGuard,
+    UserService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
