@@ -13,13 +13,13 @@ export class CreatePublicationComponent {
 
   form = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    description: new FormControl('', [Validators.required, Validators.minLength(20)])
+    description: new FormControl('', [Validators.required, Validators.minLength(20)]),
+    imageUrl: new FormControl('', [Validators.required, Validators.pattern(/https?:\/\//)]),
   })
 
   onSubmitCreatePost() {
     this.service.createPost(this.form.value).subscribe()
     this.router.navigate(['/profile/my-publications'])
-
   }
 
 }
