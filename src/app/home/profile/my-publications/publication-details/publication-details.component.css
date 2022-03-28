@@ -1,47 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
 .post-wrapper {
-  border-style: solid;
+  /* border-style: solid; */
   width: 50%;
   height: 100vh;
   font-family: "Orbitron", sans-serif;
   margin-left: 25%;
-  border-color: magenta;
+  /* border-color: magenta; */
 }
 
 .post-image {
-  border: solid;
+  /* border: solid; */
   width: 100%;
   height: 20rem;
-  border-color: mediumaquamarine;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border-color: mediumaquamarine; */
 }
 
 .post-card {
-  border: solid;
+  /* border: solid; */
   width: 100%;
   height: 30rem;
-  border-color: mediumturquoise;
+  /* border-color: mediumturquoise; */
 }
 
 #title-section {
-  border: solid;
+  /* border: solid; */
   width: 100%;
   height: 5rem;
-  border-color: orange;
-  text-align: center;
+  /* border-color: orange; */
+  text-align: left;
 }
 #description-section {
-  border: solid;
+  /* border: solid; */
   width: 100%;
   height: 10rem;
-  border-color: rgb(0, 217, 255);
+  /* border-color: rgb(0, 217, 255); */
 }
 
 .add-comment-section {
-  border: solid;
+  /* border: solid; */
   width: 100%;
   height: 10rem;
-  border-color: rgb(238, 255, 0);
+  /* border-color: rgb(238, 255, 0); */
   display: grid;
 }
 #comment-input {
@@ -64,32 +66,58 @@
   border-style: none;
   height: 2.5rem;
   width: 10rem;
-  margin-left: 40%;
 }
 
 .button:hover {
   background: green;
 }
 
-#h2-title{
-    width: 50%;
-    margin-top: 1rem;
-    margin-left: 25%;
-    border-style: solid;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-color: red;
-    border-width: .15rem;
-    font-weight: bold;
-    padding-bottom: .5rem;
-
+#h2-title {
+  width: 90%;
+  margin-top: 3rem;
+  margin-left: 5%;
+  border-style: solid;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-color: grey;
+  border-width: 0.125rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
 }
 
-#p-description{
-    width: 100%;
-    height: 100%;
-    border-style: solid;
-    padding-left: 1rem;
-    padding-top: 1rem;
+#p-description {
+  width: 90%;
+  height: 100%;
+  border-style: solid;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding-left: 1rem;
+  margin-left: 5%;
+  border-color: grey;
+  border-width: 0.125rem;
+  /* border-radius: 1rem; */
+}
+
+.add-comment-button-wrapper {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.view-comments-button-wrapper {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.button-comments {
+  background-color: black;
+  color: white;
+  border-radius: 0.4rem;
+  border-style: none;
+  height: 2.5rem;
+  width: 20rem;
 }

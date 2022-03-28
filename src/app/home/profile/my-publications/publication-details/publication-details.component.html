@@ -1,12 +1,17 @@
 <div *ngIf="currentPost">
   <form class="post-wrapper">
-    <div class="post-image" style="background-image: url('{{currentPost.imageUrl}}');"></div>
+    <div>
+      <div
+        class="post-image"
+        style="background-image: url('{{ currentPost.imageUrl }}');"
+      ></div>
+    </div>
     <div class="post-card">
       <div id="title-section">
-          <h2 id="h2-title">{{currentPost.title}}</h2>
+        <h2 id="h2-title">{{ currentPost.title }}</h2>
       </div>
       <div id="description-section">
-          <p id="p-description">{{currentPost.description}}</p>
+        <p id="p-description">{{ currentPost.description }}</p>
       </div>
       <div class="add-comment-section">
         <input
@@ -14,7 +19,12 @@
           type="text"
           placeholder="Tell us what you think..."
         />
-        <button type="submit" class="button">ADD COMMENT</button>
+        <div class="add-comment-button-wrapper">
+          <button type="submit" class="button">ADD COMMENT</button>
+        </div>
+      </div>
+      <div class="view-comments-button-wrapper">
+        <button type="button" class="button-comments">VIEW COMMENTS</button>
       </div>
     </div>
   </form>
