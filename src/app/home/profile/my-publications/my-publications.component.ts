@@ -19,7 +19,7 @@ export class MyPublicationsComponent implements OnInit {
   getUserPosts() {
     this.service.getAllPublications().subscribe(data => {
       this.allUserPosts = data;
-      this.userPosts = this.allUserPosts.filter(post => post.author.email === localStorage.getItem('email'));
+      this.userPosts = this.allUserPosts.filter(post => post.author?.email === localStorage.getItem('email'));
     })
   }
 }

@@ -12,3 +12,9 @@
     </div>
   </div>
 </div>
+<div *ngIf="userPosts.length == 0">
+  <div class="info-text-wrapper">
+    <h4 id="info-text">You have no publications yet.</h4>
+    <span id="create-publication-link" routerLink="/profile/create-publication">Create publication ></span>
+  </div>
+</div>

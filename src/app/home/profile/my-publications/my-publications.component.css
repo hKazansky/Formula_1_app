@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
-.outer-wrapper{
+.outer-wrapper {
   margin-top: 3rem;
 }
 .card {
@@ -28,8 +28,8 @@
   cursor: pointer;
 }
 
-.go-to-link:hover{
-    color: red;
+.go-to-link:hover {
+  color: red;
 }
 
 #title {
@@ -42,5 +42,37 @@
 }
 
 .publication-wrapper:hover {
+  border-color: black;
+}
+
+.info-text-wrapper {
+  font-family: "Orbitron", sans-serif;
+  border-style: solid;
+  height: 3rem;
+  width: 50%;
+  margin-left: 25%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 0.1rem;
+  display: flex;
+}
+#info-text {
+  width: 80%;
+  margin-left: 1rem;
+  font-weight: 800;
+}
+
+#create-publication-link {
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: red;
+  height: 2rem;
+  cursor: pointer;
+}
+
+#create-publication-link:hover{
   border-color: black;
 }
