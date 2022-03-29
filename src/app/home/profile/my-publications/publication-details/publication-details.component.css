@@ -122,28 +122,30 @@
   width: 20rem;
 }
 
-.comment-div{
-    display: flex;
-    border-style: solid;
-    border-color: red;
-    height: 5rem;
-    margin: 1rem;
-    margin-top: 2rem;
+.comment-div {
+  display: flex;
+  border-style: solid;
+  border-color: black;
+  border-radius: .7rem;
+  text-align: center;
+  height: 5rem;
+  margin: 1rem;
+  margin-top: 2rem;
 }
 
-.comment-section-wrapper{
-    height: 100vh;
+.comment-section-wrapper {
+  height: 100vh;
 }
 
 #content {
-    display: grid;
-    width: 90%;
-    border-style: solid;
-    text-align: start;
-    padding-left: 1rem;
+  display: grid;
+  width: 90%;
+  /* border-style: solid; */
+  text-align: start;
+  padding-left: 1rem;
 }
 
-#user-info-div{
+#user-info-div {
   display: flex;
   padding-right: 1rem;
 }
@@ -151,4 +153,38 @@
 #user-fullname-span {
   padding-right: 2rem;
   font-weight: bold;
+}
+#likes {
+  display: grid;
+  padding-left: 2rem;
+}
+
+#like {
+  width: 2rem;
+  cursor: pointer;
+}
+
+#dislike {
+  width: 2rem;
+  cursor: pointer;
+}
+
+#comment-options {
+  display: grid;
+  padding-right: 1rem;
+}
+
+#edit {
+  margin-top: 0.2rem;
+  background-color: rgb(255, 171, 75);
+  border-radius: 0.3rem;
+  border-color: black;
+}
+
+#delete {
+  margin-top: 0.4rem;
+  background-color: red;
+  border-color: black;
+
+  border-radius: 0.3rem;
 }

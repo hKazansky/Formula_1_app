@@ -43,7 +43,26 @@
                   </div>
                   <span>{{ comment.comment }}</span>
                 </div>
-                <div id="likes"></div>
+                <div *ngIf="!comment.author._id == comment.post._id">
+                  <div id="likes">
+                    <img id="like" src="assets/icons/like.png" alt="" />
+                    <img id="dislike" src="assets/icons/dislike.png" alt="" />
+                  </div>
+                </div>
+                <div *ngIf="activeUser == comment.author.email">
+                  <div id="comment-options">
+                    <button id="edit">EDIT</button>
+                    <button
+                      (click)="deleteComment(comment._id, comment.post._id)"
+                      id="delete"
+                      routerLink="/profile/my-publications/{{
+                        comment.post._id
+                      }}"
+                    >
+                      DELETE
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
