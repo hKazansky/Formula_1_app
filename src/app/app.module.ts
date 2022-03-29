@@ -45,8 +45,6 @@ import { PublicationDetailsComponent } from './home/profile/my-publications/publ
     MyPublicationsComponent,
     CreatePublicationComponent,
     PublicationDetailsComponent,
-    
-
   ],
   imports: [
     BrowserModule,
