@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import { FormGroup, FormControl, Validators, NgModel } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { IComment } from 'src/app/interfaces/comment';
 @Component({
   selector: 'app-publication-details',
   templateUrl: './publication-details.component.html',
@@ -11,6 +13,8 @@ export class PublicationDetailsComponent implements OnInit {
   allPosts: any[] = [];
   currentPost: any;
   postId: string = '';
+  comments: IComment[] | undefined;
+  postComments: any
 
 
   constructor(private service: PostService, private route: ActivatedRoute) { }
@@ -18,6 +22,7 @@ export class PublicationDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getCurrentPost();
 
+    console.log(this.getComments())
   }
 
   form = new FormGroup({
@@ -41,8 +46,14 @@ export class PublicationDetailsComponent implements OnInit {
     inputField.value = '';
   }
 
-  toggleComments() {
-    const comments = this.service.getPublicationComments().subscribe(data => console.log(data));
-    
+  getComments() {
+    const postId = Object.values(this.route.snapshot.params)[0]
+    this.service.getPublicationComments().subscribe(data => {
+      this.comments = data;
+      this.postComments = this.comments?.filter((x) => x.post._id === postId)
+      console.log(this.postComments)
+    })
   }
+
+
 }
