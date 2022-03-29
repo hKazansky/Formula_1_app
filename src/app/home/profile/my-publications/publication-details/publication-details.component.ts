@@ -47,11 +47,11 @@ export class PublicationDetailsComponent implements OnInit {
   }
 
   getComments() {
-    const postId = Object.values(this.route.snapshot.params)[0]
+    const postId = Object.values(this.route.snapshot.params)[0];
+    
     this.service.getPublicationComments().subscribe(data => {
       this.comments = data;
       this.postComments = this.comments?.filter((x) => x.post._id === postId)
-      console.log(this.postComments)
     })
   }
 
