@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
-import { FormGroup, FormControl, Validators, NgModel } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IComment } from 'src/app/interfaces/comment';
+
 @Component({
   selector: 'app-publication-details',
   templateUrl: './publication-details.component.html',
   styleUrls: ['./publication-details.component.css']
 })
+
 export class PublicationDetailsComponent implements OnInit {
   allPosts: any[] = [];
   currentPost: any;
@@ -15,7 +17,6 @@ export class PublicationDetailsComponent implements OnInit {
   comments: IComment[] | undefined;
   postComments: any;
   activeUser: any
-
 
   constructor(private service: PostService, private route: ActivatedRoute, private router: Router) { }
 
@@ -44,9 +45,7 @@ export class PublicationDetailsComponent implements OnInit {
     let inputField = (<HTMLInputElement>document.getElementById('comment-input'))
     inputField.value = '';
 
-    // this.router.navigate([`/profile/my-publications/${this.postId}`]);
     location.reload();
-
   }
 
   getComments() {
@@ -59,12 +58,11 @@ export class PublicationDetailsComponent implements OnInit {
       this.activeUser = localStorage.getItem('email');
     });
   }
+
   deleteComment(commentId: any, postId: any) {
     this.service.deleteComment(commentId, postId).subscribe();
-    const comment = <HTMLElement>document.querySelector('.comment-div')
+    const comment = <HTMLElement>document.querySelector('.comment-div');
     comment.remove();
     this.router.navigate([`/profile/my-publications/${postId}`]);
   }
-
-
 }
