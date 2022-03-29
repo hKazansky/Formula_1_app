@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import { FormGroup, FormControl, Validators, NgModel } from '@angular/forms';
 import { IComment } from 'src/app/interfaces/comment';
@@ -17,7 +17,7 @@ export class PublicationDetailsComponent implements OnInit {
   activeUser: any
 
 
-  constructor(private service: PostService, private route: ActivatedRoute) { }
+  constructor(private service: PostService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getCurrentPost();
@@ -43,6 +43,10 @@ export class PublicationDetailsComponent implements OnInit {
 
     let inputField = (<HTMLInputElement>document.getElementById('comment-input'))
     inputField.value = '';
+
+    // this.router.navigate([`/profile/my-publications/${this.postId}`]);
+    location.reload();
+
   }
 
   getComments() {
@@ -58,7 +62,8 @@ export class PublicationDetailsComponent implements OnInit {
   deleteComment(commentId: any, postId: any) {
     this.service.deleteComment(commentId, postId).subscribe();
     const comment = <HTMLElement>document.querySelector('.comment-div')
-    comment.remove()
+    comment.remove();
+    this.router.navigate([`/profile/my-publications/${postId}`]);
   }
 
 
