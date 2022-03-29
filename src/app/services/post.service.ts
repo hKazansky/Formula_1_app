@@ -24,10 +24,6 @@ export class PostService {
     return this.http.get<any>('http://localhost:3000/posts');
   }
 
-  getUserPosts() {
-    return this.http.get<any>('http://localstorage:3000/user-posts');
-  }
-
   getPublicationComments() {
     return this.http.get<any>('http://localhost:3000/comments')
   }
