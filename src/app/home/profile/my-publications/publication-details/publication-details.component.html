@@ -1,5 +1,5 @@
 <div *ngIf="currentPost">
-  <form class="post-wrapper">
+  <div class="post-wrapper">
     <div>
       <div
         class="post-image"
@@ -13,19 +13,25 @@
       <div id="description-section">
         <p id="p-description">{{ currentPost.description }}</p>
       </div>
-      <div class="add-comment-section">
+      <form
+        [formGroup]="form"
+        (ngSubmit)="postComment()"
+        class="add-comment-section"
+      >
         <input
+          name="commentInput"
           id="comment-input"
           type="text"
           placeholder="Tell us what you think..."
+          formControlName="comment"
         />
         <div class="add-comment-button-wrapper">
           <button type="submit" class="button">ADD COMMENT</button>
         </div>
-      </div>
+      </form>
       <div class="view-comments-button-wrapper">
-        <button type="button" class="button-comments">VIEW COMMENTS</button>
+        <button type="button" (click)="toggleComments()" class="button-comments">VIEW COMMENTS</button>
       </div>
     </div>
-  </form>
+  </div>
 </div>
