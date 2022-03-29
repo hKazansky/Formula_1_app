@@ -121,3 +121,34 @@
   height: 2.5rem;
   width: 20rem;
 }
+
+.comment-div{
+    display: flex;
+    border-style: solid;
+    border-color: red;
+    height: 5rem;
+    margin: 1rem;
+    margin-top: 2rem;
+}
+
+.comment-section-wrapper{
+    height: 100vh;
+}
+
+#content {
+    display: grid;
+    width: 90%;
+    border-style: solid;
+    text-align: start;
+    padding-left: 1rem;
+}
+
+#user-info-div{
+  display: flex;
+  padding-right: 1rem;
+}
+
+#user-fullname-span {
+  padding-right: 2rem;
+  font-weight: bold;
+}

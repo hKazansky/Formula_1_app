@@ -30,7 +30,24 @@
         </div>
       </form>
       <div class="view-comments-button-wrapper">
-        <button type="button" (click)="toggleComments()" class="button-comments">VIEW COMMENTS</button>
+        <div *ngIf="postComments">
+          <div class="comment-section-wrapper">
+            <div *ngFor="let comment of postComments">
+              <div class="comment-div">
+                <div id="content">
+                  <div id="user-info-div">
+                    <span id="user-fullname-span"
+                      >{{ comment.author.fullName }}
+                    </span>
+                    <span>@{{ comment.author.team }}</span>
+                  </div>
+                  <span>{{ comment.comment }}</span>
+                </div>
+                <div id="likes"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
