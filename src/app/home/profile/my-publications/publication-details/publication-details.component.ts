@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import { FormGroup, FormControl, Validators, NgModel } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { IComment } from 'src/app/interfaces/comment';
 @Component({
   selector: 'app-publication-details',
@@ -14,15 +13,15 @@ export class PublicationDetailsComponent implements OnInit {
   currentPost: any;
   postId: string = '';
   comments: IComment[] | undefined;
-  postComments: any
+  postComments: any;
+  activeUser: any
 
 
   constructor(private service: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getCurrentPost();
-
-    console.log(this.getComments())
+    this.getComments();
   }
 
   form = new FormGroup({
@@ -48,11 +47,18 @@ export class PublicationDetailsComponent implements OnInit {
 
   getComments() {
     const postId = Object.values(this.route.snapshot.params)[0];
-    
+
     this.service.getPublicationComments().subscribe(data => {
       this.comments = data;
-      this.postComments = this.comments?.filter((x) => x.post._id === postId)
-    })
+      this.postComments = this.comments?.filter((x) => x?.post?._id === postId);
+
+      this.activeUser = localStorage.getItem('email');
+    });
+  }
+  deleteComment(commentId: any, postId: any) {
+    this.service.deleteComment(commentId, postId).subscribe();
+    const comment = <HTMLElement>document.querySelector('.comment-div')
+    comment.remove()
   }
 
 

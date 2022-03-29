@@ -28,4 +28,14 @@ export class PostService {
     return this.http.get<any>('http://localhost:3000/comments')
   }
 
+  deleteComment(commentId: any, postId: any) {
+    const params = new HttpParams({
+      fromObject: {
+        commentId,
+        postId
+      }
+    })
+    return this.http.delete<any>(`http://localhost:3000/delete/${commentId}`, { params: params })
+  }
+
 }
