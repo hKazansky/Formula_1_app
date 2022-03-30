@@ -45,7 +45,10 @@ export class PublicationDetailsComponent implements OnInit {
     let inputField = (<HTMLInputElement>document.getElementById('comment-input'))
     inputField.value = '';
 
-    location.reload();
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 
   getComments() {
@@ -66,10 +69,13 @@ export class PublicationDetailsComponent implements OnInit {
     this.router.navigate(['/profile/my-publications'])
   }
 
-  deleteComment(commentId: any, postId: any) {
+  deleteComment(commentId: any, postId: any, event: any) {
     this.service.deleteComment(commentId, postId).subscribe();
-    const comment = <HTMLElement>document.querySelector('.comment-div');
+
+    const comment = event.target.parentElement.parentElement.parentElement.parentElement
     comment.remove();
+
     this.router.navigate([`/profile/my-publications/${postId}`]);
   }
+
 }

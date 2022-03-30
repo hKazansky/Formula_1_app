@@ -71,7 +71,7 @@
                   <div id="comment-options">
                     <button id="edit">EDIT</button>
                     <button
-                      (click)="deleteComment(comment._id, comment.post._id)"
+                      (click)="deleteComment(comment._id, comment.post._id, $event)"
                       id="delete"
                     >
                       DELETE
