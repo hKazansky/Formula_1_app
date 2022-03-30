@@ -13,6 +13,20 @@
       <div id="description-section">
         <p id="p-description">{{ currentPost.description }}</p>
       </div>
+      <div
+        class="post-options-wrapper"
+        *ngIf="activeUser == currentPost.author.email"
+      >
+        <div class="post-options">
+          <button
+            id="post-edit"
+            routerLink="/profile/my-publications/{{ currentPost._id }}/edit"
+          >
+            EDIT
+          </button>
+          <button id="post-delete" (click)="deletePost()">DELETE</button>
+        </div>
+      </div>
       <form
         [formGroup]="form"
         (ngSubmit)="postComment()"
@@ -55,7 +69,6 @@
                     <button
                       (click)="deleteComment(comment._id, comment.post._id)"
                       id="delete"
-               
                     >
                       DELETE
                     </button>
