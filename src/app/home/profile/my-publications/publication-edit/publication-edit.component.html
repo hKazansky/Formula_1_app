@@ -1,0 +1,44 @@
+<app-profile></app-profile>
+<div class="outer-wrapper">
+  <div *ngIf="post">
+    <form
+      class="card"
+      [formGroup]="form"
+      (ngSubmit)="onSubmitEditPost()"
+      method="post"
+    >
+      <span id="text">Edit the current topic</span>
+      <div class="title-wrapper">
+        <div id="title">Topic title</div>
+        <input
+          id="title-input"
+          type="text"
+          formControlName="title"
+          placeholder="Your title here"
+          [(ngModel)]="post.title"
+        />
+      </div>
+      <div class="description-wrapper">
+        <div id="description">Tell us more about the topic</div>
+        <input
+          id="description-input"
+          type="text"
+          formControlName="description"
+          placeholder="Add description"
+          [(ngModel)]="post.description"
+        />
+      </div>
+      <div class="image-wrapper">
+        <div id="image">Upload image</div>
+        <input
+          id="image-input"
+          type="text"
+          formControlName="imageUrl"
+          placeholder="Upload picture https://..."
+          [(ngModel)]="post.imageUrl"
+        />
+      </div>
+      <button class="button" type="submit">EDIT POST</button>
+    </form>
+  </div>
+</div>

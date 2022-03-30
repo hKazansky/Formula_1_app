@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
+.outer-wrapper{
+  height: 100vh;
+}
+
+.card {
+  height: 80vh;
+  border-style: solid;
+  border-color: black;
+  border-radius: 1rem;
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 2rem;
+  align-items: center;
+  font-family: "Orbitron", sans-serif;
+}
+
+#text {
+  margin-top: 2rem;
+  width: 90%;
+  height: 10%;
+  font-weight: bold;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: grey;
+  border-width: 0.1rem;
+  text-align: center;
+}
+
+.title-wrapper {
+  margin-top: 2rem;
+  width: 90%;
+  height: 15%;
+}
+
+#title {
+  font-weight: bold;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: red;
+  border-width: 0.15rem;
+  width: 20%;
+}
+
+#title-input {
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  border-color: black;
+  height: 50%;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.description-wrapper {
+  /* border-style: solid; */
+  margin-top: 2rem;
+  width: 90%;
+  height: 30%;
+}
+
+#description {
+  font-weight: bold;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: red;
+  border-width: 0.15rem;
+  width: 50%;
+}
+
+#description-input {
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  border-color: black;
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
+  padding-bottom: 35%;
+}
+
+.button {
+  margin-top: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.4rem;
+  border-style: none;
+  height: 2.5rem;
+  width: 10rem;
+}
+
+.button:hover {
+  background-color: rgb(230, 0, 0);
+}
+
+.image-wrapper{
+  margin-top: 4rem;
+  width: 90%;
+  height: 10%;
+}
+
+
+#image-input {
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  border-color: black;
+  height: 50%;
+  width: 100%;
+  margin-top: 1rem;
+}
