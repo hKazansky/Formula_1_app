@@ -59,6 +59,13 @@ export class PublicationDetailsComponent implements OnInit {
     });
   }
 
+  deletePost() {
+    const postId = Object.values(this.route.snapshot.params)[0];
+
+    this.service.deletePost(postId).subscribe();
+    this.router.navigate(['/profile/my-publications'])
+  }
+
   deleteComment(commentId: any, postId: any) {
     this.service.deleteComment(commentId, postId).subscribe();
     const comment = <HTMLElement>document.querySelector('.comment-div');
