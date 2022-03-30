@@ -33,9 +33,13 @@
   text-align: left;
 }
 #description-section {
-  /* border: solid; */
+  border: solid;
   width: 100%;
   height: 10rem;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 0.7rem;
+  border-width: 0.15rem;
   /* border-color: rgb(0, 217, 255); */
 }
 
@@ -45,6 +49,7 @@
   height: 10rem;
   /* border-color: rgb(238, 255, 0); */
   display: grid;
+  margin-top: 2rem;
 }
 #comment-input {
   border: solid;
@@ -75,28 +80,29 @@
 #h2-title {
   width: 90%;
   margin-top: 3rem;
-  margin-left: 5%;
-  border-style: solid;
+  /* margin-left: 5%; */
+  /* border-style: solid;
   border-top: none;
   border-right: none;
   border-left: none;
-  border-color: grey;
+  border-color: grey; */
   border-width: 0.125rem;
   font-weight: bold;
   padding-bottom: 0.5rem;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
 }
 
 #p-description {
   width: 90%;
   height: 100%;
-  border-style: solid;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  /* border-style: solid; */
+  /* border-top: none; */
+  /* border-right: none; */
+  /* border-left: none; */
   padding-left: 1rem;
-  margin-left: 5%;
-  border-color: grey;
+  padding-top: 1rem;
+  /* margin-left: 5%; */
+  /* border-color: grey; */
   border-width: 0.125rem;
   /* border-radius: 1rem; */
 }
@@ -129,12 +135,14 @@
   border-radius: 0.7rem;
   text-align: center;
   height: 5rem;
-  margin: 1rem;
-  margin-top: 2rem;
+  /* margin: 1rem; */
+  margin-top: 1rem;
 }
 
 .comment-section-wrapper {
-  height: 100vh;
+  display: grid;
+  height: auto;
+  margin-top: 3rem;
 }
 
 #content {
@@ -172,43 +180,70 @@
 #comment-options {
   display: grid;
   padding-right: 1rem;
+  padding-top: .3rem;
 }
 
 #edit {
   margin-top: 0.2rem;
-  background-color: rgb(255, 171, 75);
+  background-color: rgb(255, 172, 78);
   border-radius: 0.3rem;
-  border-color: black;
+  border: none;
+  font-weight: bold;
 }
 
 #delete {
   margin-top: 0.4rem;
-  background-color: red;
-  border-color: black;
+  background-color: rgb(255, 89, 89);
   border-radius: 0.3rem;
+  border: none;
+  font-weight: bold;
+
 }
 .post-options-wrapper {
-  margin-top: 2.5rem;
+  margin-top: 10rem;
   text-align: center;
 }
 
 .post-options {
   align-items: center;
   height: 5rem;
+  border-style: solid;
+  border-width: 0.15rem;
+  border-top-right-radius: 0.7rem;
+  padding-top: 1.2rem;
+  border-left: none;
+  border-bottom: none;
+  width: 40%;
+  margin-left: 60%;
 }
 
 #post-edit {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  margin-right: .7rem;
-  border-color: black;
+  margin-right: 0.7rem;
+  border: none;
   border-radius: 0.3rem;
   height: 2rem;
+  background-color: rgb(255, 172, 78);
+  font-weight: bold;
 }
 
 #post-delete {
-  border-color: black;
+  /* border-color: black; */
+  border: none;
   border-radius: 0.3rem;
   height: 2rem;
+  background-color: rgb(255, 89, 89);
+  font-weight: bold;
+}
 
+#comment-section-text {
+  border-style: solid;
+  margin-top: 7rem;
+  width: 50%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: red;
+  border-width: 0.15rem;
 }
