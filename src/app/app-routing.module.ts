@@ -16,6 +16,7 @@ import { UserInformationComponent } from './home/profile/user-information/user-i
 import { RegisterComponent } from './user/register/register.component';
 import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
 import { PublicationEditComponent } from './home/profile/my-publications/publication-edit/publication-edit.component';
+import { ForumComponent } from './home/forum/forum.component';
 
 const routes: Routes = [
   {
@@ -98,6 +99,12 @@ const routes: Routes = [
   {
     path: 'constructors',
     component: ConstructorsComponent,
+    canActivate: [AuthGuard]
+
+  },
+  {
+    path: 'forum',
+    component: ForumComponent,
     canActivate: [AuthGuard]
 
   }
