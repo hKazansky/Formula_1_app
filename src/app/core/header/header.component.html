@@ -14,7 +14,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div style="display: flex; margin-left: 60vh">
+    <div style="display: flex; margin-left: 55vh;">
       <a
         class="nav-link"
         routerLink="/home"
@@ -38,7 +38,10 @@
         *ngIf="isLoggedIn()"
         style="display: flex; font-family: Orbitron, sans-serif"
       >
-        <a class="nav-link" routerLink="/profile/my-account" routerLinkActive="active"
+        <a
+          class="nav-link"
+          routerLink="/profile/my-account"
+          routerLinkActive="active"
           >Profile</a
         >
         <a class="nav-link" routerLink="/calendar" routerLinkActive="active"
@@ -50,9 +53,12 @@
         <a class="nav-link" routerLink="/constructors" routerLinkActive="active"
           >Constructors</a
         >
+        <a class="nav-link" routerLink="/forum" routerLinkActive="active"
+          >Forum</a
+        >
         <a
           class="nav-link"
-          style="margin-left: 62vh"
+          style="margin-left: 60vh"
           routerLink="/logout"
           routerLinkActive="active"
           (click)="logout()"
