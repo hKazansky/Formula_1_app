@@ -27,6 +27,7 @@ import { CreatePublicationComponent } from './home/profile/create-publication/cr
 import { UserService } from './services/user.service';
 import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
 import { PublicationEditComponent } from './home/profile/my-publications/publication-edit/publication-edit.component';
+import { ForumComponent } from './home/forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { PublicationEditComponent } from './home/profile/my-publications/publica
     CreatePublicationComponent,
     PublicationDetailsComponent,
     PublicationEditComponent,
+    ForumComponent,
   ],
   imports: [
     BrowserModule,
