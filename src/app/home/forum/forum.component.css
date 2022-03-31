@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
+.cover {
+  border-style: solid;
+  border-color: black;
+  height: 15rem;
+  background-color: black;
+  font-family: "Orbitron", sans-serif;
+}
+
+#forum-text-div {
+  text-align: center;
+  border-style: solid;
+  border-color: red;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 6%;
+  color: white;
+  height: 7rem;
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 0.7rem;
+}
+
+#forum-text-h2 {
+  font-weight: bold;
+  padding-top: 5%;
+}
+
+.outer {
+  height: auto;
+  background: rgb(197, 197, 197);
+
+}
+
+.card-wrapper {
+  height: 100vh;
+  width: 70%;
+  margin-left: 15%;
+  background-color: white;
+  font-family: "Orbitron", sans-serif;
+  padding-left: 5rem;
+  padding-top: 2rem;
+}
+
+.post-card {
+  width: 25rem;
+  height: 35rem;
+  border-width: .3rem;
+  border-radius: .75rem;
+  margin-right: 5rem;
+  margin-left: 30%;
+  margin-bottom: 5rem;
+}
+
+#image-card {
+  width: 100%;
+  height: 15rem;
+  border-radius: .75rem;
+}
+
+#content {
+  width: 100%;
+  height: 15rem;
+  border-style: solid;
+  border-top: none;
+  border-bottom-left-radius: .75rem ;
+  border-bottom-right-radius: .75rem;
+
+}
+
+#title {
+  width: 90%;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 3rem;
+  border-width: .15rem;
+  padding-top: .5rem;
+  padding-left: .5rem;
+}
+
+#description {
+  width: 100%;
+  height: 12rem;
+  padding-left: .5rem;
+  padding-top: 1rem;
+}
+
+#button-details {
+    border: none;
+    border-radius: .5rem;
+    background-color: black;
+    color: white;
+    width: 10rem;
+    margin-left: 30%;
+    margin-top: .75rem;
+    height: 2.5rem;
+}

@@ -1,1 +1,26 @@
-<p>forum works!</p>
+<div class="cover">
+  <div id="forum-text-div">
+    <h2 id="forum-text-h2">FORUM</h2>
+  </div>
+</div>
+<div class="outer">
+  <div class="card-wrapper">
+    <div *ngIf="data">
+      <div *ngFor="let post of data" style="display: inline-block;">
+        <div class="post-card">
+          <div
+            id="image-card"
+            style="background-image: url('{{ post.imageUrl }}');"
+          ></div>
+          <div id="content">
+            <div id="title">
+              <h5>{{ post.title }}</h5>
+            </div>
+            <div id="description">{{ post.description }}</div>
+            <button id="button-details" routerLink="/publications/{{post._id}}">DETAILS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
