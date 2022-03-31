@@ -59,7 +59,7 @@
                     </span>
                     <span>@{{ comment.author.team }}</span>
                   </div>
-                  <span>{{ comment.comment }}</span>
+                  <span contenteditable="true">{{ comment.comment }}</span>
                 </div>
                 <div *ngIf="!comment.author._id == comment.post._id">
                   <div id="likes">
