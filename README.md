@@ -86,7 +86,7 @@
 
 
 ## Used:
- - https://ergast.com/mrd/ free API to fetch up-to-date data
+ - https://ergast.com/mrd/ free API to fetch up-to-date Formula 1 data
  - https://www.formula1.com/en.html for drivers, races and constructors images, information and more
  - https://developers.google.com/maps to fetch data from the google maps API
  - https://unsplash.com/ to get images for some of the pages
