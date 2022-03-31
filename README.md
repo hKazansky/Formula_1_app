@@ -83,3 +83,18 @@
 
 ### **Login page**
 - Everyone will be able to login into their accounts and use its functionality
+
+
+## Used:
+ - https://ergast.com/mrd/ free API to fetch up-to-date data
+ - https://www.formula1.com/en.html for drivers, races and constructors images, information and more
+ - https://developers.google.com/maps to fetch data from the google maps API
+ - https://unsplash.com/ to get images for some of the pages
+ - https://getbootstrap.com/ for some components
+
+## Additional libraries used in the project
+ - https://www.npmjs.com/package/bcryptjs for hashing the users passwords
+ - https://www.npmjs.com/package/jsonwebtoken for the user's authentication
+ - https://axios-http.com/docs/intro to make HTTP requests for fetching data from the ergas.com API
+ - https://www.mongodb.com/ for the database
+ - https://mongoosejs.com/ for object modeling and interacting with the database - MongoDB
