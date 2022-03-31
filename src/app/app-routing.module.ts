@@ -83,6 +83,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'publications/:postId',
+    component: PublicationDetailsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'drivers',
     component: DriversComponent,
     canActivate: [AuthGuard],
