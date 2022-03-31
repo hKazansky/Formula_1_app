@@ -1,2 +1,3 @@
-# Formula_1_app
-A Formula 1 website project for educational purposes
+# Formula 1
+
+<p>A Formula 1 website project for educational purposes. The app itself is created to be used for fans of the sport and be informated for every race, pilot and constructor which take place in current season of Formula 1 championship. The goal of the app is to connect like-minded people and share emotions.</p>
