@@ -4,7 +4,7 @@
 
 !['home-page'](md-images/home-page.png)
 !['profile-page'](md-images/profile-page.png)
-!['publications-page'](md-images/publications-page.png)
+!['publications-page'](md-images/my-publications-page.png)
 !['create-publication-page'](md-images/create-publication-page.png)
 !['calendar-page'](md-images/calendar-page.png)
 !['drivers-page'](md-images/drivers-page.png)
