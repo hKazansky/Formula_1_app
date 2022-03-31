@@ -12,11 +12,74 @@
 
 </br> 
  
-### USED STACK
+<h3 style="text-align: center">
+
+ <h4> USED STACK </h4>
+</h3>
+
 </br>
 
 !['mean-stack-image'](md-images/mean-stack.png)
 
+### Features of the platform are not finished. Updates to come soon.
 
+- Responsive design
+- Home page
+- Shows the upcoming race
+- Countdown the time to the start of the race
+- Information about the race - date and time of practices/qualis/race
+- Google maps to target the host city of the race
 
+ </br>
 
+### **Profile page**
+- #### **My account section**
+ Show personal information of the current user
+
+ </br>
+
+- #### **My publications section**
+ Show current user publications
+ 
+ </br>
+
+- #### **Create publication section**
+ Form to create a post on topic that you're interested in
+
+</br>
+
+### **Calendar page**
+
+- Updates dynamically the race calendar for the year
+- Shows information about each race of the calendar
+- By clicking on a race, you'll be navigated to race's details page
+
+</br>
+
+### **Drivers page**
+- Updates dynamically the drivers of the season if there are changes
+- Shows information about each driver of the season
+- By clicking on a driver, you'll be navigated to driver's details page
+
+</br>
+
+### **Constructors page**
+- Updates dynamically the points and position of each constructor from the current racing season
+
+</br>
+
+### **Forum page**
+- All users publications are displayed in the forum page
+- User can review, post a comment and share information with other users about a topic
+- Edit/Delete of the publication options if the user is author of the publication
+- Each user will be able to post a comment on topic he wants
+
+</br>
+
+### **Register page**
+- Everyone will be able to make an account to join the F1 community
+
+</br>
+
+### **Login page**
+- Everyone will be able to login into their accounts and use its functionality
