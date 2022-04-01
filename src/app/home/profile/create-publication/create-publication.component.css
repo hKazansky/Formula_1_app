@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
-.outer-wrapper{
-  height: 100vh;
+.outer-wrapper {
+  height: 100%;
 }
 
 .card {
@@ -43,7 +43,7 @@
   border-left: none;
   border-right: none;
   border-color: red;
-  border-width: 0.15rem;
+  border-width: 1.75px;
   width: 20%;
 }
 
@@ -71,7 +71,7 @@
   border-left: none;
   border-right: none;
   border-color: red;
-  border-width: 0.15rem;
+  border-width: 1.75px;
   width: 50%;
 }
 
@@ -99,12 +99,22 @@
   background-color: rgb(230, 0, 0);
 }
 
-.image-wrapper{
+.image-wrapper {
   margin-top: 4rem;
   width: 90%;
   height: 10%;
 }
 
+#image {
+  font-weight: bold;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: red;
+  border-width: 1.75px;
+  width: 50%;
+}
 
 #image-input {
   border-style: solid;
