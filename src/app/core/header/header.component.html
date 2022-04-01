@@ -10,59 +10,47 @@
     aria-controls="navbarNavAltMarkup"
     aria-expanded="false"
     aria-label="Toggle navigation"
-  >
+    >
     <span class="navbar-toggler-icon"></span>
   </button> -->
-  <div class="inner-a-wrapper">
-      <a
-        class="nav-link"
-        routerLink="/home"
-        routerLinkActive="active"
-        style="font-family: Orbitron, sans-serif"
-        >Home
-      </a>
-      <div
-        *ngIf="!isLoggedIn()"
-        style="display: flex; font-family: Orbitron, sans-serif"
-      >
-        <a class="nav-link" routerLink="/login" routerLinkActive="active"
-          >Login</a
-        >
-        <a class="nav-link" routerLink="/register" routerLinkActive="active"
-          >Register</a
-        >
-      </div>
+  <div *ngIf="!isLoggedIn()" style="display: flex; font-family: Orbitron, sans-serif; margin-right: 87.5vh;">
+    <h6 class="nav-link" routerLink="/home" routerLinkActive="active">Home</h6>
+    <h6 class="nav-link" routerLink="/login" routerLinkActive="active">
+      Login
+    </h6>
+    <h6 class="nav-link" routerLink="/register" routerLinkActive="active">
+      Register
+    </h6>
+  </div>
 
-      <div
-        *ngIf="isLoggedIn()"
-        style="display: flex; font-family: Orbitron, sans-serif"
-      >
-        <a
-          class="nav-link"
-          routerLink="/profile/my-account"
-          routerLinkActive="active"
-          >Profile</a
-        >
-        <a class="nav-link" routerLink="/calendar" routerLinkActive="active"
-          >Calendar</a
-        >
-        <a class="nav-link" routerLink="/drivers" routerLinkActive="active"
-          >Drivers</a
-        >
-        <a class="nav-link" routerLink="/constructors" routerLinkActive="active"
-          >Constructors</a
-        >
-        <a class="nav-link" routerLink="/forum" routerLinkActive="active"
-          >Forum</a
-        >
-        <a
-          class="nav-link"
-          style="margin-left: 57vh"
-          routerLink="/logout"
-          routerLinkActive="active"
-          (click)="logout()"
-          >Logout</a
-        >
-      </div>
-    </div>
+  <div
+    *ngIf="isLoggedIn()"
+    style="display: flex; font-family: Orbitron, sans-serif"
+  >
+    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home </a>
+    <a
+      class="nav-link"
+      routerLink="/profile/my-account"
+      routerLinkActive="active"
+      >Profile</a
+    >
+    <a class="nav-link" routerLink="/calendar" routerLinkActive="active"
+      >Calendar</a
+    >
+    <a class="nav-link" routerLink="/drivers" routerLinkActive="active"
+      >Drivers</a
+    >
+    <a class="nav-link" routerLink="/constructors" routerLinkActive="active"
+      >Constructors</a
+    >
+    <a class="nav-link" routerLink="/forum" routerLinkActive="active">Forum</a>
+    <a
+      class="nav-link"
+      style="margin-left: 57vh"
+      routerLink="/logout"
+      routerLinkActive="active"
+      (click)="logout()"
+      >Logout</a
+    >
+  </div>
 </nav>
