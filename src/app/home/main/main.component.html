@@ -1,4 +1,10 @@
-<div class="cover"></div>
+<div class="cover">
+  <img
+    id="cover-image"
+    src="/assets/cover-images/main-page.jpg"
+    alt="car-image"
+  />
+</div>
 <div *ngIf="final">
   <div class="race-div">
     <h2 class="header-race-name">
@@ -42,72 +48,65 @@
         </ul>
       </div>
     </div>
-
-    <div class="details-wrapper">
-      <div class="practices-wrapper">
-        <h6 class="upcoming-race-text">UPCOMING RACE ></h6>
-        <h6 class="qualifying">QUALIFY ></h6>
-        <h6 class="race">RACE ></h6>
-        <h6 class="practice-3">PRACTICE 3 ></h6>
-        <h6 class="practice-2">PRACTICE 2 ></h6>
-        <h6 class="practice-1">PRACTICE 1 ></h6>
+    <div class="upcoming-race-info-wrapper">
+      <div class="left-wrapper">
+        <span id="upcoming-span">UPCOMING</span>
+        <img id="img-track" src="/assets/images/{{final.Circuit.circuitId}}.png" alt="track-image" routerLink="/race/details/{{final.round}}" />
+        <span id="country-span">AUSTRALIA</span>
       </div>
-      <div class="practices-info-wrapper">
-        <div class="track-image-wrapper">
-          <a
-            class="upcoming-race-details-link"
-            routerLink="/race/details/{{ final.round }}"
-          >
-            <img
-              class="track-image"
-              src="assets/images/{{ final.Circuit.circuitId }}.png"
-              alt="track-image"
-            />
-          </a>
+      <div class="right-wrapper">
+        <div class="race-wrapper">
+          <div class="race-title">RACE</div>
+          <div class="race-info">
+            <span style="padding-left: 5rem">DATE: {{ final.date }}</span>
+            <span style="padding-left: 3rem">TIME: {{ final.time }}</span>
+          </div>
         </div>
-
-        <div class="race-info-div-details">
-          <span id="date-span-race">DATE: {{ final.date }}</span>
-          <span id="time-span-race">TIME: {{ final.time.split("Z")[0] }}</span>
+        <div class="qualify-wrapper">
+          <div class="qualify-title">QUALIFY</div>
+          <div class="qualify-info">
+            <span style="padding-left: 5rem"
+              >DATE: {{ final.Qualifying.date }}</span
+            >
+            <span style="padding-left: 4rem"
+              >TIME: {{ final.Qualifying.time }}</span
+            >
+          </div>
         </div>
-
-        <div class="qualify-div-details">
-          <span class="date-span-qualify"
-            >DATE: {{ final.Qualifying.date }}</span
-          >
-          <span class="time-span-qualify"
-            >TIME: {{ final.Qualifying.time.split("Z")[0] }}</span
-          >
+        <div class="practice-3-wrapper">
+          <div class="practice-3-title">PRACTICE 3</div>
+          <div class="practice-3-info">
+            <span style="padding-left: 4rem"
+              >DATE: {{ final.ThirdPractice.date }}</span
+            >
+            <span style="padding-left: 3rem"
+              >TIME: {{ final.ThirdPractice.time }}</span
+            >
+          </div>
         </div>
-        <div class="third-practice-div-details">
-          <span class="date-span-third-practice"
-            >DATE: {{ final.ThirdPractice.date }}</span
-          >
-          <span class="time-span-third-practice"
-            >TIME: {{ final.ThirdPractice.time.split("Z")[0] }}</span
-          >
+        <div class="practice-2-wrapper">
+          <div class="practice-2-title">PRACTICE 2</div>
+          <div class="practice-2-info">
+            <span style="padding-left: 4rem"
+              >DATE: {{ final.SecondPractice.date }}</span
+            >
+            <span style="padding-left: 3rem"
+              >TIME: {{ final.SecondPractice.time }}</span
+            >
+          </div>
         </div>
-
-        <div class="second-practice-div-details">
-          <span class="date-span-second-practice"
-            >DATE: {{ final.SecondPractice.date }}</span
-          >
-          <span class="time-span-second-practice"
-            >TIME: {{ final.SecondPractice.time.split("Z")[0] }}</span
-          >
-        </div>
-        <div class="first-practice-div-details">
-          <span class="date-span-first-practice"
-            >DATE: {{ final.FirstPractice.date }}</span
-          >
-          <span class="time-span-first-practice"
-            >TIME: {{ final.FirstPractice.time.split("Z")[0] }}</span
-          >
+        <div class="practice-1-wrapper">
+          <div class="practice-1-title">PRACTICE 1</div>
+          <div class="practice-1-info">
+            <span style="padding-left:3rem"
+              >DATE: {{ final.FirstPractice.date }}</span
+            >
+            <span style="padding-left: 1rem"
+              >TIME: {{ final.FirstPractice.time }}</span
+            >
+          </div>
         </div>
       </div>
-      <h3 class="track-name">
-        {{ final.Circuit.Location.country.toUpperCase() }}
-      </h3>
     </div>
   </div>
 </div>

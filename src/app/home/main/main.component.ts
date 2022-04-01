@@ -106,7 +106,6 @@ export class MainComponent implements OnInit {
       this.day = this.nextRaceFilteredToString.slice(6);
 
       this.yearDayMonth = `${this.year.join('')}/${this.month.join('')}/${this.day.join('')}`
-      console.log(this.yearDayMonth)
 
       this.final = this.calendar?.filter(x => x.date.split('-').join('/') === this.yearDayMonth)[0];
 

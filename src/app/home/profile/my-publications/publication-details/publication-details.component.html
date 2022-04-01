@@ -1,19 +1,19 @@
 <app-profile></app-profile>
-<div style="margin-top: 3rem;" *ngIf="currentPost">
+<div style="margin-top: 3rem" *ngIf="currentPost">
   <div class="post-wrapper">
     <div>
-      <div
-        class="post-image"
-        style="background-image: url('{{ currentPost.imageUrl }}');"
-      ></div>
+      <div class="post-image">
+        <img id="img" src="{{ currentPost.imageUrl }}" alt="post-image" />
+      </div>
     </div>
     <div class="post-card">
       <div id="title-section">
         <h2 id="h2-title">{{ currentPost.title }}</h2>
       </div>
-      <div id="description-section">
-        <p id="p-description">{{ currentPost.description }}</p>
-      </div>
+      <textarea disabled id="description-section">
+       {{ currentPost.description }}
+        </textarea
+      >
       <div
         class="post-options-wrapper"
         *ngIf="activeUser == currentPost.author.email"
@@ -28,56 +28,60 @@
           <button id="post-delete" (click)="deletePost()">DELETE</button>
         </div>
       </div>
-      <div id="comment-section-text">
-        <h3 style="font-weight: bold;">COMMENTS SECTION</h3>
-      </div>
-      <form
-        [formGroup]="form"
-        (ngSubmit)="postComment()"
-        class="add-comment-section"
-      >
-        <input
-          name="commentInput"
-          id="comment-input"
-          type="text"
-          placeholder="Tell us what you think..."
-          formControlName="comment"
-        />
-        <div class="add-comment-button-wrapper">
-          <button type="submit" class="button">ADD COMMENT</button>
-        </div>
-      </form>
-      <div class="view-comments-button-wrapper">
-        <div *ngIf="postComments">
-          <div class="comment-section-wrapper">
-            <div *ngFor="let comment of postComments">
-              <div class="comment-div">
-                <div id="content">
-                  <div id="user-info-div">
-                    <span id="user-fullname-span"
-                      >{{ comment.author.fullName }}
-                    </span>
-                    <span>@{{ comment.author.team }}</span>
-                  </div>
-                  <span contenteditable="true">{{ comment.comment }}</span>
-                </div>
-                <div *ngIf="!comment.author._id == comment.post._id">
-                  <div id="likes">
-                    <img id="like" src="assets/icons/like.png" alt="" />
-                    <img id="dislike" src="assets/icons/dislike.png" alt="" />
-                  </div>
-                </div>
-                <div *ngIf="activeUser == comment.author.email">
-                  <div id="comment-options">
-                    <button id="edit">EDIT</button>
-                    <button
-                      (click)="deleteComment(comment._id, comment.post._id, $event)"
-                      id="delete"
-                    >
-                      DELETE
-                    </button>
-                  </div>
-                </div>
+    </div>
+  </div>
+</div>
+<section id="comment-section-wrapper">
+  <div id="comment-section-text">
+    <h3 style="font-weight: bold; padding-left: 12%;">COMMENTS SECTION</h3>
+  </div>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="postComment()"
+    class="add-comment-section"
+  >
+    <input
+      name="commentInput"
+      id="comment-input"
+      type="text"
+      placeholder="Tell us what you think..."
+      formControlName="comment"
+    />
+    <div class="add-comment-button-wrapper">
+      <button type="submit" class="button">ADD COMMENT</button>
+    </div>
+  </form>
+  <div class="view-comments-button-wrapper">
+    <div *ngIf="postComments">
+      <div class="comment-section-wrapper">
+        <div *ngFor="let comment of postComments">
+          <div class="comment-div">
+            <div id="content">
+              <div id="user-info-div">
+                <span id="user-fullname-span"
+                  >{{ comment.author.fullName }}
+                </span>
+                <span>@{{ comment.author.team }}</span>
+              </div>
+              <span id="comment-content-span">{{ comment.comment }}</span>
+            </div>
+            <div *ngIf="!comment.author._id == comment.post._id">
+              <div id="likes">
+                <img id="like" src="assets/icons/like.png" alt="" />
+                <img id="dislike" src="assets/icons/dislike.png" alt="" />
+              </div>
+            </div>
+            <div *ngIf="activeUser == comment.author.email">
+              <div id="comment-options">
+                <button id="edit" (click)="editComment($event, comment._id)">
+                  EDIT
+                </button>
+                <button
+                  (click)="deleteComment(comment._id, comment.post._id, $event)"
+                  id="delete"
+                >
+                  DELETE
+                </button>
               </div>
             </div>
           </div>
@@ -85,4 +89,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>
