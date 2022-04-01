@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
 import { IRace } from 'src/app/interfaces/race';
 import { CalendarService } from 'src/app/services/calendar.service';
+import { timeZoneUpdate } from '../calendar/details/race-details.component';
 
 @Component({
   selector: 'app-main',
@@ -114,12 +115,6 @@ export class MainComponent implements OnInit {
       this.final.ThirdPractice.time = timeZoneUpdate(this.final.ThirdPractice.time);
       this.final.SecondPractice.time = timeZoneUpdate(this.final.SecondPractice.time);
       this.final.FirstPractice.time = timeZoneUpdate(this.final.FirstPractice.time);
-
-
-      function timeZoneUpdate(time: string) {
-        let [h, m, s] = time.split('Z')[0].split(':');
-        return `0${Number(h) + 3}:${m}:${s}`
-      }
 
       this.googleMapsInit(this.final);
 

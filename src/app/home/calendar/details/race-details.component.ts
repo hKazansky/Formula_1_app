@@ -12,11 +12,12 @@ import { IStanding } from 'src/app/interfaces/standing';
 export class RaceDetailsComponent implements OnInit {
 
   raceRound = '';
-  raceDetails: IRace[] | undefined
+  details: IRace[] | undefined
   raceStandings: IStanding[] | undefined
   standings: any
   allRaces: IRace[] | undefined
   race: any
+  raceDetails: any
 
   constructor(private calendarService: CalendarService, private activatedRoute: ActivatedRoute) { }
 
@@ -36,8 +37,17 @@ export class RaceDetailsComponent implements OnInit {
     this.calendarService.filterRaceByRound().subscribe(data => {
       this.allRaces = data
 
-      this.raceDetails = this.allRaces?.filter((race) => race.round === this.raceRound);
-      // console.log(this.raceDetails)
+      this.details = this.allRaces?.filter((race) => race.round === this.raceRound);
+      this.raceDetails = this.details;
+
+      this.raceDetails[0].time = timeZoneUpdate(this.raceDetails[0].time);
+      this.raceDetails[0].Qualifying.time = timeZoneUpdate(this.raceDetails[0].Qualifying.time);
+      this.raceDetails[0].FirstPractice.time = timeZoneUpdate(this.raceDetails[0].FirstPractice.time);
+      this.raceDetails[0].SecondPractice.time = timeZoneUpdate(this.raceDetails[0].SecondPractice.time);
+      this.raceDetails[0].ThirdPractice.time = timeZoneUpdate(this.raceDetails[0].ThirdPractice.time);
+      
+      console.log(this.raceDetails)
+
     })
   }
 
@@ -48,8 +58,15 @@ export class RaceDetailsComponent implements OnInit {
       const races = Object.values(data);
       this.race = races.filter((race) => race.round === this.raceRound);
       this.standings = this.race[0].StandingsLists[0]?.DriverStandings
-      
+
     });
   }
 
+}
+
+export function timeZoneUpdate(time: string) {
+  const [h, m, s] = time?.split('Z')[0].split(':');
+  let result;
+  Number(h) > 9 ? result = `${Number(h) + 3}:${m}:${s}` : result = `0${Number(h) + 3}:${m}:${s}`
+  return result
 }
