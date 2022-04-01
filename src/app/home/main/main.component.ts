@@ -109,22 +109,17 @@ export class MainComponent implements OnInit {
 
       this.final = this.calendar?.filter(x => x.date.split('-').join('/') === this.yearDayMonth)[0];
 
-      let [hRace, mRace, sRace] = this.final.time.split('Z')[0].split(':');
-      this.final.time = `0${Number(hRace) + 3}:${mRace}:${sRace}`
+      this.final.time = timeZoneUpdate(this.final.time);
+      this.final.Qualifying.time = timeZoneUpdate(this.final.Qualifying.time);
+      this.final.ThirdPractice.time = timeZoneUpdate(this.final.ThirdPractice.time);
+      this.final.SecondPractice.time = timeZoneUpdate(this.final.SecondPractice.time);
+      this.final.FirstPractice.time = timeZoneUpdate(this.final.FirstPractice.time);
 
-      let [hQualy, mQualy, sQualy] = this.final.Qualifying.time.split('Z')[0].split(':');
-      this.final.Qualifying.time = `0${Number(hQualy) + 3}:${mQualy}:${sQualy}`
 
-      let [hPracticeThree, mPracticeThree, sPracticeThree] = this.final.ThirdPractice.time.split('Z')[0].split(':');
-      this.final.ThirdPractice.time = `0${Number(hPracticeThree) + 3}:${mPracticeThree}:${sPracticeThree}`
-
-      let [hPracticeSecond, mPracticeSecond, sPracticeSecond] = this.final.SecondPractice.time.split('Z')[0].split(':');
-      this.final.SecondPractice.time = `0${Number(hPracticeSecond) + 3}:${mPracticeSecond}:${sPracticeSecond}`
-
-      let [hPracticeFirst, mPracticeFirst, sPracticeFirst] = this.final.FirstPractice.time.split('Z')[0].split(':');
-      this.final.FirstPractice.time = `0${Number(hPracticeFirst) + 3}:${mPracticeFirst}:${sPracticeFirst}`
-
-      console.log(this.final.ThirdPractice.time)
+      function timeZoneUpdate(time: string) {
+        let [h, m, s] = time.split('Z')[0].split(':');
+        return `0${Number(h) + 3}:${m}:${s}`
+      }
 
       this.googleMapsInit(this.final);
 
@@ -145,7 +140,7 @@ export class MainComponent implements OnInit {
           '12': 'Dec',
         }
         let [year, month, date] = this.final?.date?.split('-');
-        let time = this.final?.time?.split('Z')[0];
+        let time = timeZoneUpdate(this.final?.time);
         let raceDate = `${months[month]} ${date}, ${year} ${time}`
         let countDownRaceDate = new Date(raceDate).getTime();
 
