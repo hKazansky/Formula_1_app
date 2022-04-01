@@ -73,16 +73,27 @@ export class MainComponent implements OnInit {
   }
 
   loadNextRace(): void {
+    const options: object = {
+      timeZone: 'Europe/Sofia',
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+    }
+    let formatter = new Intl.DateTimeFormat([], options);
+    let sofiaDate: string = formatter.format(new Date()).split(',')[0];
+    let [month, date, year] = sofiaDate.split('/');
+
     this.service.loadRaceSchedule().subscribe((data) => {
       this.calendar = data
       this.calendar?.forEach(x => this.nextRace?.push(x.date.split('-').join('/')));
 
-      this.currentDate = new Date(Date.now()).toLocaleDateString().split('/');
-      this.today = `${this.currentDate[2]}/${+this.currentDate[0] < 10 ? `0${this.currentDate[0]}` : `${this.currentDate[0]}`}/${this.currentDate[1]}`
+      this.today = `${year}/${+month < 10 ? `0${month}` : `${month}`}/${+date < 10 ? `0${date}` : `${date}`}`
+      this.todayAsNumber = +this.today.split('/').join('');
 
-      this.currentDate.forEach(x => this.currDateAsStr += x);
       this.nextRace?.forEach(x => this.secondDates.push(x.split('/').join('')));
-      this.todayAsNumber = +this.today.split('/').join('')
 
       this.allRaceDatesAsNumbers = this.secondDates.map(Number);
       this.result = this.allRaceDatesAsNumbers.find(x => x > this.todayAsNumber);
@@ -94,10 +105,27 @@ export class MainComponent implements OnInit {
       this.day = this.nextRaceFilteredToString.slice(6);
 
       this.yearDayMonth = `${this.year.join('')}/${this.month.join('')}/${this.day.join('')}`
- 
+      console.log(this.yearDayMonth)
+
       this.final = this.calendar?.filter(x => x.date.split('-').join('/') === this.yearDayMonth)[0];
-      
-      
+
+      let [hRace, mRace, sRace] = this.final.time.split('Z')[0].split(':');
+      this.final.time = `0${Number(hRace) + 3}:${mRace}:${sRace}`
+
+      let [hQualy, mQualy, sQualy] = this.final.Qualifying.time.split('Z')[0].split(':');
+      this.final.Qualifying.time = `0${Number(hQualy) + 3}:${mQualy}:${sQualy}`
+
+      let [hPracticeThree, mPracticeThree, sPracticeThree] = this.final.ThirdPractice.time.split('Z')[0].split(':');
+      this.final.ThirdPractice.time = `0${Number(hPracticeThree) + 3}:${mPracticeThree}:${sPracticeThree}`
+
+      let [hPracticeSecond, mPracticeSecond, sPracticeSecond] = this.final.SecondPractice.time.split('Z')[0].split(':');
+      this.final.SecondPractice.time = `0${Number(hPracticeSecond) + 3}:${mPracticeSecond}:${sPracticeSecond}`
+
+      let [hPracticeFirst, mPracticeFirst, sPracticeFirst] = this.final.FirstPractice.time.split('Z')[0].split(':');
+      this.final.FirstPractice.time = `0${Number(hPracticeFirst) + 3}:${mPracticeFirst}:${sPracticeFirst}`
+
+      console.log(this.final.ThirdPractice.time)
+
       this.googleMapsInit(this.final);
 
 
