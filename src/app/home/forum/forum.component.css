@@ -101,3 +101,7 @@
   font-weight: 700;
   color: white;
 }
+
+textarea::-webkit-scrollbar {
+  width: 1em;
+}

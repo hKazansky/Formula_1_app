@@ -12,7 +12,7 @@
 .post-image {
   /* border: solid; */
   width: 100%;
-  height: 30rem;
+  height: 23rem;
   background-repeat: no-repeat;
   background-position: center;
   /* border-color: mediumaquamarine; */
@@ -24,9 +24,13 @@
 }
 
 .post-card {
-  /* border: solid; */
+  border: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 2px;
   width: 100%;
-  height: 30rem;
+  height: 25rem;
   /* border-color: mediumturquoise; */
 }
 
@@ -45,14 +49,14 @@
   border-bottom: none;
   border-top-left-radius: 0.7rem;
   border-width: 0.15rem;
+  resize: none;
+  background-color: transparent;
   /* border-color: rgb(0, 217, 255); */
 }
 
 .add-comment-section {
-  /* border: solid; */
   width: 100%;
   height: 10rem;
-  /* border-color: rgb(238, 255, 0); */
   display: grid;
   margin-top: 2rem;
 }
@@ -97,21 +101,6 @@
   /* padding-left: 1rem; */
 }
 
-#p-description {
-  width: 90%;
-  height: 100%;
-  /* border-style: solid; */
-  /* border-top: none; */
-  /* border-right: none; */
-  /* border-left: none; */
-  padding-left: 1rem;
-  padding-top: 1rem;
-  /* margin-left: 5%; */
-  /* border-color: grey; */
-  border-width: 0.125rem;
-  /* border-radius: 1rem; */
-}
-
 .add-comment-button-wrapper {
   width: 100%;
   align-items: center;
@@ -142,17 +131,20 @@
   height: 5rem;
   /* margin: 1rem; */
   margin-top: 1rem;
+  margin-left: 25%;
+  width: 50%;
 }
 
 .comment-section-wrapper {
   display: grid;
   height: auto;
-  margin-top: 3rem;
+  width: 100%;
+  text-align: center;
 }
 
 #content {
   display: grid;
-  width: 90%;
+  width: 100%;
   /* border-style: solid; */
   text-align: start;
   padding-left: 1rem;
@@ -185,7 +177,7 @@
 #comment-options {
   display: grid;
   padding-right: 1rem;
-  padding-top: .3rem;
+  padding-top: 0.3rem;
 }
 
 #edit {
@@ -202,24 +194,22 @@
   border-radius: 0.3rem;
   border: none;
   font-weight: bold;
-
 }
 .post-options-wrapper {
-  margin-top: 10rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
 .post-options {
   align-items: center;
   height: 5rem;
-  border-style: solid;
+  /* border-style: solid; */
   border-width: 0.15rem;
-  border-top-right-radius: 0.7rem;
+  border-radius: 10px;
   padding-top: 1.2rem;
-  border-left: none;
-  border-bottom: none;
   width: 40%;
   margin-left: 60%;
+  /* background-color: rgb(236, 236, 236); */
 }
 
 #post-edit {
@@ -244,11 +234,21 @@
 
 #comment-section-text {
   border-style: solid;
-  margin-top: 7rem;
-  width: 50%;
+  width: 90%;
   border-top: none;
   border-left: none;
   border-right: none;
   border-color: red;
   border-width: 0.15rem;
+  /* padding-left: 2rem; */
+}
+
+textarea::-webkit-scrollbar {
+  width: 1em;
+}
+
+#comment-section-wrapper {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  margin-top: 10rem;
 }
