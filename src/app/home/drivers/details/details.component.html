@@ -1,5 +1,12 @@
+<div class="cover">
+  <img id="cover-image"
+    src="/assets/constructor-cars/{{
+      driverDetails[0].Constructors[0].constructorId
+    }}.png"
+    alt="constructor-car"
+  />
+</div>
 <div *ngIf="driverDetails">
-  <div class="cover">cover or something else</div>
   <div class="body-wrapper">
     <div class="driver-card-wrapper">
       <div class="driver-profile-picture">
@@ -73,4 +80,3 @@
     </div>
   </div>
 </div>
-

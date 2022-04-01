@@ -6,10 +6,15 @@
 
 .cover {
   display: flex;
-  border-style: solid;
-  border-color: red;
-  height: 15rem;
+  width: 100%;
+justify-content: center;
 }
+
+#cover-image {
+  padding-top: 5rem;
+  align-items: center;
+}
+
 .body-wrapper {
   display: flex;
   height: 100vh;

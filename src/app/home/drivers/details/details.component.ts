@@ -27,6 +27,7 @@ export class DetailsComponent implements OnInit {
     this.service.loadDrivers().subscribe((driver) => {
       this.drivers = driver[0].StandingsLists[0].DriverStandings
       this.driverDetails = this.drivers.filter((d: any) => d.Driver.driverId === this.driverId);
+      console.log(this.driverDetails)
     });
   }
 }
