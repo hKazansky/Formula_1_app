@@ -1,0 +1,42 @@
+.mini-nav-auth {
+    background-color: black;
+    height: 7rem;
+    text-align: center;
+    padding-top: 5rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  .mini-login-nav {
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    border-width: 0.2rem;
+    padding-right: 3rem;
+    padding-left: 4rem;
+    text-decoration: none;
+    padding-bottom: .20rem;
+    cursor: pointer;
+  }
+  .mini-login-nav:hover {
+    color: red;
+  }
+  .mini-register-nav {
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    border-width: 0.2rem;
+    padding-right: 3rem;
+    text-decoration: none;
+    padding-bottom: .20rem;
+    cursor: pointer;
+
+  }
+  .mini-register-nav:hover {
+    color: red;
+  }
+  
+  .active {
+    color: red;
+  }
+  

@@ -28,6 +28,7 @@ import { UserService } from './services/user.service';
 import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
 import { PublicationEditComponent } from './home/profile/my-publications/publication-edit/publication-edit.component';
 import { ForumComponent } from './home/forum/forum.component';
+import { AuthNavComponent } from './user/auth-nav/auth-nav.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ForumComponent } from './home/forum/forum.component';
     PublicationDetailsComponent,
     PublicationEditComponent,
     ForumComponent,
+    AuthNavComponent,
   ],
   imports: [
     BrowserModule,

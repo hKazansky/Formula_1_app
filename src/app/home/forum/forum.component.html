@@ -1,26 +1,19 @@
-<div class="cover">
-  <div id="forum-text-div">
-    <h2 id="forum-text-h2">FORUM</h2>
+<section class="background">
+  <div class="cover">
+    <div id="forum-text-div">
+      <h2 id="forum-text-h2">FORUM</h2>
+    </div>
   </div>
-</div>
-<div class="outer">
-  <div class="card-wrapper">
-    <div *ngIf="data">
-      <div *ngFor="let post of data" style="display: inline-block;">
-        <div class="post-card">
-          <div
-            id="image-card"
-            style="background-image: url('{{ post.imageUrl }}');"
-          ></div>
-          <div id="content">
-            <div id="title">
-              <h5>{{ post.title }}</h5>
-            </div>
-            <div id="description">{{ post.description }}</div>
-            <button id="button-details" routerLink="/publications/{{post._id}}">DETAILS</button>
-          </div>
-        </div>
+  <div *ngIf="data" style="text-align: center;;">
+    <div
+      *ngFor="let post of data"
+      style="display: inline-block; margin-top: 18rem; padding: 2rem"
+    >
+      <div class="publication-card" routerLink="/publications/{{post._id}}">
+        <div id="pub-image"><img id="img" src="{{post.imageUrl}}" alt="post-image"></div>
+        <div id="pub-title">{{ post.title }}</div>
+        <textarea disabled id="pub-desc">{{ post.description }}</textarea>
       </div>
     </div>
   </div>
-</div>
+</section>

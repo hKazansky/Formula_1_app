@@ -1,8 +1,5 @@
 <div class="background">
-  <div class="mini-nav-auth">
-    <a class="mini-login-nav" routerLink="/login">SIGN IN</a>
-    <a class="mini-register-nav" routerLink="/register">REGISTER</a>
-  </div>
+  <app-auth-nav></app-auth-nav>
   <div class="outline-div">
     <section class="Form my-4 mx-5" style="width: 50%">
       <div class="container">
@@ -15,16 +12,9 @@
             />
           </div>
           <div class="col-lg-7 px-5 pt-5">
-            <h2
-              class="font-weight-bold py-3"
-              style="font-family: Righteous, cursive"
-            >
-              SIGN IN
-            </h2>
+            <h2 class="font-weight-bold py-3">SIGN IN</h2>
             <div class="sign-in-div"></div>
-            <h5 style="font-family: Righteous, cursive">
-              Sign into your account
-            </h5>
+            <h5>Sign into your account</h5>
             <form
               [formGroup]="form"
               (ngSubmit)="onSubmitLogin()"
@@ -52,11 +42,7 @@
                 </div>
                 <div class="form-row">
                   <div class="col-lg-7">
-                    <button
-                      type="submit"
-                      class="btn1 mt-3 mb-5"
-                      style="font-family: monospace"
-                    >
+                    <button type="submit" class="btn1 mt-3 mb-5">
                       SIGN IN
                     </button>
                   </div>

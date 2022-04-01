@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
 .outline-div {
-  font-family: "Righteous", cursive;
+  font-family: "Orbitron", sans-serif;
 }
 * {
   padding: 0;
@@ -36,14 +37,8 @@ img {
   justify-content: center;
   align-items: center;
   display: flex;
-  border-style: solid;
-  border-color: black;
   border-width: 0.1rem;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
   border-left: none;
-  border-top-right-radius: 2rem;
-  border-bottom-right-radius: 2rem;
 }
 .outline-div {
   justify-content: center;
@@ -63,27 +58,4 @@ img {
 .background {
   background-color: grey;
   height: 100vh;
-}
-.mini-nav-auth {
-  background-color: black;
-  height: 5rem;
-  text-align: center;
-  padding-top: 3rem;
-  font-family: "Righteous", cursive;
-  margin-bottom: 1.5rem;
-}
-.mini-login-nav {
-  color: white;
-  padding-right: 4rem;
-  text-decoration: none;
-}
-.mini-login-nav:hover {
-  color: red;
-}
-.mini-register-nav {
-  color: white;
-  text-decoration: none;
-}
-.mini-register-nav:hover {
-  color: red;
 }
