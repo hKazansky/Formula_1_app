@@ -1,7 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400&family=Righteous&family=Work+Sans&display=swap");
 
+.navbar{
+  display: flex;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 3;
+}
+
+.inner-a-wrapper{
+  display: flex;
+  /* width: 50%; */
+}
+
 .nav-item {
-  color: grey;
+  color: silver;
 }
 .nav-item:hover {
   color: black;
