@@ -73,6 +73,7 @@
   width: 30rem;
   height: 24rem;
   margin: 1rem;
+  cursor:pointer
 }
 
 .listing-standing {
@@ -162,4 +163,8 @@
 
 #driver-image {
   padding-left: 50%;
+}
+
+.driver-card:hover {
+border-color: red;
 }
