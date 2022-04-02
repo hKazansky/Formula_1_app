@@ -70,4 +70,24 @@ export class PostService {
     return this.http.delete<any>(`http://localhost:3000/delete/${commentId}`, { params: params })
   }
 
+  likeComment(commentId: string) {
+    const params = new HttpParams({
+      fromObject: {
+        commentId
+      }
+    });
+
+    return this.http.post<any>(`http://localhost:3000/comments/${commentId}/like`, '', { params: params })
+  }
+
+  dislikeComment(commentId: string) {
+    const params = new HttpParams({
+      fromObject: {
+        commentId
+      }
+    });
+
+    return this.http.post<any>(`http://localhost:3000/comments/${commentId}/dislike`, '', { params: params })
+  }
+
 }
