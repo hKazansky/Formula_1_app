@@ -46,8 +46,6 @@ export class RaceDetailsComponent implements OnInit {
       this.raceDetails[0].SecondPractice.time = timeZoneUpdate(this.raceDetails[0].SecondPractice.time);
       this.raceDetails[0].ThirdPractice.time = timeZoneUpdate(this.raceDetails[0].ThirdPractice.time);
       
-      console.log(this.raceDetails)
-
     })
   }
 
