@@ -67,10 +67,26 @@
                 comment.comment
               }}</textarea>
             </div>
-            <div *ngIf="comment.author._id !== comment.post.author"> 
-              <div id="likes">
-                <img id="like" src="assets/icons/like.png" alt="like-icon" />
-                <img id="dislike" src="assets/icons/dislike.png" alt="dislike-icon" />
+            <div *ngIf="comment.author.email !== activeUser">
+              <div *ngIf="isReacted(this.comment._id) === false">
+                <div id="likes">
+                  <img
+                    (click)="likeComment(comment._id)"
+                    id="like"
+                    src="assets/icons/like.png"
+                    alt="like-icon"
+                  />
+                  <img
+                    (click)="dislikeComment(comment._id)"
+                    id="dislike"
+                    src="assets/icons/dislike.png"
+                    alt="dislike-icon"
+                  />
+                </div>
+              </div>
+              <div *ngIf="isReacted(this.comment._id) === true" style="display: grid;">
+                <i style="font-weight: 600; color: rgb(255, 123, 0);">You've already reacted</i>
+                <i>Likes: {{this.comment.likes.length}}</i>
               </div>
             </div>
             <div *ngIf="activeUser == comment.author.email">

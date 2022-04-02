@@ -16,7 +16,8 @@ export class PublicationDetailsComponent implements OnInit {
   postId: string = '';
   comments: IComment[] | undefined;
   postComments: any;
-  activeUser: any
+  user = localStorage.getItem('userId');
+  activeUser = localStorage.getItem('email');
 
   constructor(private service: PostService, private route: ActivatedRoute, private router: Router) { }
 
@@ -26,6 +27,10 @@ export class PublicationDetailsComponent implements OnInit {
   }
 
   form = new FormGroup({
+    comment: new FormControl('', [Validators.required]),
+  });
+
+  commentForm = new FormGroup({
     comment: new FormControl('', [Validators.required]),
   });
 
@@ -58,7 +63,6 @@ export class PublicationDetailsComponent implements OnInit {
       this.comments = data;
       this.postComments = this.comments?.filter((x) => x?.post?._id === postId);
 
-      this.activeUser = localStorage.getItem('email');
     });
   }
 
@@ -76,6 +80,30 @@ export class PublicationDetailsComponent implements OnInit {
     comment.remove();
 
     this.router.navigate([`/profile/my-publications/${postId}`]);
+  }
+
+  likeComment(commentId: string) {
+    this.service.likeComment(commentId).subscribe();
+
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
+
+  dislikeComment(commentId: string) {
+    this.service.dislikeComment(commentId).subscribe();
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
+
+  isReacted(commentId: string) {
+    const targetComment = this.comments?.find(x => x._id === commentId);
+    const hasReacted = targetComment?.likes.some((x) => x === this.user) || targetComment?.dislikes.some((x) => x === this.user);
+
+    return hasReacted
   }
 
 }
