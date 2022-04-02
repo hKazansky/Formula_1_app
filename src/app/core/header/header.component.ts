@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-const GOOGLE_API_KEY = 'AIzaSyB2hyVwH1DR-3C39ThPNAURhPJQOR0sAO0'
-
-
+// const GOOGLE_API_KEY = 'AIzaSyB2hyVwH1DR-3C39ThPNAURhPJQOR0sAO0'
 
 @Component({
   selector: 'app-header',
