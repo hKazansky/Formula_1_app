@@ -11,5 +11,7 @@ export interface IComment {
         "author": string,
         "__v": number
     },
+    "likes": [],
+    "dislikes": [],
     "__v": number
 }
