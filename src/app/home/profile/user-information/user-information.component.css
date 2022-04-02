@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
 .card {
-  height: 70vh;
   border-style: solid;
   border-color: black;
   border-radius: 1rem;
