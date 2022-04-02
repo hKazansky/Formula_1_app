@@ -33,7 +33,7 @@
 </div>
 <section id="comment-section-wrapper">
   <div id="comment-section-text">
-    <h3 style="font-weight: bold; padding-left: 12%;">COMMENTS SECTION</h3>
+    <h3 style="font-weight: bold; padding-left: 12%">COMMENTS SECTION</h3>
   </div>
   <form
     [formGroup]="form"
@@ -63,19 +63,18 @@
                 </span>
                 <span>@{{ comment.author.team }}</span>
               </div>
-              <span id="comment-content-span">{{ comment.comment }}</span>
+              <textarea id="comment-content-textarea" disabled>{{
+                comment.comment
+              }}</textarea>
             </div>
-            <div *ngIf="!comment.author._id == comment.post._id">
+            <div *ngIf="comment.author._id !== comment.post.author"> 
               <div id="likes">
-                <img id="like" src="assets/icons/like.png" alt="" />
-                <img id="dislike" src="assets/icons/dislike.png" alt="" />
+                <img id="like" src="assets/icons/like.png" alt="like-icon" />
+                <img id="dislike" src="assets/icons/dislike.png" alt="dislike-icon" />
               </div>
             </div>
             <div *ngIf="activeUser == comment.author.email">
               <div id="comment-options">
-                <button id="edit" (click)="editComment($event, comment._id)">
-                  EDIT
-                </button>
                 <button
                   (click)="deleteComment(comment._id, comment.post._id, $event)"
                   id="delete"
