@@ -17,7 +17,7 @@ export class PostService {
         postId
       }
     });
-    
+
     return this.http.post<any>('http://localhost:3000/create-comment', body, { params: params })
   }
 
