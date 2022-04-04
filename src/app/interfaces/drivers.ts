@@ -1,11 +1,26 @@
+import { IConstructor } from "./constructor";
 import { IDriver } from "./driver";
 
 export interface IDrivers {
-    MRData: {
 
-        StandingsTable: {
+    "_id": string,
+    "season": string,
+    "StandingsLists": IDriversStandings[]
+}
 
-            StandingsLists: Array<any>
-        }
-    }
+
+interface IDriversStandings {
+    "season": string,
+    "round": string,
+    "DriverStandings": IDriverStanding[]
+
+}
+
+interface IDriverStanding {
+    "position": string,
+    "positionText": string,
+    "points": string,
+    "wins": string,
+    "Driver": IDriver,
+    "Constructors": IConstructor[];
 }
