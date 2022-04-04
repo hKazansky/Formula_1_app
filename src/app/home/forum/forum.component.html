@@ -1,11 +1,10 @@
 <body class="forum-body">
   <div class="publications-wrapper">
     <h3 id="title">USERS PUBLICATIONS</h3>
-
     <div *ngIf="data" class="data-wrapper">
       <div *ngFor="let post of data">
         <div class="publication-card">
-          <div id="card-title">{{post.title}}</div>
+          <div id="card-title">{{ post.title }}</div>
           <div id="user-info">
             <div id="location">
               <img
@@ -38,10 +37,22 @@
           </textarea
             >
           </div>
-          <div id="view-publication-router" routerLink="/publications/{{post._id}}">
+          <div
+            id="view-publication-router"
+            routerLink="/publications/{{ post._id }}"
+          >
             <span id="view-publication-span">VIEW PUBLICATION ></span>
           </div>
         </div>
+      </div>
+    </div>
+    <div *ngIf="data.length == 0" class="no-publications">
+      <h2 id="no-publications-title">NO PUBLICATIONS YET</h2>
+      <div
+        id="create-publication-link"
+        routerLink="/profile/create-publication"
+      >
+        START A DISCUSSION
       </div>
     </div>
   </div>
