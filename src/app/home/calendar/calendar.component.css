@@ -12,11 +12,11 @@
   justify-content: flex-end;
 }
 .wrapper .item {
-  min-width: 110px;
-  height: 110px;
-  line-height: 110px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: #fff;
+  justify-content: center;
 }
 .overlay {
   display: flex;

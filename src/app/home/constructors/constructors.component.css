@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
+.body{
+  margin-bottom: 15rem;
+  align-items: center;
+}
 .outer-wrapper {
   /* border-style: solid; */
   /* border-color: black; */
@@ -60,10 +64,9 @@
 .constructors-wrapper {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  /* border-color: red; */
-  /* border-style: solid; */
-  padding-left: 15%;
+  margin:0;
+  padding: 0;
+  justify-content: center;
 }
 
 .listing-standing {

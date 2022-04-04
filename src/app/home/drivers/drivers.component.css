@@ -58,12 +58,12 @@
   align-items: center;
 }
 .drivers-cards-wrapper {
-  width: 100%;
+  /* width: 100%; */
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
   font-family: "Orbitron", sans-serif;
-  padding-left: 10%;
+  justify-content: center;
 }
 .driver-card {
   border-style: solid;
@@ -167,4 +167,8 @@
 
 .driver-card:hover {
 border-color: red;
+}
+
+.body {
+  margin-bottom: 120%;
 }
