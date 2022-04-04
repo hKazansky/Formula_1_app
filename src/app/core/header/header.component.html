@@ -13,7 +13,14 @@
     >
     <span class="navbar-toggler-icon"></span>
   </button> -->
-  <div *ngIf="!isLoggedIn()" style="display: flex; font-family: Orbitron, sans-serif; margin-right: 87.5vh;">
+  <div
+    *ngIf="!isLoggedIn()"
+    style="
+      display: flex;
+      font-family: Orbitron, sans-serif;
+      margin-right: 87.5vh;
+    "
+  >
     <h6 class="nav-link" routerLink="/home" routerLinkActive="active">Home</h6>
     <h6 class="nav-link" routerLink="/login" routerLinkActive="active">
       Login
@@ -44,6 +51,8 @@
       >Constructors</a
     >
     <a class="nav-link" routerLink="/forum" routerLinkActive="active">Forum</a>
+    <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+
     <a
       class="nav-link"
       style="margin-left: 57vh"
