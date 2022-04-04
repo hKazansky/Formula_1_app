@@ -1,107 +1,126 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.background {
-  background-color: rgb(2, 2, 2);
-  height: 100%;
-  width: 100%;
+.forum-body {
   font-family: "Orbitron", sans-serif;
-
-}
-
-.cover {
-  border-style: solid;
-  border-color: black;
-  height: 15rem;
-  background-color: black;
-  position: fixed;
-  z-index: 3;
-  width: 100%;
-  height: 10rem;
-  margin-top: 3.6rem;
-}
-
-#forum-text-div {
-  text-align: center;
-  border-style: solid;
-  border-color: red;
-  width: 50%;
-  margin-left: 25%;
-  margin-top: 1.5%;
-  color: white;
-  height: 7rem;
-  border-top: none;
-  border-right: none;
-  border-bottom-left-radius: 0.7rem;
-}
-
-#forum-text-h2 {
-  font-weight: bold;
-  padding-top: 5%;
-}
-
-.publication-card {
-  width: calc(30rem);
-  height: calc(35rem);
-  border-style: solid;
-  border-color: rgb(155, 155, 155);
-  border-width: 3px;
-  border-radius: 12px;
   margin: 0;
   padding: 0;
-  cursor: pointer;
+  background-color: rgb(207, 207, 207);
 }
 
-.publication-card:hover{
-  border-color: rgb(199, 199, 199);
-  border-width: 5px;
+.publications-wrapper {
+  height: 100%;
+  padding-top: 5rem;
 }
 
-#pub-image {
-  width: 100%;
-  height: 250px;
-}
-
-#img {
-  width: 100%;
-  height: 250px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-#pub-title {
-  width: 90%;
-  height: 60px;
+#title {
+  padding-top: 1rem;
+  font-weight: 800;
   border-style: solid;
-  border-color: red;
+  width: 50%;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-width: 1px;
-  padding-left: 10px;
-  padding-top: 15px;
-  font-weight: 800;
-  font-size: 140%;
-  color: white;
+  border-color: whitesmoke;
+  border-width: 0.13rem;
+  padding-left: 1rem;
 }
 
-#pub-desc {
+.publication-card {
+  height: 25rem;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+#card-title {
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 1.75px;
+  border-color: rgb(34, 30, 30);
+  width: 90%;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-bottom: 0.5rem;
+  font-weight: 1000;
+}
+
+#user-info {
   width: 100%;
-  height: 190px;
-  padding-top: 10px;
-  padding-left: 10px;
-  background-color: transparent;
-  border: none;
-  resize: none;
-  font-weight: 700;
-  color: white;
+  display: flex;
+  height: 5rem;
+  justify-content: center;
 }
 
-textarea::-webkit-scrollbar {
-  width: 1em;
+#user-info div {
+  padding: 1rem;
+  padding-top: 0.5rem;
+}
+
+#username {
+  font-size: 80%;
+  font-weight: bold;
+  display: grid;
+}
+#location {
+  font-size: 80%;
+  font-weight: bold;
+  display: grid;
+}
+#team {
+  font-size: 80%;
+  font-weight: bold;
+  display: grid;
+}
+
+#person-image {
+  padding-left: 2rem;
+  height: 3rem;
+}
+
+#user-location-image {
+  padding-left: 0.5rem;
+  height: 3rem;
+  padding-top: 0.3rem;
+}
+
+#car-image {
+  height: 3rem;
+}
+
+#description {
+  padding-top: 1rem;
+}
+
+#desc-textarea {
+  width: 100%;
+  height: 10rem;
+  border-style: solid;
+  background-color: rgb(236, 234, 234);
+  border: none;
+  border-radius: 1rem;
+  resize: none;
+}
+
+#view-publication-router {
+  cursor: pointer;
+  border-style: solid;
+  border-radius: 0.35rem;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 0.75rem;
+  text-align: center;
+  padding-top: 0.75rem;
+  height: 3rem;
+}
+
+#view-publication-span {
+  font-weight: 900;
+}
+
+#view-publication-router :hover {
+  color: red;
 }

@@ -1,19 +1,48 @@
-<section class="background">
-  <div class="cover">
-    <div id="forum-text-div">
-      <h2 id="forum-text-h2">FORUM</h2>
-    </div>
-  </div>
-  <div *ngIf="data" style="text-align: center;;">
-    <div
-      *ngFor="let post of data"
-      style="display: inline-block; margin-top: 18rem; padding: 2rem"
-    >
-      <div class="publication-card" routerLink="/publications/{{post._id}}">
-        <div id="pub-image"><img id="img" src="{{post.imageUrl}}" alt="post-image"></div>
-        <div id="pub-title">{{ post.title }}</div>
-        <textarea disabled id="pub-desc">{{ post.description}}</textarea>
+<body class="forum-body">
+  <div class="publications-wrapper">
+    <h3 id="title">USERS PUBLICATIONS</h3>
+
+    <div *ngIf="data" class="data-wrapper">
+      <div *ngFor="let post of data">
+        <div class="publication-card">
+          <div id="card-title">{{post.title}}</div>
+          <div id="user-info">
+            <div id="location">
+              <img
+                id="user-location-image"
+                src="/assets/media-icons/location.png"
+                alt="location-image"
+              />
+              <span>{{ post.author.country }}</span>
+            </div>
+            <div id="username">
+              <img
+                id="person-image"
+                src="/assets/media-icons/person.png"
+                alt="person-image"
+              />
+              <span>{{ post.author.fullName }}</span>
+            </div>
+            <div id="team">
+              <img
+                id="car-image"
+                src="/assets/media-icons/car.png"
+                alt="formula-1-car-image"
+              />
+              <span>{{ post.author.team }}</span>
+            </div>
+          </div>
+          <div id="description">
+            <textarea id="desc-textarea" disabled>
+            {{ post.description.slice(0, 200) }}
+          </textarea
+            >
+          </div>
+          <div id="view-publication-router" routerLink="/publications/{{post._id}}">
+            <span id="view-publication-span">VIEW PUBLICATION ></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</body>
