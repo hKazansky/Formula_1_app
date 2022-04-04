@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPosts } from 'src/app/interfaces/posts';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./forum.component.css']
 })
 export class ForumComponent implements OnInit {
-  data: any
+  data!: IPosts[];
 
   constructor(private service: PostService) { }
 
@@ -16,7 +17,9 @@ export class ForumComponent implements OnInit {
   }
 
   getAllPublications() {
-    this.service.getAllPublications().subscribe(posts => this.data = posts)
+    this.service.getAllPublications().subscribe(posts => {
+      this.data = posts
+    })
   }
 
 }
