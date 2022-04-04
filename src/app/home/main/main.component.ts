@@ -13,8 +13,8 @@ export class MainComponent implements OnInit {
   title = 'google-maps';
 
   calendar: IRace[] | undefined;
-
   nextRace: any[] | undefined = [];
+  
   currentDate: string[] = [];
   firstDates: any = [];
   secondDates: any = [];
@@ -34,13 +34,11 @@ export class MainComponent implements OnInit {
   nextRaceId: any
   race: IRace | undefined
   dataIsLoaded: boolean = false
-  test: any
 
-
-  days: any;
-  hours: any;
-  minutes: any;
-  seconds: any;
+  days!: number;
+  hours!: number;
+  minutes!: number;
+  seconds!: number;
 
   constructor(private service: CalendarService) { }
 
