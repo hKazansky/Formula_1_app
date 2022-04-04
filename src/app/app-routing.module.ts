@@ -17,6 +17,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
 import { PublicationEditComponent } from './home/profile/my-publications/publication-edit/publication-edit.component';
 import { ForumComponent } from './home/forum/forum.component';
+import { AboutComponent } from './home/about/about.component';
 
 const routes: Routes = [
   {
@@ -112,6 +113,10 @@ const routes: Routes = [
     component: ForumComponent,
     canActivate: [AuthGuard]
 
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
   }
 
 ];
