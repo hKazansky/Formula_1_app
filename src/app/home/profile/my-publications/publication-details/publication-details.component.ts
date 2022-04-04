@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IComment } from 'src/app/interfaces/comment';
+import { IComments } from 'src/app/interfaces/comments';
+import { IPosts } from 'src/app/interfaces/posts';
 
 @Component({
   selector: 'app-publication-details',
@@ -11,11 +12,11 @@ import { IComment } from 'src/app/interfaces/comment';
 })
 
 export class PublicationDetailsComponent implements OnInit {
-  allPosts: any[] = [];
-  currentPost: any;
+  allPosts!: IPosts[];
+  currentPost!: IPosts;
   postId: string = '';
-  comments: IComment[] | undefined;
-  postComments: any;
+  comments!: IComments[];
+  postComments!: IComments[];
   user = localStorage.getItem('userId');
   activeUser = localStorage.getItem('email');
 
@@ -27,10 +28,6 @@ export class PublicationDetailsComponent implements OnInit {
   }
 
   form = new FormGroup({
-    comment: new FormControl('', [Validators.required]),
-  });
-
-  commentForm = new FormGroup({
     comment: new FormControl('', [Validators.required]),
   });
 
@@ -62,7 +59,6 @@ export class PublicationDetailsComponent implements OnInit {
     this.service.getPublicationComments().subscribe(data => {
       this.comments = data;
       this.postComments = this.comments?.filter((x) => x?.post?._id === postId);
-
     });
   }
 
