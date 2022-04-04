@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { IPosts } from '../interfaces/posts';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +23,7 @@ export class PostService {
   }
 
   getAllPublications() {
-    return this.http.get<any>('http://localhost:3000/posts');
+    return this.http.get<IPosts[]>('http://localhost:3000/posts');
   }
 
   getPublicationComments() {
