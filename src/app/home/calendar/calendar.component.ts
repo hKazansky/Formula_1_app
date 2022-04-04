@@ -8,7 +8,7 @@ import { CalendarService } from 'src/app/services/calendar.service';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  calendar: IRace[] | undefined;
+  calendar!: IRace[]
 
   constructor(private service: CalendarService) { }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPosts } from 'src/app/interfaces/posts';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -7,8 +8,8 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./my-publications.component.css']
 })
 export class MyPublicationsComponent implements OnInit {
-  allUserPosts: any[] = [];
-  userPosts: any[] = [];
+  allUserPosts!: IPosts[]
+  userPosts!: IPosts[]
   
   constructor(private service: PostService) { }
 
