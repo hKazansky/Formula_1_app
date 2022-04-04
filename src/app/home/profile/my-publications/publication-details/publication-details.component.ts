@@ -66,7 +66,7 @@ export class PublicationDetailsComponent implements OnInit {
     const postId = Object.values(this.route.snapshot.params)[0];
 
     this.service.deletePost(postId).subscribe();
-    this.router.navigate(['/profile/my-publications'])
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => this.router.navigate(['/profile/my-publications']));
   }
 
   deleteComment(commentId: any, postId: any, event: any) {
