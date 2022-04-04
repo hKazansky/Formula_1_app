@@ -19,7 +19,6 @@ export class LoginComponent {
 
   onSubmitLogin() {
     this.loginService.loginUser(this.form.value).subscribe(res => {
-      console.log(res)
       localStorage.setItem('token', res.token);
       localStorage.setItem('userId', res.userId);
       localStorage.setItem('email', this.form.value.email);
