@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IPosts } from '../interfaces/posts';
+import { IComments } from '../interfaces/comments';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +28,7 @@ export class PostService {
   }
 
   getPublicationComments() {
-    return this.http.get<any>('http://localhost:3000/comments')
+    return this.http.get<IComments[]>('http://localhost:3000/comments')
   }
 
   getPostById(postId: any) {
@@ -37,7 +38,7 @@ export class PostService {
       }
     });
 
-    return this.http.get<any>(`http://localhost:3000/posts/${postId}`, { params: params })
+    return this.http.get<IPosts>(`http://localhost:3000/posts/${postId}`, { params: params })
   }
 
   editPost(postId: string, body: any) {
