@@ -16,7 +16,7 @@ interface IDriversStandings {
 
 }
 
-interface IDriverStanding {
+export interface IDriverStanding {
     "position": string,
     "positionText": string,
     "points": string,
