@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IDriver } from 'src/app/interfaces/driver';
+import { IDrivers } from 'src/app/interfaces/drivers';
 import { DriversService } from 'src/app/services/drivers.service';
 
 
@@ -11,19 +12,18 @@ import { DriversService } from 'src/app/services/drivers.service';
 export class DriversComponent implements OnInit {
   constructor(private driversService: DriversService) { }
 
-  drivers: any
+  drivers!: IDrivers[]
 
   ngOnInit(): void {
     this.getDrivers();
   }
 
+  //Make an OUTPUT / INPUT to the details component, so i've no need of fetching the drivers one more time
 
   getDrivers(): void {
 
     this.driversService.loadDrivers().subscribe((drivers) => {
-
-      this.drivers = drivers[0].StandingsLists[0].DriverStandings
-
+      this.drivers = drivers
     });
   }
 }

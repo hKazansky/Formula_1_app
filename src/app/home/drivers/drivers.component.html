@@ -11,7 +11,7 @@
   </div>
 </div>
 <div class="drivers-cards-wrapper" *ngIf="drivers">
-  <div *ngFor="let driver of drivers">
+  <div *ngFor="let driver of drivers[0].StandingsLists[0].DriverStandings">
     <div class="driver-card" routerLink="/drivers/details/{{driver.Driver.driverId}}">
       <div class="listing-standing">
         <div class="rank">{{ driver.position }}</div>

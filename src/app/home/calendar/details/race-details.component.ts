@@ -12,10 +12,10 @@ import { IStanding } from 'src/app/interfaces/standing';
 export class RaceDetailsComponent implements OnInit {
 
   raceRound = '';
-  details: IRace[] | undefined
-  raceStandings: IStanding[] | undefined
+  details!: IRace[]
+  raceStandings!: IStanding[]
   standings: any
-  allRaces: IRace[] | undefined
+  allRaces!: IRace[]
   race: any
   raceDetails: any
 
@@ -25,12 +25,6 @@ export class RaceDetailsComponent implements OnInit {
     this.getRace();
     this.getDriversStandings();
   }
-
-  // getRace(): void {
-  //   this.raceRound = Object.values(this.activatedRoute.snapshot.params)[0]
-  //   this.calendarService.getRaceById(this.raceRound).subscribe(data => this.raceDetails = data.MRData.RaceTable.Races);
-
-  // }
 
   getRace(): void {
     this.raceRound = Object.values(this.activatedRoute.snapshot.params)[0]

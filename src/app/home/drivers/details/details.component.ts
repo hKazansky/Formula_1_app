@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IDriver } from 'src/app/interfaces/driver';
 import { DriversService } from 'src/app/services/drivers.service';
 import { ActivatedRoute } from '@angular/router'
+import { IDrivers, IDriverStanding } from 'src/app/interfaces/drivers';
 
 @Component({
   selector: 'app-details',
@@ -9,10 +10,9 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  // driverDetails: IDriver[] | undefined
   driverId: string = '';
-  drivers: any;
-  driverDetails: any;
+  drivers!: IDrivers[];
+  driverDetails!: IDriverStanding;
   isLoaded: boolean = false;
 
   constructor(private service: DriversService, private route: ActivatedRoute) {
@@ -24,10 +24,9 @@ export class DetailsComponent implements OnInit {
 
   loadDriverDetails(): void {
     this.driverId = Object.values(this.route.snapshot.params)[0]
-    this.service.loadDrivers().subscribe((driver) => {
-      this.drivers = driver[0].StandingsLists[0].DriverStandings
-      this.driverDetails = this.drivers.filter((d: any) => d.Driver.driverId === this.driverId);
-      console.log(this.driverDetails)
+    this.service.loadDrivers().subscribe((drivers) => {
+      this.drivers = drivers
+      this.driverDetails! = this.drivers[0].StandingsLists[0].DriverStandings.filter((d: any) => d.Driver.driverId === this.driverId)[0];
     });
   }
 }

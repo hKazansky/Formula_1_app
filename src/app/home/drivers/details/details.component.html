@@ -1,7 +1,8 @@
 <div class="cover">
-  <img id="cover-image"
+  <img
+    id="cover-image"
     src="/assets/constructor-cars/{{
-      driverDetails[0].Constructors[0].constructorId
+      driverDetails.Constructors[0].constructorId
     }}.png"
     alt="constructor-car"
   />
@@ -14,7 +15,7 @@
           <img
             id="driver-image"
             src="/assets/drivers-details/{{
-              driverDetails[0].Driver.driverId
+              driverDetails.Driver.driverId
             }}.jpg"
             alt="driver-image"
           />
@@ -22,17 +23,17 @@
         <div class="driver-name-text">
           <div class="number-flag-wrapper">
             <h1 id="driver-racing-number">
-              {{ driverDetails[0].Driver.permanentNumber }}
+              {{ driverDetails.Driver.permanentNumber }}
             </h1>
             <img
-              src="/assets/flags/{{ driverDetails[0].Driver.nationality }}.jpg"
+              src="/assets/flags/{{ driverDetails.Driver.nationality }}.jpg"
               id="flag"
             />
           </div>
           <div class="driver-name">
             <h1 id="driver-name-text">
-              {{ driverDetails[0].Driver.givenName }}
-              {{ driverDetails[0].Driver.familyName }}
+              {{ driverDetails.Driver.givenName }}
+              {{ driverDetails.Driver.familyName }}
             </h1>
           </div>
         </div>
@@ -42,11 +43,11 @@
           <img
             id="helmet-img"
             src="/assets/drivers-helmets/{{
-              driverDetails[0].Driver.driverId
+              driverDetails.Driver.driverId
             }}.png"
             alt="helmet-img"
           />
-          <a id="driver-wiki-info" href="{{ driverDetails[0].Driver.url }}"
+          <a id="driver-wiki-info" href="{{ driverDetails.Driver.url }}"
             >Driver's biography</a
           >
         </div>
@@ -64,16 +65,16 @@
             <h5 style="font-weight: bold">Racing number:</h5>
           </div>
           <div class="info-description">
-            <h5>{{ driverDetails[0].Driver.code }}</h5>
-            <h5>{{ driverDetails[0].Constructors[0].name }}</h5>
-            <h5>{{ driverDetails[0].points }}</h5>
-            <h5>{{ driverDetails[0].position }}</h5>
-            <h5>{{ driverDetails[0].wins }}</h5>
-            <h5>{{ driverDetails[0].Driver.dateOfBirth | date }}</h5>
-            <h5>{{ driverDetails[0].Driver.givenName }}</h5>
-            <h5>{{ driverDetails[0].Driver.familyName }}</h5>
-            <h5>{{ driverDetails[0].Driver.nationality }}</h5>
-            <h5>{{ driverDetails[0].Driver.permanentNumber }}</h5>
+            <h5>{{ driverDetails.Driver.code }}</h5>
+            <h5>{{ driverDetails.Constructors[0].name }}</h5>
+            <h5>{{ driverDetails.points }}</h5>
+            <h5>{{ driverDetails.position }}</h5>
+            <h5>{{ driverDetails.wins }}</h5>
+            <h5>{{ driverDetails.Driver.dateOfBirth | date }}</h5>
+            <h5>{{ driverDetails.Driver.givenName }}</h5>
+            <h5>{{ driverDetails.Driver.familyName }}</h5>
+            <h5>{{ driverDetails.Driver.nationality }}</h5>
+            <h5>{{ driverDetails.Driver.permanentNumber }}</h5>
           </div>
         </div>
       </div>
