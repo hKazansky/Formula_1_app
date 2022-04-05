@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { fade } from 'src/app/animations';
 import { IDriver } from 'src/app/interfaces/driver';
 import { IDrivers } from 'src/app/interfaces/drivers';
 import { DriversService } from 'src/app/services/drivers.service';
@@ -7,7 +8,8 @@ import { DriversService } from 'src/app/services/drivers.service';
 @Component({
   selector: 'app-drivers',
   templateUrl: './drivers.component.html',
-  styleUrls: ['./drivers.component.css']
+  styleUrls: ['./drivers.component.css'],
+  animations: [fade]
 })
 export class DriversComponent implements OnInit {
   constructor(private driversService: DriversService) { }
