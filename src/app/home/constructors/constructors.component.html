@@ -1,52 +1,53 @@
 <body class="body">
-<div class="outer-wrapper">
-  <div class="constructors-cover"></div>
-  <!-- <div class="constructor-text">Constructors text</div> -->
-  <div class="main-text">
-    <h1 id="f1-text">F1 CONSTRUCTORS 2022</h1>
-    <div class="additional-main-text">
-      <span id="additional-decoration-text">
-        Discover everything you need to know about this year's Formula 1 teams -
-        drivers, podium finishes, points earned and championship titles.
-      </span>
+  <div class="outer-wrapper">
+    <div class="constructors-cover"></div>
+    <!-- <div class="constructor-text">Constructors text</div> -->
+    <div class="main-text">
+      <h1 id="f1-text">F1 CONSTRUCTORS 2022</h1>
+      <div class="additional-main-text">
+        <span id="additional-decoration-text">
+          Discover everything you need to know about this year's Formula 1 teams
+          - drivers, podium finishes, points earned and championship titles.
+        </span>
+      </div>
     </div>
-  </div>
-  <div class="constructors-wrapper" *ngIf="constructors">
-    <div *ngFor="let constructor of constructors">
-      <div class="constructor-card">
-        <div class="listing-standing">
-          <div class="rank">{{ constructor.position }}</div>
-          <div class="points-wrapper">
-            <div class="points">{{ constructor.points }}</div>
-            <div class="pts">PTS</div>
+    <div class="constructors-wrapper" *ngIf="constructors">
+      <div *ngFor="let constructor of constructors">
+        <div class="constructor-card">
+          <div class="listing-standing">
+            <div class="rank">{{ constructor.position }}</div>
+            <div class="points-wrapper">
+              <div class="points">{{ constructor.points }}</div>
+              <div class="pts">PTS</div>
+            </div>
           </div>
-        </div>
-        <div class="team-info-wrapper">
-          <div class="team-name-div">
-            <span class="decorator"></span>
-            <span class="team-name">{{ constructor.Constructor.name }}</span>
+          <div class="team-info-wrapper">
+            <div class="team-name-div">
+              <span class="decorator"></span>
+              <span class="team-name">{{ constructor.Constructor.name }}</span>
+            </div>
+            <div class="team-logo">
+              <img
+                class="brand-image"
+                src="/assets/constructor-brands/{{
+                  constructor.Constructor.constructorId
+                }}.png"
+                alt=""
+              />
+            </div>
           </div>
-          <div class="team-logo">
+          <div class="team-car-wrapper">
             <img
-              class="brand-image"
-              src="/assets/constructor-brands/{{
+              class="car-image"
+              src="/assets/constructor-cars/{{
                 constructor.Constructor.constructorId
               }}.png"
               alt=""
+              @transitDates
             />
           </div>
-        </div>
-        <div class="team-car-wrapper">
-          <img
-            class="car-image"
-            src="/assets/constructor-cars/{{
-              constructor.Constructor.constructorId
-            }}.png"
-            alt=""
-          />
         </div>
       </div>
     </div>
   </div>
-</div>
 </body>
