@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, Router, UrlSegment, UrlTree } from '@angular/router';
+import { CanActivate, Router, } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { RegisterService } from '../services/register.service';
 @Injectable({
@@ -18,22 +18,4 @@ export class AuthGuard implements CanActivate {
     }
   }
 
-
-  // canActivateChild(
-  //   childRoute: ActivatedRouteSnapshot,
-  //   state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-  //   return true;
-  // }
-  // canDeactivate(
-  //   component: unknown,
-  //   currentRoute: ActivatedRouteSnapshot,
-  //   currentState: RouterStateSnapshot,
-  //   nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-  //   return true;
-  // }
-  // canLoad(
-  //   route: Route,
-  //   segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-  //   return true;
-  // }
 }
