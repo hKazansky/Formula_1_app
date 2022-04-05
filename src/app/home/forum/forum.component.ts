@@ -18,7 +18,7 @@ export class ForumComponent implements OnInit {
 
   getAllPublications() {
     this.service.getAllPublications().subscribe(posts => {
-      this.data = posts
+      this.data = posts;
     })
   }
 
