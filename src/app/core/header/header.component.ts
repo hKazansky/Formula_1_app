@@ -17,6 +17,7 @@ export class HeaderComponent{
 
   logout() {
     localStorage.removeItem('token');
-
+    localStorage.removeItem('email');
+    localStorage.removeItem('userId');
   }
 }
