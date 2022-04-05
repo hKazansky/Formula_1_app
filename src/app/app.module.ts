@@ -30,6 +30,7 @@ import { PublicationEditComponent } from './home/profile/my-publications/publica
 import { ForumComponent } from './home/forum/forum.component';
 import { AuthNavComponent } from './user/auth-nav/auth-nav.component';
 import { AboutComponent } from './home/about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AboutComponent } from './home/about/about.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [
