@@ -4,16 +4,20 @@
   font-family: "Orbitron", sans-serif;
   /* margin: 0; */
   /* padding: 0; */
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: rgb(207, 207, 207);
+  margin-bottom: 5rem;
 
 }
 
 .publications-wrapper {
   /* height: 100%; */
   padding-top: 5rem;
+  min-height: 100%;
+  margin-bottom: 10rem;
+
   /* margin-bottom: 5rem; */
 }
 
