@@ -75,7 +75,11 @@ export class PublicationDetailsComponent implements OnInit {
     const comment = event.target.parentElement.parentElement.parentElement.parentElement
     comment.remove();
 
-    this.router.navigate([`/profile/my-publications/${postId}`]);
+    let currentUrl = this.router.url;
+
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 
   likeComment(commentId: string) {
