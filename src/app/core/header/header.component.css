@@ -20,7 +20,7 @@
 .not-logged-in-wrapper {
   display: flex;
   font-family: "Orbitron", sans-serif;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
   height: 0;
   margin-top: -5rem;
