@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { NonAuthGuard } from './guards/non-auth.guard';
 import { CalendarComponent } from './home/calendar/calendar.component';
 import { RaceDetailsComponent } from './home/calendar/details/race-details.component';
 import { ConstructorsComponent } from './home/constructors/constructors.component';
@@ -42,11 +43,13 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [NonAuthGuard]
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [NonAuthGuard]
   },
   {
     path: 'logout',
