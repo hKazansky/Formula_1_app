@@ -89,25 +89,12 @@
 #h2-title {
   width: 90%;
   margin-top: 3rem;
-  /* margin-left: 5%; */
-  /* border-style: solid;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-color: grey; */
   border-width: 0.125rem;
   font-weight: bold;
   padding-bottom: 0.5rem;
-  /* padding-left: 1rem; */
 }
 
 .add-comment-button-wrapper {
-  width: 100%;
-  align-items: center;
-  text-align: center;
-}
-
-.view-comments-button-wrapper {
   width: 100%;
   align-items: center;
   text-align: center;
@@ -137,9 +124,9 @@
 
 .comment-section-wrapper {
   display: grid;
-  height: auto;
   width: 100%;
   text-align: center;
+  margin-bottom: 20rem;
 }
 
 #content {
@@ -256,11 +243,11 @@ textarea::-webkit-scrollbar {
 #comment-content-textarea {
   border: none;
   resize: none;
-  background-color:transparent;
+  background-color: transparent;
   width: 90%;
 }
 
-#like:hover{
+#like:hover {
   width: 40px;
 }
 

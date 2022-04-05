@@ -1,57 +1,56 @@
 <app-profile></app-profile>
-<div style="margin-top: 3rem" *ngIf="currentPost">
-  <div class="post-wrapper">
-    <div>
-      <div class="post-image">
-        <img id="img" src="{{ currentPost.imageUrl }}" alt="post-image" />
+<body style="min-height: 100rem;">
+  <div style="margin-top: 3rem" *ngIf="currentPost">
+    <div class="post-wrapper">
+      <div>
+        <div class="post-image">
+          <img id="img" src="{{ currentPost.imageUrl }}" alt="post-image" />
+        </div>
       </div>
-    </div>
-    <div class="post-card">
-      <div id="title-section">
-        <h2 id="h2-title">{{ currentPost.title }}</h2>
-      </div>
-      <textarea disabled id="description-section">
+      <div class="post-card">
+        <div id="title-section">
+          <h2 id="h2-title">{{ currentPost.title }}</h2>
+        </div>
+        <textarea disabled id="description-section">
        {{ currentPost.description }}
-        </textarea
-      >
-      <div
-        class="post-options-wrapper"
-        *ngIf="activeUser == currentPost.author.email"
-      >
-        <div class="post-options">
-          <button
-            id="post-edit"
-            routerLink="/profile/my-publications/{{ currentPost._id }}/edit"
-          >
-            EDIT
-          </button>
-          <button id="post-delete" (click)="deletePost()">DELETE</button>
+        </textarea>
+        <div
+          class="post-options-wrapper"
+          *ngIf="activeUser == currentPost.author.email"
+        >
+          <div class="post-options">
+            <button
+              id="post-edit"
+              routerLink="/profile/my-publications/{{ currentPost._id }}/edit"
+            >
+              EDIT
+            </button>
+            <button id="post-delete" (click)="deletePost()">DELETE</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<section id="comment-section-wrapper">
-  <div id="comment-section-text">
-    <h3 style="font-weight: bold; padding-left: 12%">COMMENTS SECTION</h3>
-  </div>
-  <form
-    [formGroup]="form"
-    (ngSubmit)="postComment()"
-    class="add-comment-section"
-  >
-    <input
-      name="commentInput"
-      id="comment-input"
-      type="text"
-      placeholder="Tell us what you think..."
-      formControlName="comment"
-    />
-    <div class="add-comment-button-wrapper">
-      <button type="submit" class="button">ADD COMMENT</button>
+  <section id="comment-section-wrapper">
+    <div id="comment-section-text">
+      <h3 style="font-weight: bold; padding-left: 12%">COMMENTS SECTION</h3>
     </div>
-  </form>
-  <div class="view-comments-button-wrapper">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="postComment()"
+      class="add-comment-section"
+    >
+      <input
+        name="commentInput"
+        id="comment-input"
+        type="text"
+        placeholder="Tell us what you think..."
+        formControlName="comment"
+      />
+      <div class="add-comment-button-wrapper">
+        <button type="submit" class="button">ADD COMMENT</button>
+      </div>
+    </form>
     <div *ngIf="postComments">
       <div class="comment-section-wrapper">
         <div *ngFor="let comment of postComments">
@@ -84,9 +83,14 @@
                   />
                 </div>
               </div>
-              <div *ngIf="isReacted(this.comment._id) === true" style="display: grid;">
-                <i style="font-weight: 600; color: rgb(255, 123, 0);">You've already reacted</i>
-                <i>Likes: {{this.comment.likes.length}}</i>
+              <div
+                *ngIf="isReacted(this.comment._id) === true"
+                style="display: grid"
+              >
+                <i style="font-weight: 600; color: rgb(255, 123, 0)"
+                  >You've already reacted</i
+                >
+                <i>Likes: {{ this.comment.likes.length }}</i>
               </div>
             </div>
             <div *ngIf="activeUser == comment.author.email">
@@ -101,7 +105,10 @@
             </div>
           </div>
         </div>
+        <div *ngIf="postComments.length ==0">
+          <h3>No comments yet. Be the first one!</h3>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</body>
