@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
 
 .outer-wrapper {
-  margin-top: 3rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
 }
 .card {
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 1rem;
   font-family: "Orbitron", sans-serif;
   border: none;
 }
