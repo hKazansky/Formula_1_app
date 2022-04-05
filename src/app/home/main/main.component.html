@@ -26,7 +26,7 @@
       "
     >
       <!-- <h1>Countdown Clock</h1> -->
-      <div class="container">
+      <div class="container" @fade>
         <!-- <h1>Countdown to my birthday:</h1> -->
         <ul class="countdown">
           <span>
@@ -49,61 +49,78 @@
       </div>
     </div>
     <div class="upcoming-race-info-wrapper">
-      <div class="left-wrapper">
+      <div class="left-wrapper" @fade>
         <span id="upcoming-span">UPCOMING RACE ></span>
-        <img id="img-track" src="/assets/images/{{final.Circuit.circuitId}}.png" alt="track-image" routerLink="/race/details/{{final.round}}" />
+        <img
+          id="img-track"
+          src="/assets/images/{{ final.Circuit.circuitId }}.png"
+          alt="track-image"
+          routerLink="/race/details/{{ final.round }}"
+        />
         <span id="country-span">AUSTRALIA</span>
       </div>
       <div class="right-wrapper">
         <div class="race-wrapper">
-          <div class="race-title">RACE ></div>
+          <div class="race-title" @transitTitles>
+            <span>RACE ></span>
+          </div>
           <div class="race-info">
-            <span style="padding-left: 5rem">DATE: {{ final.date }}</span>
-            <span style="padding-left: 3rem">TIME: {{ final.time }}</span>
+            <span @transit style="padding-left: 5rem" @transitDates
+              >DATE: {{ final.date }}</span
+            >
+            <span @transit style="padding-left: 3rem" @transitTimes
+              >TIME: {{ final.time }}</span
+            >
           </div>
         </div>
         <div class="qualify-wrapper">
-          <div class="qualify-title">QUALIFY ></div>
-          <div class="qualify-info">
-            <span style="padding-left: 5rem"
+          <div class="qualify-title" @transitTitles>
+            <span @transit>QUALIFY ></span>
+          </div>
+          <div class="qualify-info" @transit>
+            <span style="padding-left: 5rem" @transitDates
               >DATE: {{ final.Qualifying.date }}</span
             >
-            <span style="padding-left: 4rem"
+            <span style="padding-left: 4rem" @transitTimes
               >TIME: {{ final.Qualifying.time }}</span
             >
           </div>
         </div>
         <div class="practice-3-wrapper">
-          <div class="practice-3-title">PRACTICE 3 ></div>
-          <div class="practice-3-info">
-            <span style="padding-left: 4rem"
+          <div class="practice-3-title" @transitTitles>
+            <span>PRACTICE 3 ></span>
+          </div>
+          <div class="practice-3-info" @transit>
+            <span style="padding-left: 4rem" @transitDates
               >DATE: {{ final.ThirdPractice.date }}</span
             >
-            <span style="padding-left: 3rem"
+            <span style="padding-left: 3rem" @transitTimes
               >TIME: {{ final.ThirdPractice.time }}</span
             >
           </div>
         </div>
         <div class="practice-2-wrapper">
-          <div class="practice-2-title">PRACTICE 2 ></div>
-          <div class="practice-2-info">
-            <span style="padding-left: 4rem"
+          <div class="practice-2-title" @transitTitles>
+            <span>PRACTICE 2 ></span>
+          </div>
+          <div class="practice-2-info" >
+            <span style="padding-left: 4rem" @transitDates
               >DATE: {{ final.SecondPractice.date }}</span
             >
-            <span style="padding-left: 3rem"
+            <span style="padding-left: 3rem" @transitTimes
               >TIME: {{ final.SecondPractice.time }}</span
             >
           </div>
         </div>
         <div class="practice-1-wrapper">
-          <div class="practice-1-title">PRACTICE 1 ></div>
+          <div class="practice-1-title" @transitTitles>
+            <span>PRACTICE 1 ></span>
+          </div>
           <div class="practice-1-info">
-            <span style="padding-left:1rem"
+            <span style="padding-left: 1rem" @transitDates
               >DATE: {{ final.FirstPractice.date }}</span
             >
-            <span 
-              >TIME: {{ final.FirstPractice.time }}</span
-            >
+            <span @transitTimes>TIME: {{ final.FirstPractice.time }}</span>
           </div>
         </div>
       </div>

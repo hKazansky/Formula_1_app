@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
+import { transitTitles, transitDates, fade, transitTimes } from 'src/app/animations';
 import { IRace } from 'src/app/interfaces/race';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { timeZoneUpdate } from '../calendar/details/race-details.component';
@@ -7,14 +8,15 @@ import { timeZoneUpdate } from '../calendar/details/race-details.component';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
+  animations: [transitTitles, transitDates, transitTimes, fade]
 })
 export class MainComponent implements OnInit {
   title = 'google-maps';
 
   calendar: IRace[] | undefined;
   nextRace: any[] | undefined = [];
-  
+
   currentDate: string[] = [];
   firstDates: any = [];
   secondDates: any = [];
