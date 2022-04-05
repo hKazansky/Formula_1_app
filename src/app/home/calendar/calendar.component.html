@@ -10,7 +10,7 @@
 
 <div *ngIf="calendar">
   <div class="wrapper">
-    <div *ngFor="let race of calendar">
+    <div *ngFor="let race of calendar" @fade>
       <div class="card-element">
         <a class="a-wrapper" routerLink="/race/details/{{ race.round }}">
           <div class="card-element-body">
