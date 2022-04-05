@@ -8,11 +8,11 @@ import { CalendarService } from 'src/app/services/calendar.service';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
   animations: [
-   fade  
+    fade
   ]
 })
 export class CalendarComponent implements OnInit {
-  calendar!: IRace[]
+  calendar!: IRace[];
 
   constructor(private service: CalendarService) { }
 
@@ -21,6 +21,7 @@ export class CalendarComponent implements OnInit {
   }
 
   loadRaces(): any {
-    this.service.loadRaceSchedule().subscribe((x) => this.calendar = x);
+    this.service.loadRaceSchedule().subscribe((races) => this.calendar = races);
+
   }
 }

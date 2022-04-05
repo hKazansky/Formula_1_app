@@ -40,12 +40,11 @@
 .link-wrapper {
   text-decoration: none;
 }
-.cover-div {
-  background-image: url("https://images.unsplash.com/photo-1612548539960-006191e492c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
-  height: 16rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: -35rem;
+.cover {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 10% 50%;
 }
 .title-text {
   margin-top: 5rem;
@@ -73,7 +72,7 @@
   width: 30rem;
   height: 24rem;
   margin: 1rem;
-  cursor:pointer
+  cursor: pointer;
 }
 
 .listing-standing {
@@ -166,7 +165,7 @@
 }
 
 .driver-card:hover {
-border-color: red;
+  border-color: red;
 }
 
 .body {

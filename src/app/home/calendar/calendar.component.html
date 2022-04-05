@@ -1,14 +1,16 @@
-<div class="cover"></div>
-<div class="bg-image-title">
-  <div class="title-div">
-    <h1 class="h1-title">F1 SCHEDULE 2022</h1>
-    <p class="p-title">
-      2022 FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR
-    </p>
-  </div>
-</div>
-
 <div *ngIf="calendar">
+  <img class="cover" src="/assets/cover-images/calendar-page.jpg" alt="">
+
+  <div class="bg-image-title">
+    <div class="title-div">
+      <h1 class="h1-title">F1 SCHEDULE {{ calendar[0].season }}</h1>
+      <p class="p-title">
+        {{ calendar[0].season }} FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE
+        CALENDAR
+      </p>
+    </div>
+  </div>
+
   <div class="wrapper">
     <div *ngFor="let race of calendar" @fade>
       <div class="card-element">
