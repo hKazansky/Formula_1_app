@@ -1,14 +1,20 @@
 <body class="body">
   <div class="outer-wrapper">
-    <img class="cover" src="/assets/cover-images/constructors-page.jpg" alt="car-image">
-    <!-- <div class="constructor-text">Constructors text</div> -->
-    <div class="main-text">
-      <h1 id="f1-text">F1 CONSTRUCTORS 2022</h1>
-      <div class="additional-main-text">
-        <span id="additional-decoration-text">
-          Discover everything you need to know about this year's Formula 1 teams
-          - drivers, podium finishes, points earned and championship titles.
-        </span>
+    <img
+      class="cover"
+      src="/assets/cover-images/constructors-page.jpg"
+      alt="car-image"
+    />
+    <div *ngIf="constructors">
+      <div class="main-text">
+        <h1 id="f1-text">F1 CONSTRUCTORS 2022</h1>
+        <div class="additional-main-text">
+          <span id="additional-decoration-text">
+            Discover everything you need to know about this year's Formula 1
+            teams - drivers, podium finishes, points earned and championship
+            titles.
+          </span>
+        </div>
       </div>
     </div>
     <div class="constructors-wrapper" *ngIf="constructors">
