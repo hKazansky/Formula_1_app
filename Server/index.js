@@ -1,0 +1,293 @@
+const express = require("express");
+const { default: mongoose } = require("mongoose");
+const { PORT } = require("./config/index.js");
+const cors = require("cors");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const axios = require("axios").default;
+const jwtSecret = "Super_Secret_Key";
+
+const expressConfig = require("./config/express.js");
+const databaseConfig = require("./config/database.js");
+const {
+  createUser,
+  getUserByEmail,
+  getAllUsers,
+} = require("./services/userService.js");
+const auth = require("./services/testAuth.js");
+const TOKEN_SECRET = require("./config/index.js");
+const COOKIE_NAME = require("./config/index.js");
+const USER_DATA = require("./services/testAuth.js");
+
+const {
+  createPost,
+  getUserPosts,
+  getAllPosts,
+  getPostById,
+  editPost,
+  deletePost,
+} = require("./services/postService.js");
+
+const {
+  getAllRaces,
+  isRaceExisting,
+  getRacesByRound,
+  getAllDriversInfo,
+  getAllConstructors,
+  createRace,
+  createAllConstructorsInfo,
+  createRacesByRound,
+  createAllDriversInfo,
+} = require("./services/calendarService.js");
+
+const {
+  createComment,
+  getAllComments,
+  deleteComment,
+  editComment,
+  likeComment,
+  dislikeComment,
+  getCommentLikes,
+} = require("./services/commentService.js");
+
+setInterval(() => {
+  function fetchRacesFromAPI() {
+    mongoose.connection.dropCollection("calendars");
+
+    axios.get("http://ergast.com/api/f1/2022.json").then((data) => {
+      let dataArr = Object.values(data.data);
+      dataArr.forEach((d) =>
+        d.RaceTable.Races.forEach((item) => createRace(item))
+      );
+    });
+  }
+  fetchRacesFromAPI();
+}, 432000000);
+
+setInterval(() => {
+  async function fetchDriverStandingsFromAPI() {
+    mongoose.connection.dropCollection("racedetails");
+
+    const races = await getAllRaces();
+    races.forEach((race) => {
+      axios
+        .get(
+          `https://ergast.com/api/f1/2022/${race.round}/driverStandings.json`
+        )
+        .then((data) => createRacesByRound(data.data.MRData.StandingsTable));
+    });
+  }
+  fetchDriverStandingsFromAPI();
+}, 432000000);
+
+setInterval(() => {
+  async function fetchAllDriversInformationStandingsFromAPI() {
+    mongoose.connection.dropCollection("drivers");
+    axios
+      .get("https://ergast.com/api/f1/2022/driverStandings.json")
+      .then((data) => createAllDriversInfo(data.data.MRData.StandingsTable));
+  }
+  fetchAllDriversInformationStandingsFromAPI();
+  console.log("Yes");
+}, 432000000);
+
+setImmediate(() => {
+  async function fetchAllConstructorsInfoFromAPI() {
+    mongoose.connection.dropCollection("constructors");
+
+    axios
+      .get("https://ergast.com/api/f1/2022/constructorStandings.json")
+      .then(async (data) => {
+        await createAllConstructorsInfo(data.data.MRData.StandingsTable);
+      });
+  }
+  fetchAllConstructorsInfoFromAPI();
+}, 432000000);
+
+start();
+
+async function start() {
+  const app = express();
+  app.use(cors());
+  app.use(auth());
+
+  expressConfig(app);
+  await databaseConfig(app);
+
+  app.get("/", (req, res) => {
+    res.json({ message: "Rest service operation" });
+  });
+
+  app.post("/register", async (req, res) => {
+    console.log(req.body);
+    let password = req.body.password;
+    let hashedPassword = await bcrypt.hash(password, 10);
+    let userData = {
+      email: req.body.email,
+      fullName: req.body.fullname,
+      birthday: req.body.birthday,
+      country: req.body.country,
+      team: req.body.team,
+      password: hashedPassword,
+    };
+    try {
+      let user = await createUser(userData);
+      let token = jwt.sign(
+        {
+          _id: user._id,
+          email: user.email,
+        },
+        jwtSecret
+      );
+
+      res.status(200).send({ token, userId: user._id });
+    } catch (error) {
+      console.log(error.message);
+    }
+  });
+
+  app.post("/login", async (req, res) => {
+    password = req.body.password;
+    let userData = req.body;
+    try {
+      const user = await getUserByEmail(userData.email);
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!user) {
+        res.status(401).send("Invalid email");
+        return;
+      }
+
+      if (!isMatch) {
+        res.status(401).send("Invalid password");
+        return;
+      }
+
+      let payload = {
+        _id: user._id,
+        email: user.email,
+      };
+      let token = jwt.sign(payload, jwtSecret);
+      res.status(200).json({ token, userId: user._id });
+    } catch (error) {
+      console.log(error.message);
+    }
+  });
+
+  app.post("/create", async (req, res) => {
+    let post = {
+      title: req.body.title,
+      description: req.body.description,
+      imageUrl: req.body.imageUrl,
+      author: req.user._id,
+    };
+    try {
+      await createPost(post);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  app.post("/create-comment", async (req, res) => {
+    const postId = req.query.postId;
+    let data = {
+      comment: req.body.comment,
+      author: req.user._id,
+      post: postId,
+    };
+    try {
+      await createComment(data, postId);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  app.get("/posts", async (req, res) => {
+    const posts = await getAllPosts();
+    res.json(posts);
+  });
+
+  app.get("/posts/:postId", async (req, res) => {
+    const postId = req.query.postId;
+
+    const post = await getPostById(postId);
+    res.json(post);
+  });
+
+  app.put("/posts/:postId/edit", async (req, res) => {
+    const postId = req.query.postId;
+    const data = {
+      title: req.body.title,
+      description: req.body.description,
+      imageUrl: req.body.imageUrl,
+    };
+    const editedPost = await editPost(data, postId);
+    res.json(editedPost);
+  });
+
+  app.delete("/posts/:postId/delete", async (req, res) => {
+    const postId = req.query.postId;
+
+    await deletePost(postId);
+
+    res.json();
+  });
+
+  app.get("/comments", async (req, res) => {
+    const comments = await getAllComments();
+    res.json(comments);
+  });
+
+  app.get("/races", async (req, res) => {
+    const races = await getAllRaces();
+    const allRaces = races.sort((a, b) => a.date.localeCompare(b.date));
+    res.json(allRaces);
+  });
+
+  app.get("/races/by-round", async (req, res) => {
+    const races = await getRacesByRound();
+    res.json(races);
+  });
+
+  app.get("/drivers", async (req, res) => {
+    const drivers = await getAllDriversInfo();
+    res.json(drivers);
+  });
+
+  app.get("/constructors", async (req, res) => {
+    const constructors = await getAllConstructors();
+    res.json(constructors);
+  });
+
+  app.get("/users", async (req, res) => {
+    const users = await getAllUsers();
+    res.json(users);
+  });
+
+  app.delete("/delete/:commentId", async (req, res) => {
+    const commentId = req.query.commentId;
+    const postId = req.query.postId;
+    await deleteComment(commentId, postId);
+    res.json();
+  });
+
+  app.post("/comments/:commentId/like", async (req, res) => {
+    const commentId = req.query.commentId;
+    const userId = req.user._id;
+
+    const like = await likeComment(commentId, userId);
+    res.json(like);
+  });
+
+  app.post("/comments/:commentId/dislike", async (req, res) => {
+    const commentId = req.query.commentId;
+    const userId = req.user._id;
+
+    const dislike = await dislikeComment(commentId, userId);
+    res.json(dislike);
+  });
+
+
+  app.listen(PORT, () => {
+    console.log(`The server is listening on port: http://localhost:${PORT}`);
+  });
+}
