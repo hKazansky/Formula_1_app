@@ -37,7 +37,8 @@
   margin-top: 1.5%;
   color: white;
   display: grid;
-  text-align: center;
+  /* text-align: center; */
+  justify-content: center;
 }
 
 .right-wrapper {
@@ -250,12 +251,14 @@
 #upcoming-span {
   font-weight: 800;
   font-size: 100%;
+  margin-left: 4rem;
 }
 
 #country-span {
   font-weight: 800;
   font-size: 150%;
   padding-top: 1rem;
+  margin-left: 4rem;
 }
 
 #img-track:hover{
