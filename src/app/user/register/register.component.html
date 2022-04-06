@@ -40,6 +40,20 @@
                     formControlName="email"
                   />
                 </div>
+                <div
+                  *ngIf="
+                    form.get('email')?.touched && form.get('email')?.invalid
+                  "
+                >
+                  <div *ngIf="form.get('email')?.errors?.['required']">
+                    <span style="color: red">Email is required</span>
+                  </div>
+                  <div *ngIf="form.get('email')?.errors?.['email']">
+                    <span style="color: red"
+                      >Email must be in format example@example.com</span
+                    >
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="col-lg-7" style="width: auto">
                     <input
@@ -49,6 +63,21 @@
                       id="fullname"
                       formControlName="fullname"
                     />
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    form.get('fullname')?.touched &&
+                    form.get('fullname')?.invalid
+                  "
+                >
+                  <div *ngIf="form.get('fullname')?.errors?.['required']">
+                    <span style="color: red">Name is required</span>
+                  </div>
+                  <div *ngIf="form.get('fullname')?.errors?.['minlength']">
+                    <span style="color: red"
+                      >Your name must consist of minimum 3 characters</span
+                    >
                   </div>
                 </div>
                 <div class="form-row">
@@ -62,6 +91,21 @@
                     />
                   </div>
                 </div>
+                <div
+                  *ngIf="
+                    form.get('birthday')?.touched &&
+                    form.get('birthday')?.invalid
+                  "
+                >
+                  <div *ngIf="form.get('birthday')?.errors?.['required']">
+                    <span style="color: red">Date of birth is required</span>
+                  </div>
+                  <div *ngIf="form.get('birthday')?.errors?.['pattern']">
+                    <span style="color: red"
+                      >Date of birth must be in format DD/MM/YYYY</span
+                    >
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="col-lg-7" style="width: auto">
                     <input
@@ -71,6 +115,15 @@
                       id="country"
                       formControlName="country"
                     />
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    form.get('country')?.touched && form.get('country')?.invalid
+                  "
+                >
+                  <div *ngIf="form.get('country')?.errors?.['required']">
+                    <span style="color: red">Country is required</span>
                   </div>
                 </div>
                 <div class="form-row">
@@ -84,6 +137,18 @@
                     />
                   </div>
                 </div>
+                <div
+                  *ngIf="form.get('team')?.touched && form.get('team')?.invalid"
+                >
+                  <div *ngIf="form.get('team')?.errors?.['required']">
+                    <span style="color: red">Favourite team is required</span>
+                  </div>
+                  <div *ngIf="form.get('team')?.errors?.['minlength']">
+                    <span style="color: red"
+                      >Team must consist of minimum 4 characters</span
+                    >
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="col-lg-7" style="width: auto">
                     <input
@@ -93,6 +158,21 @@
                       id="password"
                       formControlName="password"
                     />
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    form.get('password')?.touched &&
+                    form.get('password')?.invalid
+                  "
+                >
+                  <div *ngIf="form.get('password')?.errors?.['required']">
+                    <span style="color: red">Password is required</span>
+                  </div>
+                  <div *ngIf="form.get('password')?.errors?.['minlength']">
+                    <span style="color: red"
+                      >Password must consist of minimum 3 characters</span
+                    >
                   </div>
                 </div>
                 <div class="form-row">
@@ -105,6 +185,24 @@
                       formControlName="rePass"
                     />
                   </div>
+                </div>
+                <div
+                  *ngIf="
+                    form.get('rePass')?.touched && form.get('rePass')?.invalid
+                  "
+                >
+                  <div *ngIf="form.get('rePass')?.errors?.['required']">
+                    <span style="color: red">Repeat password is required</span>
+                  </div>
+                  <div *ngIf="form.get('rePass')?.errors?.['minlength']">
+                    <span style="color: red"
+                      >Repeated password must consist of minimum 3
+                      characters</span
+                    >
+                  </div>
+                </div>
+                <div *ngIf="errors">
+                  <span style="color: red">{{ errors }}</span>
                 </div>
                 <div class="form-row">
                   <div class="col-lg-7">

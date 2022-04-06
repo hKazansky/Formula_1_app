@@ -8,16 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-
+  errors: any
+  
   constructor(private registerService: RegisterService, private router: Router) { }
 
   form = new FormGroup({
-    "email": new FormControl('', [Validators.pattern(/[a-z]+@[a-z]+.[a-z]+/), Validators.required]),
+    "email": new FormControl('', [Validators.email, Validators.required]),
     "password": new FormControl('', [Validators.minLength(3), Validators.required]),
     "fullname": new FormControl('', [Validators.minLength(3), Validators.required]),
-    "birthday": new FormControl('', [Validators.minLength(3), Validators.required]),
-    "country": new FormControl('', [Validators.minLength(3), Validators.required]),
-    "team": new FormControl('', [Validators.minLength(3), Validators.required]),
+    "birthday": new FormControl('', [Validators.required, Validators.pattern(/[0-9]+\/[0-9]+\/[0-9]+/)]),
+    "country": new FormControl('', [Validators.required]),
+    "team": new FormControl('', [Validators.minLength(4), Validators.required]),
     "rePass": new FormControl('', [Validators.minLength(3), Validators.required]),
   });
 
@@ -27,6 +28,9 @@ export class RegisterComponent {
       localStorage.setItem('userId', res.userId);
       localStorage.setItem('email', this.form.value.email);
       this.router.navigate(['/']);
+    },(error) => {
+      console.log(error.error)
+      this.errors = error.error
     });
   }
 }
