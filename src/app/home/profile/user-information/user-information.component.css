@@ -130,8 +130,8 @@
 .team-text {
   width: 90%;
   height: 4.5rem;
-  border-style: solid;
-  border-color: grey;
+  /* border-style: solid; */
+  /* border-color: grey; */
   border-width: 0.1rem;
   border-top: none;
   border-left: none;

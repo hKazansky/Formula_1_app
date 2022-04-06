@@ -244,7 +244,7 @@
   border-top-right-radius: 10px;
   height: 8rem;
   margin-left: 4rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 #upcoming-span {
@@ -255,6 +255,7 @@
 #country-span {
   font-weight: 800;
   font-size: 150%;
+  padding-top: 1rem;
 }
 
 #img-track:hover{
