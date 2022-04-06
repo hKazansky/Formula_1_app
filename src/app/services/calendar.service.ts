@@ -21,11 +21,6 @@ export class CalendarService {
     return this.http.get<IRaces>(`http://ergast.com/api/f1/2022/${circuitId}.json`)
   }
 
-  // getRaceById(round: string) {
-  //   return this.http.get<IRaces>(`http://ergast.com/api/f1/2022/${round}.json`)
-
-  // }
-
   getDriverStandingsByRace() {
     return this.http.get(`http://localhost:3000/races/by-round`)
   }
