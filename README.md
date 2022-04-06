@@ -3,12 +3,16 @@
 **A Formula 1 website project for educational purposes. The app itself is created to be used by fans of the sport to be informed for every race, pilot and constructor which take place in current season of Formula 1 championship. The goal of the app is to connect enthusiasts of this sport and to share emotions together.**
 
 !['home-page'](md-images/home-page.png)
+!['register-page'](md-images/register-page.png)
+!['login-page'](md-images/login-page.png)
 !['profile-page'](md-images/profile-page.png)
 !['publications-page'](md-images/my-publications-page.png)
 !['create-publication-page'](md-images/create-publication-page.png)
 !['calendar-page'](md-images/calendar-page.png)
 !['drivers-page'](md-images/drivers-page.png)
 !['constructors-page'](md-images/constructors-page.png)
+!['forum-page'](md-images/forum-page.png)
+
 
 </br> 
  
@@ -23,8 +27,7 @@
 
 ### Features of the platform are not finished. Updates to come soon.
 
-- Responsive design
-- Home page
+### **Home page**
 - Shows the upcoming race
 - Countdown the time to the start of the race
 - Information about the race - date and time of practices/qualis/race
@@ -91,6 +94,8 @@
  - https://developers.google.com/maps to fetch data from the google maps API
  - https://unsplash.com/ to get images for some of the pages
  - https://getbootstrap.com/ for some components
+ - HTML5 SVG for the logos, and media icons
+ - Angular animations for the Home page, Calendar page, Drivers page and Constructors page
 
 ## Additional libraries used in the project
  - https://www.npmjs.com/package/bcryptjs for hashing the users passwords
