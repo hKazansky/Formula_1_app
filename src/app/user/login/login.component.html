@@ -30,6 +30,20 @@
                     formControlName="email"
                   />
                 </div>
+                <div
+                  *ngIf="
+                    form.get('email')?.touched && form.get('email')?.invalid
+                  "
+                >
+                  <div *ngIf="form.get('email')?.errors?.['required']">
+                    <span style="color: red">Email is required.</span>
+                  </div>
+                  <div *ngIf="form.get('email')?.errors?.['email']">
+                    <span style="color: red"
+                      >Email must be in format example@example.com</span
+                    >
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="col-lg-7" style="width: auto">
                     <input
@@ -39,6 +53,19 @@
                       formControlName="password"
                     />
                   </div>
+                  <div
+                    *ngIf="
+                      form.get('password')?.touched &&
+                      form.get('password')?.invalid
+                    "
+                  >
+                    <div *ngIf="form.get('password')?.errors?.['required']">
+                      <span style="color: red">Password is required.</span>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="errors">
+                  <span style="color: red;">{{errors}}</span>
                 </div>
                 <div class="form-row">
                   <div class="col-lg-7">
