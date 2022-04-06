@@ -8,6 +8,15 @@
   z-index: 3;
 }
 
+.f1-logo {
+  color: rgb(255, 0, 0);
+  height: 3rem;
+  align-items: center;
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
 .logged-in-wrapper {
   display: flex;
   font-family: "Orbitron", sans-serif;
