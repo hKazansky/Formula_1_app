@@ -23,7 +23,7 @@
 
 </br>
 
-!['mean-stack-image'](md-images/mean-stack.png)
+!['mean-stack-image'](src/assets/md-images/mean-stack.png)
 
 ### Features of the platform are not finished. Updates to come soon.
 
