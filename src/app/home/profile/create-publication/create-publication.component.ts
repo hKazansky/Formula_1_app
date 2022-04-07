@@ -8,18 +8,27 @@ import { PostService } from '../../../services/post.service'
   styleUrls: ['./create-publication.component.css']
 })
 export class CreatePublicationComponent {
+  errors: string = '';
 
   constructor(private router: Router, private service: PostService) { }
 
   form = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    description: new FormControl('', [Validators.required, Validators.minLength(20)]),
+    description: new FormControl('', [Validators.required, Validators.minLength(20), Validators.maxLength(250)]),
     imageUrl: new FormControl('', [Validators.required, Validators.pattern(/https?:\/\//)]),
   })
 
   onSubmitCreatePost() {
-    this.service.createPost(this.form.value).subscribe()
-    this.router.navigate(['/profile/my-publications'])
+    if (this.form.value.description !== '' && this.form.value.imageUrl !== '' && this.form.value.title !== '') {
+      this.service.createPost(this.form.value).subscribe(() => { }, (error) => {
+        this.errors = error.error
+      })
+      this.router.navigate(['/profile/my-publications'])
+    } else {
+      this.errors = 'All fields are required!';
+      return
+    }
+
   }
 
 }
