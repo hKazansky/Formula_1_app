@@ -1,11 +1,13 @@
 <div class="cover">
-  <img
-    id="cover-image"
-    src="/assets/constructor-cars/{{
-      driverDetails.Constructors[0].constructorId
-    }}.png"
-    alt="constructor-car"
-  />
+  <div *ngIf="driverDetails">
+    <img
+      id="cover-image"
+      src="/assets/constructor-cars/{{
+        driverDetails.Constructors[0].constructorId
+      }}.png"
+      alt="constructor-car"
+    />
+  </div>
 </div>
 <div *ngIf="driverDetails">
   <div class="body-wrapper">
