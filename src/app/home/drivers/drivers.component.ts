@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { fade } from 'src/app/animations';
-import { IDriver } from 'src/app/interfaces/driver';
 import { IDrivers } from 'src/app/interfaces/drivers';
 import { DriversService } from 'src/app/services/drivers.service';
 
