@@ -10,6 +10,7 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PublicationEditComponent implements OnInit {
   post: any;
+  errors: string = '';
 
   constructor(private router: Router, private service: PostService, private route: ActivatedRoute) { }
 
@@ -19,7 +20,7 @@ export class PublicationEditComponent implements OnInit {
 
   form = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    description: new FormControl('', [Validators.required, Validators.minLength(20)]),
+    description: new FormControl('', [Validators.required, Validators.minLength(20),Validators.maxLength(250)]),
     imageUrl: new FormControl('', [Validators.required, Validators.pattern(/https?:\/\//)]),
   });
 
@@ -33,12 +34,18 @@ export class PublicationEditComponent implements OnInit {
   }
 
   onSubmitEditPost() {
-    const postId = Object.values(this.route.snapshot.params)[0];
-    const body = this.form.value;
+    if(this.form.value.title !== '' && this.form.value.description !== '' && this.form.value.imageUrl !== ''){
 
-    this.service.editPost(postId, body).subscribe();
-
-    this.router.navigate([`/profile/my-publications/${postId}`]);
+      const postId = Object.values(this.route.snapshot.params)[0];
+      const body = this.form.value;
+  
+      this.service.editPost(postId, body).subscribe();
+  
+      this.router.navigate([`/profile/my-publications/${postId}`]);
+    }else{
+      this.errors = 'All fields are required';
+      return;
+    }
   }
 
 }

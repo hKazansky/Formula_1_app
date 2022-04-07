@@ -17,6 +17,16 @@
           placeholder="Your title here"
           [(ngModel)]="post.title"
         />
+        <div *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
+          <div *ngIf="form.get('title')?.errors?.['required']">
+            <span style="color: red">Title is required</span>
+          </div>
+          <div *ngIf="form.get('title')?.errors?.['minlength']">
+            <span style="color: red"
+              >Title must consist minimum of 5 characters</span
+            >
+          </div>
+        </div>
       </div>
       <div class="description-wrapper">
         <div id="description">Tell us more about the topic</div>
@@ -27,6 +37,21 @@
           placeholder="Add description"
           [(ngModel)]="post.description"
         />
+        <div *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+          <div *ngIf="form.get('description')?.errors?.['required']">
+            <span style="color: red">Description is required</span>
+          </div>
+          <div *ngIf="form.get('description')?.errors?.['minlength']">
+            <span style="color: red"
+              >Description must consist minimum of 20 characters</span
+            >
+          </div>
+          <div *ngIf="form.get('description')?.errors?.['maxlength']">
+            <span style="color: red"
+              >Description must consist maximum of 250 characters</span
+            >
+          </div>
+        </div>
       </div>
       <div class="image-wrapper">
         <div id="image">Upload image</div>
@@ -36,7 +61,18 @@
           formControlName="imageUrl"
           placeholder="Upload picture https://..."
           [(ngModel)]="post.imageUrl"
+          
         />
+        <div *ngIf="form.get('imageUrl')?.touched && form.get('imageUrl')?.invalid">
+          <div *ngIf="form.get('imageUrl')?.errors?.['required']">
+            <span style="color: red">Title is required</span>
+          </div>
+          <div *ngIf="form.get('imageUrl')?.errors?.['minlength']">
+            <span style="color: red"
+              >Title must consist minimum of 5 characters</span
+            >
+          </div>
+        </div>
       </div>
       <button class="button" type="submit">EDIT POST</button>
     </form>
