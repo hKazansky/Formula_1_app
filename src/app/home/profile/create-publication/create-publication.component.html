@@ -1,19 +1,84 @@
 <app-profile></app-profile>
 <div class="outer-wrapper">
-<form class="card" [formGroup]="form" (ngSubmit)="onSubmitCreatePost()" method="post">
-  <span id="text">Create Publication</span>
-  <div class="title-wrapper">
-    <div id="title">TOPIC TITLE</div>
-    <input id="title-input" type="text" formControlName="title" placeholder="Your title here" />
-  </div>
-  <div class="description-wrapper">
-    <div id="description">TOPIC INFORMATION</div>
-    <input id="description-input" type="text" formControlName="description" placeholder="Add description" />
-  </div>
-  <div class="image-wrapper">
-    <div id="image">UPLOAD IMAGE</div>
-    <input id="image-input" type="text" formControlName="imageUrl" placeholder="Upload picture https://..." />
-  </div>
-  <button class="button" type="submit">SUBMIT</button>
-</form>
+  <form
+    class="card"
+    [formGroup]="form"
+    (ngSubmit)="onSubmitCreatePost()"
+    method="post"
+  >
+    <span id="text">Create Publication</span>
+    <div class="title-wrapper">
+      <div id="title">TOPIC TITLE</div>
+      <input
+        id="title-input"
+        type="text"
+        formControlName="title"
+        placeholder="Your title here"
+      />
+      <div *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
+        <div *ngIf="form.get('title')?.errors?.['required']">
+          <span style="color: red">Title is required</span>
+        </div>
+        <div *ngIf="form.get('title')?.errors?.['minlength']">
+          <span style="color: red"
+            >Title must consist minimum of 5 characters</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="description-wrapper">
+      <div id="description">TOPIC INFORMATION</div>
+      <input
+        id="description-input"
+        type="text"
+        formControlName="description"
+        placeholder="Add description"
+      />
+      <div
+        *ngIf="
+          form.get('description')?.touched && form.get('description')?.invalid
+        "
+      >
+        <div *ngIf="form.get('description')?.errors?.['required']">
+          <span style="color: red">Description is required</span>
+        </div>
+        <div *ngIf="form.get('description')?.errors?.['minlength']">
+          <span style="color: red"
+            >Description must consist minimum of 20 characters</span
+          >
+        </div>
+        <div *ngIf="form.get('description')?.errors?.['maxlength']">
+          <span style="color: red"
+            >Description must consist maximum of 250 characters</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="image-wrapper">
+      <div id="image">UPLOAD IMAGE</div>
+      <input
+        id="image-input"
+        type="text"
+        formControlName="imageUrl"
+        placeholder="Upload picture https://..."
+      />
+      <div
+        *ngIf="form.get('imageUrl')?.touched && form.get('imageUrl')?.invalid"
+      >
+        <div *ngIf="form.get('imageUrl')?.errors?.['required']">
+          <span style="color: red">Image URL is required</span>
+        </div>
+        <div *ngIf="form.get('imageUrl')?.errors?.['pattern']">
+          <span style="color: red"
+            >Image URL must be in format: https://example.com</span
+          >
+        </div>
+      </div>
+    </div>
+    <div *ngIf="errors">
+      <span style="color: red">{{ errors }}</span>
+    </div>
+    <button class="button" type="submit">SUBMIT</button>
+  </form>
 </div>
