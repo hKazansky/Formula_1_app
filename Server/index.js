@@ -119,7 +119,6 @@ async function start() {
   });
 
   app.post("/register", async (req, res) => {
-    console.log(req.body);
     let password = req.body.password;
     let hashedPassword = await bcrypt.hash(password, 10);
     let userData = {
@@ -131,6 +130,9 @@ async function start() {
       password: hashedPassword,
     };
     try {
+      if(req.body.password !== req.body.rePass){
+        throw new Error('Passwords don\'t match')
+      }
       let user = await createUser(userData);
       let token = jwt.sign(
         {
@@ -142,7 +144,7 @@ async function start() {
 
       res.status(200).send({ token, userId: user._id });
     } catch (error) {
-      console.log(error.message);
+      res.status(401).send(`${error.message}`)
     }
   });
 
@@ -169,7 +171,7 @@ async function start() {
       let token = jwt.sign(payload, jwtSecret);
       res.status(200).json({ token, userId: user._id });
     } catch (error) {
-      console.log(error.message);
+      res.status(401).send('Invalid email or password')
     }
   });
 

@@ -20,7 +20,13 @@ function getUserById(id) {
   return User.findById(id).lean();
 }
 
-function createUser(userData) {
+async function createUser(userData) {
+  const existingUser = await User.findOne({ email: userData.email });
+
+  if (existingUser) {
+    throw new Error("Email or password are already taken");
+  }
+
   const user = new User(userData);
 
   return user.save();
@@ -28,7 +34,7 @@ function createUser(userData) {
 
 async function getAllUsers() {
   const users = await User.find({});
-  return users
+  return users;
 }
 
 module.exports = {
