@@ -1,0 +1,66 @@
+<app-profile></app-profile>
+<body class="body">
+  <div *ngIf="currentUser">
+    <form action="post" [formGroup]="form" (ngSubmit)="onSubmitEdit()">
+      <div class="card">
+        <div class="title-text">
+          <span id="title-text-span">PERSONAL INFORMATION</span>
+        </div>
+        <div class="name-text">
+          <div id="name-div">
+            <span id="name-text-span">Name</span>
+            <input
+              id="username-span"
+              placeholder="Edit your name"
+              formControlName="fullname"
+              [(ngModel)]="currentUser.fullName"
+            />
+          </div>
+          <button type="submit" id="edit-div-1">Save</button>
+        </div>
+        <div class="birthday-text">
+          <div id="birthday-div">
+            <span id="birthday-text-span">Birthday</span>
+            <input
+              id="birthday-date-span"
+              placeholder="Edit your date of birth"
+              formControlName="birthday"
+              [(ngModel)]="currentUser.birthday"
+
+            />
+          </div>
+          <button type="submit" id="edit-div-1">Save</button>
+        </div>
+        <div class="country-text">
+          <div id="country-div">
+            <span id="country-text-span">Country</span>
+            <input
+              id="country-span"
+              placeholder="Edit your country"
+              formControlName="country"
+              [(ngModel)]="currentUser.country"
+
+            />
+          </div>
+          <button type="submit" id="edit-div-1">Save</button>
+        </div>
+        <div class="team-text">
+          <div id="team-div">
+            <span id="favourite-team-text-span">Favourite Team</span>
+            <input
+              id="favourite-team-span"
+              placeholder="Edit your favourite team"
+              formControlName="team"
+              [(ngModel)]="currentUser.team"
+
+            />
+          </div>
+          <button type="submit" id="edit-div-1">Save</button>
+        </div>
+        <div *ngIf="errors">
+          <span style="color: red">{{ errors }}</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

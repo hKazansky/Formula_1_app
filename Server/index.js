@@ -13,6 +13,8 @@ const {
   createUser,
   getUserByEmail,
   getAllUsers,
+  getUserById,
+  editUser,
 } = require("./services/userService.js");
 const auth = require("./services/testAuth.js");
 const TOKEN_SECRET = require("./config/index.js");
@@ -130,8 +132,8 @@ async function start() {
       password: hashedPassword,
     };
     try {
-      if(req.body.password !== req.body.rePass){
-        throw new Error('Passwords don\'t match')
+      if (req.body.password !== req.body.rePass) {
+        throw new Error("Passwords don't match");
       }
       let user = await createUser(userData);
       let token = jwt.sign(
@@ -144,7 +146,7 @@ async function start() {
 
       res.status(200).send({ token, userId: user._id });
     } catch (error) {
-      res.status(401).send(`${error.message}`)
+      res.status(401).send(`${error.message}`);
     }
   });
 
@@ -171,8 +173,19 @@ async function start() {
       let token = jwt.sign(payload, jwtSecret);
       res.status(200).json({ token, userId: user._id });
     } catch (error) {
-      res.status(401).send('Invalid email or password')
+      res.status(401).send("Invalid email or password");
     }
+  });
+
+  app.put("/user/:userId/edit", async (req, res) => {
+    const userData = {
+      fullName: req.body.fullname,
+      birthday: req.body.birthday,
+      country: req.body.country,
+      team: req.body.team,
+    };
+    const editedUser = await editUser(userData, req.user._id);
+    res.json(editedUser);
   });
 
   app.post("/create", async (req, res) => {
@@ -265,6 +278,12 @@ async function start() {
     res.json(users);
   });
 
+  app.get("/user/:userId", async (req, res) => {
+    const user = await getUserById(req.user._id);
+
+    return res.json(user);
+  });
+
   app.delete("/delete/:commentId", async (req, res) => {
     const commentId = req.query.commentId;
     const postId = req.query.postId;
@@ -287,7 +306,6 @@ async function start() {
     const dislike = await dislikeComment(commentId, userId);
     res.json(dislike);
   });
-
 
   app.listen(PORT, () => {
     console.log(`The server is listening on port: http://localhost:${PORT}`);
