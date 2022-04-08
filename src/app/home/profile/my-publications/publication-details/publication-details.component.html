@@ -47,6 +47,9 @@
         placeholder="Tell us what you think..."
         formControlName="comment"
       />
+      <div *ngIf="errors">
+        <span style="color: red;">{{errors}}</span>
+      </div>
       <div class="add-comment-button-wrapper">
         <button type="submit" class="button">ADD COMMENT</button>
       </div>

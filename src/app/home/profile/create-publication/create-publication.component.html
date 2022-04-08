@@ -15,7 +15,7 @@
         formControlName="title"
         placeholder="Your title here"
       />
-      <div *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
+      <div *ngIf="form.get('title')?.touched && form.get('title')?.invalid && form.get('title')?.dirty">
         <div *ngIf="form.get('title')?.errors?.['required']">
           <span style="color: red">Title is required</span>
         </div>
@@ -36,7 +36,7 @@
       />
       <div
         *ngIf="
-          form.get('description')?.touched && form.get('description')?.invalid
+          form.get('description')?.touched && form.get('description')?.invalid && form.get('description')?.dirty
         "
       >
         <div *ngIf="form.get('description')?.errors?.['required']">
@@ -64,7 +64,7 @@
         placeholder="Upload picture https://..."
       />
       <div
-        *ngIf="form.get('imageUrl')?.touched && form.get('imageUrl')?.invalid"
+        *ngIf="form.get('imageUrl')?.touched && form.get('imageUrl')?.invalid && form.get('imageUrl')?.dirty"
       >
         <div *ngIf="form.get('imageUrl')?.errors?.['required']">
           <span style="color: red">Image URL is required</span>
@@ -77,7 +77,7 @@
       </div>
     </div>
     <div *ngIf="errors">
-      <span style="color: red">{{ errors }}</span>
+      <span style="color: red">All fields are required</span>
     </div>
     <button class="button" type="submit">SUBMIT</button>
   </form>
