@@ -31,6 +31,7 @@ import { ForumComponent } from './home/forum/forum.component';
 import { AuthNavComponent } from './user/auth-nav/auth-nav.component';
 import { AboutComponent } from './home/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditUserInformationComponent } from './home/profile/edit-user-information/edit-user-information.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ForumComponent,
     AuthNavComponent,
     AboutComponent,
+    EditUserInformationComponent,
   ],
   imports: [
     BrowserModule,
