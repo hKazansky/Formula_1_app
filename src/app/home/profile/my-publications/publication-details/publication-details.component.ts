@@ -19,6 +19,7 @@ export class PublicationDetailsComponent implements OnInit {
   postComments!: IComments[];
   user = localStorage.getItem('userId');
   activeUser = localStorage.getItem('email');
+  errors: string = '';
 
   constructor(private service: PostService, private route: ActivatedRoute, private router: Router) { }
 
@@ -41,6 +42,11 @@ export class PublicationDetailsComponent implements OnInit {
 
   postComment() {
     this.postId = Object.values(this.route.snapshot.params)[0];
+
+    if(this.form.get('comment')?.value == ''){
+      this.errors = 'Input field must not be empty'
+      return;
+    }
 
     this.service.createComment(this.form.value, this.postId).subscribe();
 
