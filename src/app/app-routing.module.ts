@@ -8,7 +8,6 @@ import { ConstructorsComponent } from './home/constructors/constructors.componen
 import { DetailsComponent } from './home/drivers/details/details.component';
 import { DriversComponent } from './home/drivers/drivers.component';
 import { MainComponent } from './home/main/main.component';
-import { RouteResolver } from './resolvers/route.resolver';
 import { LoginComponent } from './user/login/login.component';
 import { CreatePublicationComponent } from './home/profile/create-publication/create-publication.component';
 import { MyPublicationsComponent } from './home/profile/my-publications/my-publications.component';
@@ -106,9 +105,7 @@ const routes: Routes = [
   {
     path: 'drivers/details/:driverId',
     component: DetailsComponent,
-    resolve: {
-      data: RouteResolver
-    },
+
     canActivate: [AuthGuard]
   },
   {
@@ -133,6 +130,5 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [RouteResolver]
 })
 export class AppRoutingModule { }
