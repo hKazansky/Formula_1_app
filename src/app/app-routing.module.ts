@@ -19,6 +19,7 @@ import { PublicationDetailsComponent } from './home/profile/my-publications/publ
 import { PublicationEditComponent } from './home/profile/my-publications/publication-edit/publication-edit.component';
 import { ForumComponent } from './home/forum/forum.component';
 import { AboutComponent } from './home/about/about.component';
+import { EditUserInformationComponent } from './home/profile/edit-user-information/edit-user-information.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,11 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile/edit',
+    component: EditUserInformationComponent,
     canActivate: [AuthGuard]
   },
   {
