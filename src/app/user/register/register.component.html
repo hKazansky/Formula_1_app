@@ -42,7 +42,9 @@
                 </div>
                 <div
                   *ngIf="
-                    form.get('email')?.touched && form.get('email')?.invalid
+                    form.get('email')?.touched &&
+                    form.get('email')?.invalid &&
+                    form.get('email')?.dirty
                   "
                 >
                   <div *ngIf="form.get('email')?.errors?.['required']">
@@ -68,7 +70,8 @@
                 <div
                   *ngIf="
                     form.get('fullname')?.touched &&
-                    form.get('fullname')?.invalid
+                    form.get('fullname')?.invalid &&
+                    form.get('fullname')?.dirty
                   "
                 >
                   <div *ngIf="form.get('fullname')?.errors?.['required']">
@@ -94,7 +97,8 @@
                 <div
                   *ngIf="
                     form.get('birthday')?.touched &&
-                    form.get('birthday')?.invalid
+                    form.get('birthday')?.invalid &&
+                    form.get('birthday')?.dirty
                   "
                 >
                   <div *ngIf="form.get('birthday')?.errors?.['required']">
@@ -119,7 +123,9 @@
                 </div>
                 <div
                   *ngIf="
-                    form.get('country')?.touched && form.get('country')?.invalid
+                    form.get('country')?.touched &&
+                    form.get('country')?.invalid &&
+                    form.get('country')?.dirty
                   "
                 >
                   <div *ngIf="form.get('country')?.errors?.['required']">
@@ -138,7 +144,11 @@
                   </div>
                 </div>
                 <div
-                  *ngIf="form.get('team')?.touched && form.get('team')?.invalid"
+                  *ngIf="
+                    form.get('team')?.touched &&
+                    form.get('team')?.invalid &&
+                    form.get('team')?.dirty
+                  "
                 >
                   <div *ngIf="form.get('team')?.errors?.['required']">
                     <span style="color: red">Favourite team is required</span>
@@ -163,7 +173,8 @@
                 <div
                   *ngIf="
                     form.get('password')?.touched &&
-                    form.get('password')?.invalid
+                    form.get('password')?.invalid &&
+                    form.get('password')?.dirty
                   "
                 >
                   <div *ngIf="form.get('password')?.errors?.['required']">
@@ -188,7 +199,7 @@
                 </div>
                 <div
                   *ngIf="
-                    form.get('rePass')?.touched && form.get('rePass')?.invalid
+                    form.get('rePass')?.touched && form.get('rePass')?.invalid  && form.get('rePass')?.dirty
                   "
                 >
                   <div *ngIf="form.get('rePass')?.errors?.['required']">

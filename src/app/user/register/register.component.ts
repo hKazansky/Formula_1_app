@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  errors: any
-  
+  errors: string = '';
+
   constructor(private registerService: RegisterService, private router: Router) { }
 
   form = new FormGroup({
@@ -23,16 +23,32 @@ export class RegisterComponent {
   });
 
   onSubmitRegister() {
+    if (this.form.get('password')?.value !== this.form.get('rePass')?.value) {
+      this.errors = 'Passwords don\'t match'
+      return;
+    }
+
+    if (Object.entries(this.form.value).every(([key, value]) => value === '')) {
+      this.errors = 'All fields are required!'
+      setTimeout(() => {
+        this.errors = ''
+      }, (4000));
+      return;
+    }
+
+
     this.registerService.registerUser(this.form.value).subscribe(res => {
       localStorage.setItem('token', res.token);
       localStorage.setItem('userId', res.userId);
       localStorage.setItem('email', this.form.value.email);
+
       this.router.navigate(['/']);
-    },(error) => {
-      console.log(error.error)
+    }, (error) => {
       this.errors = error.error
     });
+
+
+
   }
 }
-
 
