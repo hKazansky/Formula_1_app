@@ -28,7 +28,6 @@ export class PublicationEditComponent implements OnInit {
     const postId = Object.values(this.route.snapshot.params)[0];
     this.service.getPostById(postId).subscribe(data => {
       this.post = data
-      console.log(this.post)
     });
 
   }
