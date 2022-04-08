@@ -32,6 +32,13 @@ async function createUser(userData) {
   return user.save();
 }
 
+async function editUser(userData, userId) {
+  const existingUser = await User.findById({ _id: userId });
+
+  const editedUser = Object.assign(existingUser, userData);
+  return editedUser.save();
+}
+
 async function getAllUsers() {
   const users = await User.find({});
   return users;
@@ -40,6 +47,7 @@ async function getAllUsers() {
 module.exports = {
   getUserByEmail,
   createUser,
+  editUser,
   getUserById,
   getUserByUsername,
   getAllUsers,
