@@ -20,7 +20,7 @@ export class PublicationEditComponent implements OnInit {
 
   form = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    description: new FormControl('', [Validators.required, Validators.minLength(20),Validators.maxLength(250)]),
+    description: new FormControl('', [Validators.required, Validators.minLength(20), Validators.maxLength(250)]),
     imageUrl: new FormControl('', [Validators.required, Validators.pattern(/https?:\/\//)]),
   });
 
@@ -34,16 +34,19 @@ export class PublicationEditComponent implements OnInit {
   }
 
   onSubmitEditPost() {
-    if(this.form.value.title !== '' && this.form.value.description !== '' && this.form.value.imageUrl !== ''){
+    if (this.form.value.title !== '' && this.form.value.description !== '' && this.form.value.imageUrl !== '') {
 
       const postId = Object.values(this.route.snapshot.params)[0];
       const body = this.form.value;
-  
+
       this.service.editPost(postId, body).subscribe();
-  
+
       this.router.navigate([`/profile/my-publications/${postId}`]);
-    }else{
+    } else {
       this.errors = 'All fields are required';
+      setTimeout(() => {
+        this.errors = '';
+      }, 4000)
       return;
     }
   }
