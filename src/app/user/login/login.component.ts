@@ -25,8 +25,17 @@ export class LoginComponent {
 
       this.router.navigate(['/']);
     }, (error) => {
+      console.log(error)
       this.errors = error.error
     });
+
+    if (this.form.get('email')?.value == '' && this.form.get('password')?.value == '') {
+      this.errors = 'All fields are required'
+      setTimeout(() => {
+        this.errors = '';
+      }, 4000);
+      return
+    }
   }
 }
 
