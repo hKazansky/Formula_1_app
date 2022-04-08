@@ -70,6 +70,7 @@
   border-right: none;
   height: 2rem;
   border-color: red;
+  cursor: pointer;
 }
 
 .birthday-text {
