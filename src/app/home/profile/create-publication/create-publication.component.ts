@@ -19,6 +19,8 @@ export class CreatePublicationComponent {
   })
 
   onSubmitCreatePost() {
+
+
     if (this.form.value.description !== '' && this.form.value.imageUrl !== '' && this.form.value.title !== '') {
       this.service.createPost(this.form.value).subscribe(() => { }, (error) => {
         this.errors = error.error
@@ -26,6 +28,9 @@ export class CreatePublicationComponent {
       this.router.navigate(['/profile/my-publications'])
     } else {
       this.errors = 'All fields are required!';
+      setTimeout(() => {
+        this.errors = ''
+      }, 4000)
       return
     }
 
