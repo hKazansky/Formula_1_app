@@ -19,6 +19,7 @@ import { PublicationEditComponent } from './home/profile/my-publications/publica
 import { ForumComponent } from './home/forum/forum.component';
 import { AboutComponent } from './home/about/about.component';
 import { EditUserInformationComponent } from './home/profile/edit-user-information/edit-user-information.component';
+import { WildcardComponent } from './home/wildcard/wildcard.component';
 
 const routes: Routes = [
   {
@@ -123,6 +124,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: '**',
+    component: WildcardComponent,
   }
 
 ];

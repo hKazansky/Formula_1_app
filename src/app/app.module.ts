@@ -32,6 +32,7 @@ import { AuthNavComponent } from './user/auth-nav/auth-nav.component';
 import { AboutComponent } from './home/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditUserInformationComponent } from './home/profile/edit-user-information/edit-user-information.component';
+import { WildcardComponent } from './home/wildcard/wildcard.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { EditUserInformationComponent } from './home/profile/edit-user-informati
     AuthNavComponent,
     AboutComponent,
     EditUserInformationComponent,
+    WildcardComponent,
   ],
   imports: [
     BrowserModule,
