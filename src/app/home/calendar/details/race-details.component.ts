@@ -39,7 +39,7 @@ export class RaceDetailsComponent implements OnInit {
       this.raceDetails[0].FirstPractice.time = timeZoneUpdate(this.raceDetails[0].FirstPractice.time);
       this.raceDetails[0].SecondPractice.time = timeZoneUpdate(this.raceDetails[0].SecondPractice.time);
       this.raceDetails[0].ThirdPractice.time = timeZoneUpdate(this.raceDetails[0].ThirdPractice.time);
-      
+
     })
   }
 
@@ -60,5 +60,6 @@ export function timeZoneUpdate(time: string) {
   const [h, m, s] = time?.split('Z')[0].split(':');
   let result;
   Number(h) > 9 ? result = `${Number(h) + 3}:${m}:${s}` : result = `0${Number(h) + 3}:${m}:${s}`
+  Number(result.split(':')[0]) >= 24 ? result = `${(Number(h) + 3 - 24)}:${m}:${s}` : result
   return result
 }
