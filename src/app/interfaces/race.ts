@@ -27,6 +27,10 @@ export interface IRace {
         date: string
         time: string
     }
+    Sprint: {
+        date: string
+        time: string 
+    }
     date: string
     raceName: string
     round: string

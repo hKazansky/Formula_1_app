@@ -1,0 +1,143 @@
+<div class="cover">
+  <img
+    id="cover-image"
+    src="/assets/cover-images/main-page.jpg"
+    alt="car-image"
+  />
+</div>
+<div *ngIf="upcomingRace">
+  <div class="race-div">
+    <h2 class="header-race-name">
+      {{ upcomingRace.Circuit.circuitName.toUpperCase() }}
+    </h2>
+    <img
+      class="track-flag"
+      src="assets/track-flags/{{ upcomingRace.Circuit.Location.country }}.png"
+      alt="country-flag"
+    />
+    <div
+      class="clock"
+      style="
+        color: white;
+        background-color: rgb(2, 78, 2);
+        width: 100%;
+        height: 5rem;
+        margin-top: 2rem;
+      "
+    >
+      <div class="container" @fade>
+        <ul class="countdown">
+          <span>
+            <div class="num">{{ days }}</div>
+            <div class="txt">days</div>
+          </span>
+          <span>
+            <div class="num">{{ hours }}</div>
+            <div class="txt">hours</div>
+          </span>
+          <span>
+            <div class="num">{{ minutes }}</div>
+            <div class="txt">minutes</div>
+          </span>
+          <span>
+            <div class="num">{{ seconds }}</div>
+            <div class="txt">seconds</div>
+          </span>
+        </ul>
+      </div>
+    </div>
+    <div class="upcoming-race-info-wrapper">
+      <div class="left-wrapper" @fade>
+        <span id="upcoming-span">UPCOMING RACE ></span>
+        <img
+          id="img-track"
+          src="/assets/images/{{ upcomingRace.Circuit.circuitId }}.png"
+          alt="track-image"
+          routerLink="/race/details/{{ upcomingRace.round }}"
+        />
+        <span id="country-span">{{
+          upcomingRace.Circuit.Location.country
+        }}</span>
+      </div>
+      <div class="right-wrapper">
+        <div class="race-wrapper">
+          <div class="race-title" @transitTitles>
+            <span>RACE ></span>
+          </div>
+          <div class="race-info">
+            <span style="padding-left: 5rem" @transitDates
+              >DATE: {{ upcomingRace.date }}</span
+            >
+            <span style="padding-left: 3rem" @transitTimes
+              >TIME: {{ upcomingRace.time }}</span
+            >
+          </div>
+        </div>
+        <div class="qualify-wrapper">
+          <div class="qualify-title" @transitTitles>
+            <span>QUALIFY ></span>
+          </div>
+          <div class="qualify-info">
+            <span style="padding-left: 5rem" @transitDates
+              >DATE: {{ upcomingRace.Qualifying.date }}</span
+            >
+            <span style="padding-left: 4rem" @transitTimes
+              >TIME: {{ upcomingRace.Qualifying.time }}</span
+            >
+          </div>
+        </div>
+        <div class="practice-3-wrapper">
+          <div class="practice-3-title" @transitTitles>
+            <span>{{ sprintOrPractice }} ></span>
+          </div>
+          <div class="practice-3-info">
+            <span style="padding-left: 4rem" @transitDates
+              >DATE:
+              {{
+                upcomingRace.ThirdPractice
+                  ? upcomingRace.ThirdPractice.date
+                  : upcomingRace.Sprint.date
+              }}</span
+            >
+            <span style="padding-left: 3rem" @transitTimes
+              >TIME:
+              {{
+                upcomingRace.ThirdPractice
+                  ? upcomingRace.ThirdPractice.time
+                  : upcomingRace.Sprint.time
+              }}</span
+            >
+          </div>
+        </div>
+        <div class="practice-2-wrapper">
+          <div class="practice-2-title" @transitTitles>
+            <span>PRACTICE 2 ></span>
+          </div>
+          <div class="practice-2-info">
+            <span style="padding-left: 4rem" @transitDates
+              >DATE: {{ upcomingRace.SecondPractice.date }}</span
+            >
+            <span style="padding-left: 3rem" @transitTimes
+              >TIME: {{ upcomingRace.SecondPractice.time }}</span
+            >
+          </div>
+        </div>
+        <div class="practice-1-wrapper">
+          <div class="practice-1-title" @transitTitles>
+            <span>PRACTICE 1 ></span>
+          </div>
+          <div class="practice-1-info">
+            <span style="padding-left: 1rem" @transitDates
+              >DATE: {{ upcomingRace.FirstPractice.date }}</span
+            >
+            <span @transitTimes
+              >TIME: {{ upcomingRace.FirstPractice.time }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="map"></div>

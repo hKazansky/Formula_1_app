@@ -13,10 +13,6 @@ export class CalendarService {
     return this.http.get<any>('http://localhost:3000/races');
   }
 
-  filterRaceByRound() {
-    return this.http.get<any>('http://localhost:3000/races');
-  }
-
   loadNextRace(circuitId: string) {
     return this.http.get<IRaces>(`http://ergast.com/api/f1/2022/${circuitId}.json`)
   }

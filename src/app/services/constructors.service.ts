@@ -11,6 +11,6 @@ export class ConstructorsService {
   constructor(private http: HttpClient) { }
 
   loadConstructors() {
-    return this.http.get<any>('http://localhost:3000/constructors')
+    return this.http.get<IConstructors[]>('http://localhost:3000/constructors')
   }
 }

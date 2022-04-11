@@ -1,11 +1,23 @@
 import { IConstructor } from "./constructor";
 
 export interface IConstructors {
-    MRData: {
+    "_id": string,
+    "season": string,
+    "StandingsLists": Array<IConstructorAddInfo>
+}
 
-        StandingsTable: {
-            season: string;
-            StandingsLists: object[]
-        }
-    }
+
+export interface IConstructorAddInfo {
+    "season": string,
+    "round": string,
+    "ConstructorStandings": Array<IAdditionalInfo>
+
+}
+
+interface IAdditionalInfo {
+    "position": string,
+    "positionText": string,
+    "points": string,
+    "wins": string,
+    "Constructor": IConstructor
 }

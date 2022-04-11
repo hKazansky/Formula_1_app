@@ -1,0 +1,86 @@
+<div class="cover">
+    <div *ngIf="driverDetails">
+      <img
+        id="cover-image"
+        src="/assets/constructor-cars/{{
+          driverDetails.Constructors[0].constructorId
+        }}.png"
+        alt="constructor-car"
+      />
+    </div>
+  </div>
+  <div *ngIf="driverDetails">
+    <div class="body-wrapper">
+      <div class="driver-card-wrapper">
+        <div class="driver-profile-picture">
+          <div class="driver-picture">
+            <img
+              id="driver-image"
+              src="/assets/drivers-details/{{
+                driverDetails.Driver.driverId
+              }}.jpg"
+              alt="driver-image"
+            />
+          </div>
+          <div class="driver-name-text">
+            <div class="number-flag-wrapper">
+              <h1 id="driver-racing-number">
+                {{ driverDetails.Driver.permanentNumber }}
+              </h1>
+              <img
+                src="/assets/flags/{{ driverDetails.Driver.nationality }}.jpg"
+                id="flag"
+              />
+            </div>
+            <div class="driver-name">
+              <h1 id="driver-name-text">
+                {{ driverDetails.Driver.givenName }}
+                {{ driverDetails.Driver.familyName }}
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="driver-information-wrapper">
+          <div class="helmet-and-wiki">
+            <img
+              id="helmet-img"
+              src="/assets/drivers-helmets/{{
+                driverDetails.Driver.driverId
+              }}.png"
+              alt="helmet-img"
+            />
+            <a id="driver-wiki-info" href="{{ driverDetails.Driver.url }}"
+              >Driver's biography</a
+            >
+          </div>
+          <div class="driver-info">
+            <div class="info-titles">
+              <h5 style="font-weight: bold">Driver's code:</h5>
+              <h5 style="font-weight: bold">Team:</h5>
+              <h5 style="font-weight: bold">Points:</h5>
+              <h5 style="font-weight: bold">Position:</h5>
+              <h5 style="font-weight: bold">Wins:</h5>
+              <h5 style="font-weight: bold">Birth date:</h5>
+              <h5 style="font-weight: bold">First name:</h5>
+              <h5 style="font-weight: bold">Family name:</h5>
+              <h5 style="font-weight: bold">Nationality:</h5>
+              <h5 style="font-weight: bold">Racing number:</h5>
+            </div>
+            <div class="info-description">
+              <h5>{{ driverDetails.Driver.code }}</h5>
+              <h5>{{ driverDetails.Constructors[0].name }}</h5>
+              <h5>{{ driverDetails.points }}</h5>
+              <h5>{{ driverDetails.position }}</h5>
+              <h5>{{ driverDetails.wins }}</h5>
+              <h5>{{ driverDetails.Driver.dateOfBirth | date }}</h5>
+              <h5>{{ driverDetails.Driver.givenName }}</h5>
+              <h5>{{ driverDetails.Driver.familyName }}</h5>
+              <h5>{{ driverDetails.Driver.nationality }}</h5>
+              <h5>{{ driverDetails.Driver.permanentNumber }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

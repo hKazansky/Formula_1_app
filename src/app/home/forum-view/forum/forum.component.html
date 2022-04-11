@@ -1,0 +1,58 @@
+<body class="forum-body">
+  <div class="publications-wrapper">
+    <h3 id="title">PUBLICATIONS</h3>
+    <div *ngIf="data" class="data-wrapper">
+      <div *ngFor="let post of data">
+        <div class="publication-card">
+          <div id="card-title">{{ post.title }}</div>
+          <div id="user-info">
+            <div id="location">
+              <img
+                id="user-location-image"
+                src="/assets/media-icons/location.png"
+                alt="location-image"
+              />
+              <span>{{ post.author.country }}</span>
+            </div>
+            <div id="username">
+              <img
+                id="person-image"
+                src="/assets/media-icons/person.png"
+                alt="person-image"
+              />
+              <span>{{ post.author.fullName }}</span>
+            </div>
+            <div id="team">
+              <img
+                id="car-image"
+                src="/assets/media-icons/car.png"
+                alt="formula-1-car-image"
+              />
+              <span>{{ post.author.team }}</span>
+            </div>
+          </div>
+          <div id="description">
+            <textarea id="desc-textarea" disabled>
+              {{ post.description.slice(0, 200) }}
+            </textarea>
+          </div>
+          <div
+            id="view-publication-router"
+            routerLink="/forum/publications/{{ post._id }}"
+          >
+            <span id="view-publication-span">VIEW PUBLICATION ></span>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="data.length == 0" class="no-publications">
+        <h2 id="no-publications-title">NO PUBLICATIONS YET</h2>
+        <div
+          id="create-publication-link"
+          routerLink="/profile/create-publication"
+        >
+          START A DISCUSSION
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
