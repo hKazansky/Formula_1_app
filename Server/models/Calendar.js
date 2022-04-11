@@ -21,6 +21,7 @@ const schema = new Schema({
   FirstPractice: { date: { type: String }, time: { type: String } },
   SecondPractice: { date: { type: String }, time: { type: String } },
   ThirdPractice: { date: { type: String }, time: { type: String } },
+  Sprint: { date: { type: String }, time: { type: String } },
   Qualifying: { date: { type: String }, time: { type: String } },
 });
 
