@@ -1,24 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './guards/auth.guard';
-import { NonAuthGuard } from './guards/non-auth.guard';
-import { CalendarComponent } from './home/calendar/calendar.component';
-import { RaceDetailsComponent } from './home/calendar/details/race-details.component';
-import { ConstructorsComponent } from './home/constructors/constructors.component';
-import { DetailsComponent } from './home/drivers/details/details.component';
-import { DriversComponent } from './home/drivers/drivers.component';
-import { MainComponent } from './home/main/main.component';
-import { LoginComponent } from './user/login/login.component';
-import { CreatePublicationComponent } from './home/profile/create-publication/create-publication.component';
-import { MyPublicationsComponent } from './home/profile/my-publications/my-publications.component';
-import { ProfileComponent } from './home/profile/profile.component';
-import { UserInformationComponent } from './home/profile/user-information/user-information.component';
-import { RegisterComponent } from './user/register/register.component';
-import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
-import { PublicationEditComponent } from './home/profile/my-publications/publication-edit/publication-edit.component';
-import { ForumComponent } from './home/forum/forum.component';
 import { AboutComponent } from './home/about/about.component';
-import { EditUserInformationComponent } from './home/profile/edit-user-information/edit-user-information.component';
 import { WildcardComponent } from './home/wildcard/wildcard.component';
 
 const routes: Routes = [
@@ -30,96 +12,31 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: MainComponent
+    loadChildren: () => import('src/app/home/main-view/main-view.module').then(m => m.MainViewModule)
   },
   {
     path: 'calendar',
-    component: CalendarComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'race/details/:round',
-    component: RaceDetailsComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [NonAuthGuard]
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    canActivate: [NonAuthGuard]
-  },
-  {
-    path: 'logout',
-    component: RegisterComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile/edit',
-    component: EditUserInformationComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile/my-account',
-    component: UserInformationComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile/my-publications',
-    component: MyPublicationsComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile/my-publications/:postId',
-    component: PublicationDetailsComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile/create-publication',
-    component: CreatePublicationComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile/my-publications/:postId/edit',
-    component: PublicationEditComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'publications/:postId',
-    component: PublicationDetailsComponent,
-    canActivate: [AuthGuard]
+    loadChildren: () => import('src/app/home/calendar-view/calendar-view.module').then(m => m.CalendarViewModule)
   },
   {
     path: 'drivers',
-    component: DriversComponent,
-    canActivate: [AuthGuard],
-
-  },
-  {
-    path: 'drivers/details/:driverId',
-    component: DetailsComponent,
-
-    canActivate: [AuthGuard]
+    loadChildren: () => import('src/app/home/drivers-view/drivers-view.module').then(m => m.DriversViewModule)
   },
   {
     path: 'constructors',
-    component: ConstructorsComponent,
-    canActivate: [AuthGuard]
-
+    loadChildren: () => import('src/app/home/constructors-view/constructors-view.module').then(m => m.ConstructorsViewModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('src/app/home/profile-view/profile-view.module').then(m => m.ProfileViewModule)
   },
   {
     path: 'forum',
-    component: ForumComponent,
-    canActivate: [AuthGuard]
-
+    loadChildren: () => import('src/app/home/forum-view/forum-view.module').then(m => m.ForumViewModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('src/app/home/auth-view/auth-view.module').then(m => m.AuthViewModule)
   },
   {
     path: 'about',

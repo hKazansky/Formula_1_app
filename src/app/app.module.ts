@@ -5,58 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { RegisterComponent } from './user/register/register.component';
-import { LoginComponent } from './user/login/login.component';
-import { DriversComponent } from './home/drivers/drivers.component';
-import { DriversService } from './services/drivers.service';
-import { CalendarComponent } from './home/calendar/calendar.component';
-import { DetailsComponent } from './home/drivers/details/details.component';
-import { ConstructorsService } from './services/constructors.service';
-import { ConstructorsComponent } from './home/constructors/constructors.component';
-import { MainComponent } from './home/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterService } from './services/register.service';
 import { AuthGuard } from './guards/auth.guard';
-import { RaceDetailsComponent } from './home/calendar/details/race-details.component';
 import { PostService } from './services/post.service';
 import { InterceptorService } from './services/interceptor.service';
-import { ProfileComponent } from './home/profile/profile.component';
-import { UserInformationComponent } from './home/profile/user-information/user-information.component';
-import { MyPublicationsComponent } from './home/profile/my-publications/my-publications.component';
-import { CreatePublicationComponent } from './home/profile/create-publication/create-publication.component';
 import { UserService } from './services/user.service';
-import { PublicationDetailsComponent } from './home/profile/my-publications/publication-details/publication-details.component';
-import { PublicationEditComponent } from './home/profile/my-publications/publication-edit/publication-edit.component';
-import { ForumComponent } from './home/forum/forum.component';
-import { AuthNavComponent } from './user/auth-nav/auth-nav.component';
 import { AboutComponent } from './home/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EditUserInformationComponent } from './home/profile/edit-user-information/edit-user-information.component';
 import { WildcardComponent } from './home/wildcard/wildcard.component';
+import { MainViewModule } from './home/main-view/main-view.module';
+import { CalendarViewModule } from './home/calendar-view/calendar-view.module';
+import { DriversViewModule } from './home/drivers-view/drivers-view.module';
+import { ProfileViewModule } from './home/profile-view/profile-view.module';
+import { AuthViewModule } from './home/auth-view/auth-view.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    RegisterComponent,
-    LoginComponent,
-    ProfileComponent,
-    MainComponent,
-    DriversComponent,
-    CalendarComponent,
-    DetailsComponent,
-    ConstructorsComponent,
-    RaceDetailsComponent,
-    UserInformationComponent,
-    MyPublicationsComponent,
-    CreatePublicationComponent,
-    PublicationDetailsComponent,
-    PublicationEditComponent,
-    ForumComponent,
-    AuthNavComponent,
     AboutComponent,
-    EditUserInformationComponent,
     WildcardComponent,
   ],
   imports: [
@@ -65,12 +34,14 @@ import { WildcardComponent } from './home/wildcard/wildcard.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    MainViewModule,
+    CalendarViewModule,
+    DriversViewModule,
+    ProfileViewModule,
+    AuthViewModule,
   ],
   providers: [
-    DriversService,
-    ConstructorsService,
     RegisterService,
     PostService,
     AuthGuard,
@@ -80,6 +51,7 @@ import { WildcardComponent } from './home/wildcard/wildcard.component';
       useClass: InterceptorService,
       multi: true
     },
+
   ],
   bootstrap: [AppComponent],
 })
