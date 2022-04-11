@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 // const GOOGLE_API_KEY = 'AIzaSyB2hyVwH1DR-3C39ThPNAURhPJQOR0sAO0'
 
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent{
+export class HeaderComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   isLoggedIn() {
     return Boolean(localStorage.getItem('token'));
@@ -19,5 +20,6 @@ export class HeaderComponent{
     localStorage.removeItem('token');
     localStorage.removeItem('email');
     localStorage.removeItem('userId');
+    this.router.navigate(['/auth/login'])
   }
 }
