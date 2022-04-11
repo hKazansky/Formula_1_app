@@ -57,6 +57,7 @@ setInterval(() => {
     mongoose.connection.dropCollection("calendars");
 
     axios.get("http://ergast.com/api/f1/2022.json").then((data) => {
+      console.log(data);
       let dataArr = Object.values(data.data);
       dataArr.forEach((d) =>
         d.RaceTable.Races.forEach((item) => createRace(item))
@@ -64,23 +65,23 @@ setInterval(() => {
     });
   }
   fetchRacesFromAPI();
-}, 432000000);
+}, 86400000);
 
 setInterval(() => {
   async function fetchDriverStandingsFromAPI() {
     mongoose.connection.dropCollection("racedetails");
-
     const races = await getAllRaces();
     races.forEach((race) => {
       axios
         .get(
-          `https://ergast.com/api/f1/2022/${race.round}/driverStandings.json`
+          `https://ergast.com/api/f1/2022/${race.round}/results.json`
         )
-        .then((data) => createRacesByRound(data.data.MRData.StandingsTable));
+        .then((data) => {
+  createRacesByRound(data.data.MRData)} );
     });
   }
   fetchDriverStandingsFromAPI();
-}, 432000000);
+}, 86400000);
 
 setInterval(() => {
   async function fetchAllDriversInformationStandingsFromAPI() {
@@ -90,10 +91,9 @@ setInterval(() => {
       .then((data) => createAllDriversInfo(data.data.MRData.StandingsTable));
   }
   fetchAllDriversInformationStandingsFromAPI();
-  console.log("Yes");
-}, 432000000);
+}, 86400000);
 
-setImmediate(() => {
+setInterval(() => {
   async function fetchAllConstructorsInfoFromAPI() {
     mongoose.connection.dropCollection("constructors");
 
@@ -104,7 +104,7 @@ setImmediate(() => {
       });
   }
   fetchAllConstructorsInfoFromAPI();
-}, 432000000);
+}, 86400000);
 
 start();
 
