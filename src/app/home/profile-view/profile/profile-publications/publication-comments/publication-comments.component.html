@@ -1,0 +1,83 @@
+<section id="comment-section-wrapper">
+    <div id="comment-section-text">
+      <h3 style="font-weight: bold; padding-left: 12%">COMMENTS SECTION</h3>
+    </div>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="postComment()"
+      class="add-comment-section"
+    >
+      <input
+        name="commentInput"
+        id="comment-input"
+        type="text"
+        placeholder="Tell us what you think..."
+        formControlName="comment"
+      />
+      <div *ngIf="errors">
+        <span style="color: red">{{ errors }}</span>
+      </div>
+      <div class="add-comment-button-wrapper">
+        <button type="submit" class="button">ADD COMMENT</button>
+      </div>
+    </form>
+    <div *ngIf="postComments">
+      <div class="comment-section-wrapper">
+        <div *ngFor="let comment of postComments">
+          <div class="comment-div">
+            <div id="content">
+              <div id="user-info-div">
+                <span id="user-fullname-span"
+                  >{{ comment.author.fullName }}
+                </span>
+                <span>@{{ comment.author.team }}</span>
+              </div>
+              <textarea id="comment-content-textarea" disabled>{{
+                comment.comment
+              }}</textarea>
+            </div>
+            <div *ngIf="comment.author.email !== activeUser">
+              <div *ngIf="isReacted(this.comment._id) === false">
+                <div id="likes">
+                  <img
+                    (click)="likeComment(comment._id)"
+                    id="like"
+                    src="assets/icons/like.png"
+                    alt="like-icon"
+                  />
+                  <img
+                    (click)="dislikeComment(comment._id)"
+                    id="dislike"
+                    src="assets/icons/dislike.png"
+                    alt="dislike-icon"
+                  />
+                </div>
+              </div>
+              <div
+                *ngIf="isReacted(this.comment._id) === true"
+                style="display: grid"
+              >
+                <i style="font-weight: 600; color: rgb(255, 123, 0)"
+                  >You've already reacted</i
+                >
+                <i>Likes: {{ this.comment.likes.length }}</i>
+              </div>
+            </div>
+            <div *ngIf="activeUser == comment.author.email">
+              <div id="comment-options">
+                <button
+                  (click)="deleteComment(comment._id, comment.post._id, $event)"
+                  id="delete"
+                >
+                  DELETE
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="postComments.length == 0">
+          <h3>No comments yet. Be the first one!</h3>
+        </div>
+      </div>
+    </div>
+  </section>
