@@ -65,11 +65,11 @@
         />
         <div *ngIf="form.get('imageUrl')?.touched && form.get('imageUrl')?.invalid">
           <div *ngIf="form.get('imageUrl')?.errors?.['required']">
-            <span style="color: red">Title is required</span>
+            <span style="color: red">Image URL is required</span>
           </div>
-          <div *ngIf="form.get('imageUrl')?.errors?.['minlength']">
+          <div *ngIf="form.get('imageUrl')?.errors?.['pattern']">
             <span style="color: red"
-              >Title must consist minimum of 5 characters</span
+              >Image URL must be in format: https://example.com</span
             >
           </div>
         </div>
