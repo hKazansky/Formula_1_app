@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, } from '@angular/router';
+import { CanLoad, Route, Router, UrlSegment, } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NonAuthGuard implements CanActivate {
+export class NonAuthGuard implements CanLoad {
   constructor(private router: Router) { }
-
-  canActivate(): boolean {
+  canLoad(route: Route, segments: UrlSegment[]): boolean {
     if (localStorage.getItem('token') === null) {
       return true
     } else {
