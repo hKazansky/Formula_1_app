@@ -57,7 +57,6 @@ setInterval(() => {
     mongoose.connection.dropCollection("calendars");
 
     axios.get("http://ergast.com/api/f1/2022.json").then((data) => {
-      console.log(data);
       let dataArr = Object.values(data.data);
       dataArr.forEach((d) =>
         d.RaceTable.Races.forEach((item) => createRace(item))
@@ -70,14 +69,16 @@ setInterval(() => {
 setInterval(() => {
   async function fetchDriverStandingsFromAPI() {
     mongoose.connection.dropCollection("racedetails");
-    const races = await getAllRaces();
-    races.forEach((race) => {
+    const rounds = [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+      22,
+    ];
+    rounds.forEach((round) => {
       axios
-        .get(
-          `https://ergast.com/api/f1/2022/${race.round}/results.json`
-        )
+        .get(`https://ergast.com/api/f1/2022/${round}/results.json`)
         .then((data) => {
-  createRacesByRound(data.data.MRData)} );
+          createRacesByRound(data.data.MRData);
+        });
     });
   }
   fetchDriverStandingsFromAPI();
@@ -124,7 +125,7 @@ async function start() {
     let password = req.body.password;
     let hashedPassword = await bcrypt.hash(password, 10);
     let userData = {
-      email: req.body.email,
+      email: req.body.email.toLowerCase(),
       fullName: req.body.fullname,
       birthday: req.body.birthday,
       country: req.body.country,
@@ -154,7 +155,7 @@ async function start() {
     password = req.body.password;
     let userData = req.body;
     try {
-      const user = await getUserByEmail(userData.email);
+      const user = await getUserByEmail(userData.email.toLowerCase());
       const isMatch = await bcrypt.compare(password, user.password);
       if (!user) {
         res.status(401).send("Invalid email");
