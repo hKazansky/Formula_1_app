@@ -8,7 +8,7 @@ export class GoogleMapsService {
 
   constructor() { }
 
-  googleMapsInit(final: any) {
+  googleMapsInit(upcomingRace: any) {
     let loader = new Loader({
       apiKey: 'AIzaSyB2hyVwH1DR-3C39ThPNAURhPJQOR0sAO0',
 
@@ -16,16 +16,16 @@ export class GoogleMapsService {
     loader.load().then(() => {
       let target = new google.maps.Map(document.getElementById("map") as HTMLElement, {
         center: {
-          lat: Number(final?.Circuit.Location.lat),
-          lng: Number(final?.Circuit.Location.long),
+          lat: Number(upcomingRace?.Circuit.Location.lat),
+          lng: Number(upcomingRace?.Circuit.Location.long),
         },
         zoom: 8
       })
 
       new google.maps.Marker({
         position: {
-          lat: Number(final?.Circuit.Location.lat),
-          lng: Number(final?.Circuit.Location.long),
+          lat: Number(upcomingRace?.Circuit.Location.lat),
+          lng: Number(upcomingRace?.Circuit.Location.long),
         },
         map: target,
       })
