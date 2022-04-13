@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { PostService } from 'src/app/services/post.service';
+import { PostService } from 'src/app/home/profile-view/services/post.service';
 
 @Component({
   selector: 'app-publication-edit',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IPosts } from 'src/app/interfaces/posts';
-import { PostService } from 'src/app/services/post.service';
+import { PostService } from 'src/app/home/profile-view/services/post.service';
 
 @Component({
   selector: 'app-profile-publications',

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IComments } from 'src/app/interfaces/comments';
 import { IPosts } from 'src/app/interfaces/posts';
-import { PostService } from 'src/app/services/post.service';
+import { PostService } from 'src/app/home/profile-view/services/post.service';
 
 @Component({
   selector: 'app-publication-details',

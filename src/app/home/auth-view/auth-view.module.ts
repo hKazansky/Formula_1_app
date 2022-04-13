@@ -5,8 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthViewRoutingModule } from './auth-view-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RegisterService } from 'src/app/services/register.service';
-import { LoginService } from 'src/app/services/login.service';
+import { RegisterService } from 'src/app/home/auth-view/services/register.service';
+import { LoginService } from './services/login.service';
 
 
 

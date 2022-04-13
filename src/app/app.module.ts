@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegisterService } from './services/register.service';
+import { RegisterService } from './home/auth-view/services/register.service';
 import { AuthGuard } from './guards/auth.guard';
-import { PostService } from './services/post.service';
+import { PostService } from './home/profile-view/services/post.service';
 import { InterceptorService } from './services/interceptor.service';
 import { UserService } from './services/user.service';
 import { AboutComponent } from './home/about/about.component';
@@ -30,7 +30,6 @@ import { WildcardComponent } from './home/wildcard/wildcard.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-
   ],
   providers: [
     RegisterService,

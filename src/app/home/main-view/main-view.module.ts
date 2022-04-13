@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
 import { MainRouterModule } from './main-routing.module';
 import { CalendarService } from 'src/app/services/calendar.service';
-import { GoogleMapsService } from 'src/app/services/google-maps.service';
 import { DateTimeFormatterService } from 'src/app/services/date-time-formatter.service';
+import { GoogleMapsService } from './services/google-maps.service';
+import { RacePropertiesOverriderService } from './services/race-properties-overrider.service';
 
 
 
@@ -20,6 +21,7 @@ import { DateTimeFormatterService } from 'src/app/services/date-time-formatter.s
     CalendarService,
     GoogleMapsService,
     DateTimeFormatterService,
+    RacePropertiesOverriderService
   ],
   exports: [
     MainComponent

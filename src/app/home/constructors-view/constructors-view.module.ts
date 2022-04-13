@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConstructorsComponent } from './constructors/constructors.component';
 import { ConstructorsRoutingModule } from './constructors-routing.module';
-import { ConstructorsService } from 'src/app/services/constructors.service';
+import { ConstructorsService } from './services/constructors.service';
 
 
 

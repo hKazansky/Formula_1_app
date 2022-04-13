@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PostService } from 'src/app/services/post.service';
+import { PostService } from 'src/app/home/profile-view/services/post.service';
 
 @Component({
   selector: 'app-profile-create-publication',

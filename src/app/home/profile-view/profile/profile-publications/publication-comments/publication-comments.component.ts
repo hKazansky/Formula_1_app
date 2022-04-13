@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IComments } from 'src/app/interfaces/comments';
-import { CommentsService } from 'src/app/services/comments.service';
+import { CommentsService } from '../../../services/comments.service';
 
 @Component({
   selector: 'app-publication-comments',
@@ -43,7 +43,6 @@ export class PublicationCommentsComponent implements OnInit {
 
     let inputField = (<HTMLInputElement>document.getElementById('comment-input'))
     inputField.value = '';
-
     let currentUrl = this.router.url;
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentUrl]);

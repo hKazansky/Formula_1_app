@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IPosts } from 'src/app/interfaces/posts';
-import { PostService } from 'src/app/services/post.service';
+import { PostService } from 'src/app/home/profile-view/services/post.service';
 
 @Component({
   selector: 'app-forum',

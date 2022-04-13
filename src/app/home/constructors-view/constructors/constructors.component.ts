@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { transitDates } from 'src/app/animations';
 import { IConstructorAddInfo } from 'src/app/interfaces/constructors';
-import { ConstructorsService } from 'src/app/services/constructors.service';
+import { ConstructorsService } from '../services/constructors.service';
 
 @Component({
   selector: 'app-constructors',

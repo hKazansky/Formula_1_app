@@ -4,8 +4,8 @@ import { fade, transitDates, transitTimes, transitTitles } from 'src/app/animati
 import { IRace } from 'src/app/interfaces/race';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { DateTimeFormatterService } from 'src/app/services/date-time-formatter.service';
-import { GoogleMapsService } from 'src/app/services/google-maps.service';
-import { RacePropertiesOverriderService } from 'src/app/services/race-properties-overrider.service';
+import { GoogleMapsService } from '../services/google-maps.service';
+import { RacePropertiesOverriderService } from '../services/race-properties-overrider.service';
 
 @Component({
   selector: 'app-main',
@@ -90,7 +90,7 @@ export class MainComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     setTimeout(() => {
 
-      this.nextRaceLoader.unsubscribe();
+      this.nextRaceLoader?.unsubscribe();
     }, 1000)
   }
 
