@@ -1,90 +1,91 @@
 <div class="background">
   <app-auth-mini-nav></app-auth-mini-nav>
-    <div class="outline-div">
-      <section class="Form my-4 mx-5" style="width: 50%">
-        <div class="container">
-          <div class="row no-gutters">
-            <div class="col-lg-5">
-              <img
-                src="https://images.unsplash.com/photo-1631257845230-01c163b6f574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-            <div class="col-lg-7 px-5 pt-5">
-              <h2 class="font-weight-bold py-3">SIGN IN</h2>
-              <div class="sign-in-div"></div>
-              <h5>Sign into your account</h5>
-              <form
-                [formGroup]="form"
-                (ngSubmit)="onSubmitLogin()"
-                action=""
-                method="post"
-              >
+  <div class="outline-div">
+    <section class="Form my-4 mx-5" style="width: 50%">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <img
+              src="https://images.unsplash.com/photo-1631257845230-01c163b6f574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-7 px-5 pt-5">
+            <h2 class="font-weight-bold py-3">SIGN IN</h2>
+            <div class="sign-in-div"></div>
+            <h5>Sign into your account</h5>
+            <form
+              [formGroup]="form"
+              (ngSubmit)="onSubmitLogin()"
+              action=""
+              method="post"
+            >
+              <div class="form-row">
+                <div class="col-lg-7" style="width: auto">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="form-control my-3 p-3"
+                    formControlName="email"
+                  />
+                </div>
+                <div
+                  *ngIf="
+                    form.get('email')?.touched &&
+                    form.get('email')?.invalid &&
+                    form.get('email')?.dirty
+                  "
+                >
+                  <div *ngIf="form.get('email')?.errors?.['required']">
+                    <span style="color: red">Email is required.</span>
+                  </div>
+                  <div *ngIf="form.get('email')?.errors?.['email']">
+                    <span style="color: red"
+                      >Email must be in format example@example.com</span
+                    >
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="col-lg-7" style="width: auto">
                     <input
-                      type="email"
-                      placeholder="Email"
+                      type="password"
+                      placeholder="Password"
                       class="form-control my-3 p-3"
-                      formControlName="email"
+                      formControlName="password"
                     />
                   </div>
                   <div
                     *ngIf="
-                      form.get('email')?.touched && form.get('email')?.invalid && form.get('email')?.dirty
+                      form.get('password')?.touched &&
+                      form.get('password')?.invalid &&
+                      form.get('password')?.dirty
                     "
                   >
-                    <div *ngIf="form.get('email')?.errors?.['required']">
-                      <span style="color: red">Email is required.</span>
-                    </div>
-                    <div *ngIf="form.get('email')?.errors?.['email']">
-                      <span style="color: red"
-                        >Email must be in format example@example.com</span
-                      >
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="col-lg-7" style="width: auto">
-                      <input
-                        type="password"
-                        placeholder="Password"
-                        class="form-control my-3 p-3"
-                        formControlName="password"
-                      />
-                    </div>
-                    <div
-                      *ngIf="
-                        form.get('password')?.touched &&
-                        form.get('password')?.invalid &&
-                        form.get('password')?.dirty
-                      "
-                    >
-                      <div *ngIf="form.get('password')?.errors?.['required']">
-                        <span style="color: red">Password is required.</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div *ngIf="errors">
-                    <span style="color: red;">{{errors}}</span>
-                  </div>
-                  <div class="form-row">
-                    <div class="col-lg-7">
-                      <button type="submit" class="btn1 mt-3 mb-5">
-                        SIGN IN
-                      </button>
+                    <div *ngIf="form.get('password')?.errors?.['required']">
+                      <span style="color: red">Password is required.</span>
                     </div>
                   </div>
                 </div>
-                <p>
-                  Don't have an account ?
-                  <a style="color: red" routerLink="/register">Register here</a>
-                </p>
-              </form>
-            </div>
+                <div *ngIf="errors">
+                  <span style="color: red">{{ errors }}</span>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-7">
+                    <button type="submit" class="btn1 mt-3 mb-5">
+                      SIGN IN
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Don't have an account ?
+                <a style="color: red" routerLink="/register">Register here</a>
+              </p>
+            </form>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
-  
+</div>
