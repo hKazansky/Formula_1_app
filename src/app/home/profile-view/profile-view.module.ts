@@ -11,6 +11,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { PostService } from 'src/app/services/post.service';
+import { PublicationCommentsComponent } from './profile/profile-publications/publication-comments/publication-comments.component';
 
 
 
@@ -22,7 +23,8 @@ import { PostService } from 'src/app/services/post.service';
     ProfilePublicationsComponent,
     PublicationEditComponent,
     PublicationDetailsComponent,
-    ProfileCreatePublicationComponent
+    ProfileCreatePublicationComponent,
+    PublicationCommentsComponent
   ],
   imports: [
     CommonModule,
