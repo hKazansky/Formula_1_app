@@ -10,7 +10,6 @@ export class DriversService {
   constructor(private http: HttpClient) { };
 
   loadDrivers() {
-    // return this.http.get<IDrivers>(`https://ergast.com/api/f1/2022/driverStandings.json`);
     return this.http.get<IDrivers[]>(`http://localhost:3000/drivers`)
 
   }
