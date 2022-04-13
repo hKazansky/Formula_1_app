@@ -9,7 +9,6 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-
   loginUser(user: any): Observable<any> {
     return this.http.post<any>('http://localhost:3000/login', user).pipe(catchError(this.handleError));
   }
