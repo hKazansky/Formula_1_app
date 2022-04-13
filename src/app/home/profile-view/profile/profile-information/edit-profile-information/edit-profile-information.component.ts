@@ -27,11 +27,11 @@ export class EditProfileInformationComponent implements OnInit {
     "team": new FormControl('', [Validators.minLength(4), Validators.required]),
   })
 
-  getUser() {
+  getUser(): void {
     this.service.getUserById().subscribe((user) => this.currentUser = user)
   }
 
-  onSubmitEdit() {
+  onSubmitEdit(): void {
     const formValues = Object.entries(this.form.value)
     if (formValues.every(([key, value]) => value === '')) {
       this.errors = 'All fields are required';
