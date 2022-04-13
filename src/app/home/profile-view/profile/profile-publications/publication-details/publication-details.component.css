@@ -52,117 +52,6 @@
   /* border-color: rgb(0, 217, 255); */
 }
 
-.add-comment-section {
-  width: 100%;
-  height: 10rem;
-  display: grid;
-  margin-top: 2rem;
-}
-#comment-input {
-  border: solid;
-  border-color: grey;
-  width: 50%;
-  border-radius: 0.5rem;
-  margin-left: 25%;
-  margin-top: 2rem;
-}
-#comment-input:focus {
-  border-color: black;
-}
-
-.button {
-  margin-top: 1rem;
-  background-color: black;
-  color: white;
-  border-radius: 0.4rem;
-  border-style: none;
-  height: 2.5rem;
-  width: 10rem;
-}
-
-.button:hover {
-  background: rgb(0, 75, 0);
-}
-
-#h2-title {
-  margin-top: 3rem;
-  border-width: 0.125rem;
-  font-weight: bold;
-  padding-bottom: 0.5rem;
-}
-
-.add-comment-button-wrapper {
-  width: 100%;
-  align-items: center;
-  text-align: center;
-}
-
-.button-comments {
-  background-color: black;
-  color: white;
-  border-radius: 0.4rem;
-  border-style: none;
-  height: 2.5rem;
-  width: 20rem;
-}
-
-.comment-div {
-  display: flex;
-  border-style: solid;
-  border-color: black;
-  border-radius: 0.7rem;
-  text-align: center;
-  height: 5rem;
-  /* margin: 1rem; */
-  margin-top: 1rem;
-  margin-left: 25%;
-  width: 50%;
-}
-
-.comment-section-wrapper {
-  display: grid;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20rem;
-}
-
-#content {
-  display: grid;
-  width: 100%;
-  /* border-style: solid; */
-  text-align: start;
-  padding-left: 1rem;
-}
-
-#user-info-div {
-  display: flex;
-  padding-right: 1rem;
-}
-
-#user-fullname-span {
-  padding-right: 2rem;
-  font-weight: bold;
-}
-#likes {
-  display: grid;
-  padding-right: 1rem;
-}
-
-#like {
-  width: 2rem;
-  cursor: pointer;
-}
-
-#dislike {
-  width: 2rem;
-  cursor: pointer;
-}
-
-#comment-options {
-  display: grid;
-  padding-right: 1rem;
-  padding-top: 0.3rem;
-}
 
 #edit {
   margin-top: 0.2rem;
@@ -172,13 +61,6 @@
   font-weight: bold;
 }
 
-#delete {
-  margin-top: 20px;
-  background-color: rgb(255, 89, 89);
-  border-radius: 0.3rem;
-  border: none;
-  font-weight: bold;
-}
 .post-options-wrapper {
   text-align: center;
   display: flex;
@@ -216,38 +98,9 @@
   font-weight: bold;
 }
 
-#comment-section-text {
-  border-style: solid;
-  width: 90%;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-color: red;
-  border-width: 0.15rem;
-  /* padding-left: 2rem; */
-}
+
 
 textarea::-webkit-scrollbar {
   width: 1em;
 }
 
-#comment-section-wrapper {
-  text-align: center;
-  font-family: "Orbitron", sans-serif;
-  margin-top: 10rem;
-}
-
-#comment-content-textarea {
-  border: none;
-  resize: none;
-  background-color: transparent;
-  width: 90%;
-}
-
-#like:hover {
-  width: 40px;
-}
-
-#dislike:hover {
-  width: 40px;
-}
