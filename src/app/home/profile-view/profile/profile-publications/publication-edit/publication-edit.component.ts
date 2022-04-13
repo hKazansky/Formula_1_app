@@ -38,11 +38,15 @@ export class PublicationEditComponent implements OnInit {
 
   onSubmitEditPost() {
     if (this.form.value.title !== '' && this.form.value.description !== '' && this.form.value.imageUrl !== '') {
-
+      if (this.form.status === 'INVALID') {
+        return
+      }
       const postId = Object.values(this.route.snapshot.params)[0];
       const body = this.form.value;
 
-      this.service.editPost(postId, body).subscribe();
+      this.service.editPost(postId, body).subscribe(() => { }, (error) => {
+        this.errors = error.error
+      });
 
       this.router.navigate([`/profile/my-publications/${postId}`]);
     } else {
