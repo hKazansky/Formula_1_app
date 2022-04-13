@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileInformationComponent implements OnInit {
 
-  getAllUsers!: Subscription
+  getUser!: Subscription
   allUsersFromDatabase: any[] = [];
   currentUser: any;
 
@@ -19,15 +19,12 @@ export class ProfileInformationComponent implements OnInit {
     this.getCurrentUser();
   }
 
-  getCurrentUser() {
-    this.getAllUsers = this.service.getAllUsers().subscribe(data => {
-      this.allUsersFromDatabase = data;
-      this.currentUser = this.allUsersFromDatabase.filter((user) => user.email === localStorage.getItem('email'))[0];
-    })
+  getCurrentUser(): void {
+    this.getUser = this.service.getUserById().subscribe(data => this.currentUser = data)
   }
 
   ngOnDestroy(): void {
-    this.getAllUsers.unsubscribe();
+    this.getUser.unsubscribe();
   }
 
 }
