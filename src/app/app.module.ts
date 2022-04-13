@@ -14,11 +14,6 @@ import { UserService } from './services/user.service';
 import { AboutComponent } from './home/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WildcardComponent } from './home/wildcard/wildcard.component';
-import { MainViewModule } from './home/main-view/main-view.module';
-import { CalendarViewModule } from './home/calendar-view/calendar-view.module';
-import { DriversViewModule } from './home/drivers-view/drivers-view.module';
-import { ProfileViewModule } from './home/profile-view/profile-view.module';
-import { AuthViewModule } from './home/auth-view/auth-view.module';
 
 @NgModule({
   declarations: [
@@ -35,11 +30,7 @@ import { AuthViewModule } from './home/auth-view/auth-view.module';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MainViewModule,
-    CalendarViewModule,
-    DriversViewModule,
-    ProfileViewModule,
-    AuthViewModule,
+
   ],
   providers: [
     RegisterService,
