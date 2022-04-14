@@ -25,7 +25,6 @@ export class PublicationCommentsComponent implements OnInit {
 
   }
 
-
   form = new FormGroup({
     comment: new FormControl('', [Validators.required]),
   });
@@ -58,7 +57,7 @@ export class PublicationCommentsComponent implements OnInit {
     });
   }
 
-  deleteComment(commentId: any, postId: any, event: any): void {
+  deleteComment(commentId: string, postId: string, event: any): void {
     this.service.deleteComment(commentId, postId).subscribe();
 
     const comment = event.target.parentElement.parentElement.parentElement.parentElement
