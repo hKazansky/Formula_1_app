@@ -21,6 +21,22 @@
           </div>
           <button type="submit" id="edit-div-1">Save</button>
         </div>
+        <div
+          *ngIf="
+            form.get('fullname')?.touched &&
+            form.get('fullname')?.invalid &&
+            form.get('fullname')?.dirty
+          "
+        >
+          <div *ngIf="form.get('fullname')?.errors?.['required']">
+            <span style="color: red">Full name is required</span>
+          </div>
+          <div *ngIf="form.get('fullname')?.errors?.['minlength']">
+            <span style="color: red"
+              >Name must be atleast 3 characters long</span
+            >
+          </div>
+        </div>
         <div class="birthday-text">
           <div id="birthday-div">
             <span id="birthday-text-span">Birthday</span>
@@ -29,10 +45,26 @@
               placeholder="Edit your date of birth"
               formControlName="birthday"
               [(ngModel)]="currentUser.birthday"
-
             />
           </div>
+
           <button type="submit" id="edit-div-1">Save</button>
+        </div>
+        <div
+          *ngIf="
+            form.get('birthday')?.touched &&
+            form.get('birthday')?.invalid &&
+            form.get('birthday')?.dirty
+          "
+        >
+          <div *ngIf="form.get('birthday')?.errors?.['required']">
+            <span style="color: red">Date of birth is required</span>
+          </div>
+          <div *ngIf="form.get('birthday')?.errors?.['pattern']">
+            <span style="color: red"
+              >Date of birth must be in format e.g. dd/mm/yy</span
+            >
+          </div>
         </div>
         <div class="country-text">
           <div id="country-div">
@@ -42,10 +74,20 @@
               placeholder="Edit your country"
               formControlName="country"
               [(ngModel)]="currentUser.country"
-
             />
           </div>
           <button type="submit" id="edit-div-1">Save</button>
+        </div>
+        <div
+          *ngIf="
+            form.get('country')?.touched &&
+            form.get('country')?.invalid &&
+            form.get('country')?.dirty
+          "
+        >
+          <div *ngIf="form.get('country')?.errors?.['required']">
+            <span style="color: red">Your country is required</span>
+          </div>
         </div>
         <div class="team-text">
           <div id="team-div">
@@ -55,10 +97,25 @@
               placeholder="Edit your favourite team"
               formControlName="team"
               [(ngModel)]="currentUser.team"
-
             />
           </div>
           <button type="submit" id="edit-div-1">Save</button>
+        </div>
+        <div
+          *ngIf="
+            form.get('team')?.touched &&
+            form.get('team')?.invalid &&
+            form.get('team')?.dirty
+          "
+        >
+          <div *ngIf="form.get('team')?.errors?.['required']">
+            <span style="color: red">Favourite team is required</span>
+          </div>
+          <div *ngIf="form.get('team')?.errors?.['minlength']">
+            <span style="color: red"
+              >Team must be atleast 4 characters long</span
+            >
+          </div>
         </div>
         <div *ngIf="errors">
           <span style="color: red">{{ errors }}</span>

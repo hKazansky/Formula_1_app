@@ -50,8 +50,14 @@ export class EditProfileInformationComponent implements OnInit {
       country: this.form.get('country')?.value,
       team: this.form.get('team')?.value,
     }
-    this.service.editUserInformation(userData).subscribe();
-    this.router.navigate(['/profile/my-account'])
+
+    this.service.editUserInformation(userData).subscribe(() => { this.router.navigate(['/profile/my-account']) }, (error) => {
+      this.errors = error.error.text;
+      setTimeout(() => {
+        this.errors = ''
+      }, 4000);
+      return;
+    });
 
   }
 }
