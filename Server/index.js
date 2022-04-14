@@ -179,14 +179,19 @@ async function start() {
   });
 
   app.put("/user/:userId/edit", async (req, res) => {
-    const userData = {
-      fullName: req.body.fullname,
-      birthday: req.body.birthday,
-      country: req.body.country,
-      team: req.body.team,
-    };
-    const editedUser = await editUser(userData, req.user._id);
-    res.json(editedUser);
+    try {
+      const userData = {
+        fullName: req.body.fullname,
+        birthday: req.body.birthday,
+        country: req.body.country,
+        team: req.body.team,
+      };
+      const editedUser = await editUser(userData, req.user._id);
+      res.json(editedUser);
+    } catch(err) {
+      res.send(`Invalid input fields`);
+    }
+   
   });
 
   app.post("/create", async (req, res) => {
