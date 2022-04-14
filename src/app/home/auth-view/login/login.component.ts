@@ -18,17 +18,6 @@ export class LoginComponent {
   });
 
   onSubmitLogin() {
-    this.loginService.loginUser(this.form.value).subscribe(res => {
-      localStorage.setItem('token', res.token);
-      localStorage.setItem('userId', res.userId);
-      localStorage.setItem('email', this.form.value.email);
-
-      this.router.navigate(['/']);
-    }, (error) => {
-      console.log(error)
-      this.errors = error.error
-    });
-
     if (this.form.get('email')?.value == '' && this.form.get('password')?.value == '') {
       this.errors = 'All fields are required'
       setTimeout(() => {
@@ -36,6 +25,20 @@ export class LoginComponent {
       }, 4000);
       return
     }
+    this.loginService.loginUser(this.form.value).subscribe(res => {
+      localStorage.setItem('token', res.token);
+      localStorage.setItem('userId', res.userId);
+      localStorage.setItem('email', this.form.value.email);
+
+      this.router.navigate(['/']);
+    }, (error) => {
+      this.errors = error.error
+      setTimeout(() => {
+        this.errors = ''
+      }, 4000)
+    });
+
+
   }
 
 }

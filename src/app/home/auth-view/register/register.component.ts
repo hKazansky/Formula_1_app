@@ -25,6 +25,11 @@ export class RegisterComponent {
   });
 
   onSubmitRegister() {
+    if (this.form.invalid && this.form.touched) {
+      this.errors = 'Invalid input fields'
+      return;
+    }
+
     if (this.form.get('password')?.value !== this.form.get('rePass')?.value) {
       this.errors = 'Passwords don\'t match'
       return;
