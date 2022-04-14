@@ -20,7 +20,7 @@ export class ProfileCreatePublicationComponent {
     imageUrl: new FormControl('', [Validators.required, Validators.pattern(/https?:\/\//)]),
   })
 
-  onSubmitCreatePost() {
+  onSubmitCreatePost(): void {
     if (this.form.value.description !== '' && this.form.value.imageUrl !== '' && this.form.value.title !== '') {
       if (this.form.status === 'INVALID') {
         return

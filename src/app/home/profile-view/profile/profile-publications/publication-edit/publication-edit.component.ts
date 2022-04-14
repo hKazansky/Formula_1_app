@@ -28,7 +28,7 @@ export class PublicationEditComponent implements OnInit {
     imageUrl: new FormControl('', [Validators.required, Validators.pattern(/https?:\/\//)]),
   });
 
-  getCurrentPostDetails() {
+  getCurrentPostDetails(): void {
     const postId = Object.values(this.route.snapshot.params)[0];
     this.getCurrentPost = this.service.getPostById(postId).subscribe(data => {
       this.post = data
@@ -36,7 +36,7 @@ export class PublicationEditComponent implements OnInit {
 
   }
 
-  onSubmitEditPost() {
+  onSubmitEditPost(): void {
     if (this.form.value.title !== '' && this.form.value.description !== '' && this.form.value.imageUrl !== '') {
       if (this.form.status === 'INVALID') {
         return
