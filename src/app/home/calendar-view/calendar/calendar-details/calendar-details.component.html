@@ -3,7 +3,7 @@
 </div>
 <body class="body">
   <div *ngIf="raceDetails">
-    <div *ngFor="let race of raceDetails">
+    <!-- <div *ngFor="let race of raceDetails"> -->
       <div class="cover">
         <div
           class="cover-text-wrapper"
@@ -18,10 +18,10 @@
               margin-top: 3rem;
             "
           >
-            {{ race?.Circuit?.Location?.country }}
+            {{ raceDetails?.Circuit?.Location?.country }}
           </h1>
           <h1 style="color: white; opacity: 100; font-size: 50px">
-            {{ race?.season }}
+            {{ raceDetails?.season }}
           </h1>
         </div>
       </div>
@@ -31,7 +31,7 @@
       </div>
 
       <div class="content-wrapper">
-        <h4 id="content-race-name-title">FORMULA 1 {{ race?.raceName }}</h4>
+        <h4 id="content-race-name-title">FORMULA 1 {{ raceDetails?.raceName }}</h4>
 
         <div class="middle-wrapper">
           <div class="race-details-wrapper">
@@ -39,40 +39,40 @@
               <div class="race-details">
                 <div class="race-date">
                   <span>RACE</span>
-                  <span>{{ race?.date }}</span>
+                  <span>{{ raceDetails?.date }}</span>
                 </div>
                 <div class="race-time">
-                  <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
-                  <span>Time: {{ race?.time }}</span>
+                  <span>Circuit: {{ raceDetails?.Circuit?.circuitName }}</span>
+                  <span>Time: {{ raceDetails?.time }}</span>
                 </div>
               </div>
               <div class="qualify-details">
                 <div class="qualify-date">
                   <span>QUALIFY</span>
-                  <span>{{ race?.Qualifying?.date }}</span>
+                  <span>{{ raceDetails?.Qualifying?.date }}</span>
                 </div>
                 <div class="qualify-time">
-                  <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
-                  <span>Time: {{ race?.Qualifying?.time }}</span>
+                  <span>Circuit: {{ raceDetails?.Circuit?.circuitName }}</span>
+                  <span>Time: {{ raceDetails?.Qualifying?.time }}</span>
                 </div>
               </div>
               <div class="practice-3-details">
                 <div class="practice-3-date">
                   <span>{{ sprintOrPractice }}</span>
                   <span>{{
-                    race?.ThirdPractice
-                      ? race?.ThirdPractice?.date
-                      : race?.Sprint?.date
+                    raceDetails?.ThirdPractice
+                      ? raceDetails?.ThirdPractice?.date
+                      : raceDetails?.Sprint?.date
                   }}</span>
                 </div>
                 <div class="practice-3-time">
-                  <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
+                  <span>Circuit: {{ raceDetails?.Circuit?.circuitName }}</span>
                   <span
                     >Time:
                     {{
-                      race?.ThirdPractice
-                        ? race?.ThirdPractice?.time
-                        : race.Sprint?.time
+                      raceDetails?.ThirdPractice
+                        ? raceDetails?.ThirdPractice?.time
+                        : raceDetails.Sprint?.time
                     }}</span
                   >
                 </div>
@@ -80,34 +80,34 @@
               <div class="practice-2-details">
                 <div class="practice-2-date">
                   <span>PRACTICE 2</span>
-                  <span>{{ race?.SecondPractice?.date }}</span>
+                  <span>{{ raceDetails?.SecondPractice?.date }}</span>
                 </div>
                 <div class="practice-2-time">
-                  <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
-                  <span>Time: {{ race?.SecondPractice?.time }}</span>
+                  <span>Circuit: {{ raceDetails?.Circuit?.circuitName }}</span>
+                  <span>Time: {{ raceDetails?.SecondPractice?.time }}</span>
                 </div>
               </div>
               <div class="practice-1-details">
                 <div class="practice-1-date">
                   <span>PRACTICE 1</span>
-                  <span>{{ race?.FirstPractice?.date }}</span>
+                  <span>{{ raceDetails?.FirstPractice?.date }}</span>
                 </div>
                 <div class="practice-1-time">
-                  <span>Circuit: {{ race?.Circuit?.circuitName }}</span>
-                  <span>Time: {{ race?.FirstPractice?.time }}</span>
+                  <span>Circuit: {{ raceDetails?.Circuit?.circuitName }}</span>
+                  <span>Time: {{ raceDetails?.FirstPractice?.time }}</span>
                 </div>
               </div>
             </div>
           </div>
           <div class="race-circuit-wrapper">
             <div class="circuit-info">
-              <span>Location: {{ race?.Circuit?.Location?.locality }}</span>
-              <a id="wikipediaURL" href="{{ race?.url }}"> > Circuit Info</a>
+              <span>Location: {{ raceDetails?.Circuit?.Location?.locality }}</span>
+              <a id="wikipediaURL" href="{{ raceDetails?.url }}"> > Circuit Info</a>
             </div>
             <div class="race-circuit-image">
               <img
                 id="circuit-image"
-                src="/assets/images/{{ race?.Circuit?.circuitId }}.png"
+                src="/assets/images/{{ raceDetails?.Circuit?.circuitId }}.png"
                 alt="track-image"
               />
             </div>
@@ -186,6 +186,6 @@
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </body>
