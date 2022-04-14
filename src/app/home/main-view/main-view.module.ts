@@ -5,8 +5,8 @@ import { MainRouterModule } from './main-routing.module';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { DateTimeFormatterService } from 'src/app/services/date-time-formatter.service';
 import { GoogleMapsService } from './services/google-maps.service';
-import { RacePropertiesOverriderService } from './services/race-properties-overrider.service';
 import { LoaderModuleModule } from 'src/app/shared/loader-module/loader-module.module';
+import { RacePropertiesOverriderService } from 'src/app/services/race-properties-overrider.service';
 
 
 
