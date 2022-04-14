@@ -12,7 +12,7 @@ const schema = new Schema({
   fullName: {
     type: String,
     required: [true, "Full name is required!"],
-    minlength: [5, "Full name must be atleast 5 characters long"],
+    minlength: [3, "Full name must be atleast 3 characters long"],
   },
   birthday: {
     type: String,
