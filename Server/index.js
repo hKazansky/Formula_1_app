@@ -158,12 +158,12 @@ async function start() {
       const user = await getUserByEmail(userData.email.toLowerCase());
       const isMatch = await bcrypt.compare(password, user.password);
       if (!user) {
-        res.status(401).send("Invalid email");
+        res.status(401).send("Invalid email or password");
         return;
       }
 
       if (!isMatch) {
-        res.status(401).send("Invalid password");
+        res.status(401).send("Invalid email or password");
         return;
       }
 
