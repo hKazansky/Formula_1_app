@@ -4,6 +4,7 @@ import { DriversComponent } from './drivers/drivers.component';
 import { DriversRoutingModule } from './drivers-routing.module';
 import { DriversDetailsComponent } from './drivers/drivers-details/drivers-details.component';
 import { DriversService } from './services/drivers.service';
+import { LoaderModuleModule } from 'src/app/shared/loader-module/loader-module.module';
 
 
 
@@ -15,6 +16,7 @@ import { DriversService } from './services/drivers.service';
   imports: [
     CommonModule,
     DriversRoutingModule,
+    LoaderModuleModule
   ],
   providers: [
     DriversService,

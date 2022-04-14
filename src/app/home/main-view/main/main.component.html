@@ -1,11 +1,14 @@
-<div class="cover">
-  <img
-    id="cover-image"
-    src="/assets/cover-images/main-page.jpg"
-    alt="car-image"
-  />
+<div *ngIf="!upcomingRace">
+  <app-loader></app-loader>
 </div>
 <div *ngIf="upcomingRace">
+  <div class="cover">
+    <img
+      id="cover-image"
+      src="/assets/cover-images/main-page.jpg"
+      alt="car-image"
+    />
+  </div>
   <div class="race-div">
     <h2 class="header-race-name">
       {{ upcomingRace.Circuit.circuitName.toUpperCase() }}

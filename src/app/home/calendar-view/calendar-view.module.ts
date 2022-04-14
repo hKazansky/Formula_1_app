@@ -5,6 +5,7 @@ import { CalendarDetailsComponent } from './calendar/calendar-details/calendar-d
 import { CalendarRoutingModule } from './calendar-routing.module';
 import { CalendarService } from 'src/app/services/calendar.service';
 import { DateTimeFormatterService } from 'src/app/services/date-time-formatter.service';
+import { LoaderModuleModule } from 'src/app/shared/loader-module/loader-module.module';
 
 
 
@@ -12,10 +13,11 @@ import { DateTimeFormatterService } from 'src/app/services/date-time-formatter.s
   imports: [
     CommonModule,
     CalendarRoutingModule,
+    LoaderModuleModule
   ],
   declarations: [
     CalendarComponent,
-    CalendarDetailsComponent
+    CalendarDetailsComponent,
   ],
   providers: [
     CalendarService,

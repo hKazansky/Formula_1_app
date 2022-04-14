@@ -1,62 +1,62 @@
-<!-- TODO: Display the drivers in rows -->
+<div *ngIf="!drivers">
+  <app-loader></app-loader>
+</div>
 <div class="body">
-    <img
-      class="cover"
-      src="/assets/cover-images/drivers-page.jpg"
-      alt="car-image"
-    />
-  
-    <div class="under-cover-text-div">
-      <div *ngIf="drivers">
-        <div class="title-text">
-          <h1 id="title">F1 DRIVERS {{ drivers[0].season }}</h1>
-          <div class="additional-info">
-            Check out this season's official F1 line-up. Full breakdown of
-            drivers, biographical information and more. Follow your favourite F1
-            drivers on and off the track.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="drivers-cards-wrapper" *ngIf="drivers">
-      <div
-        *ngFor="let driver of drivers[0].StandingsLists[0].DriverStandings"
-        @fade
-      >
-        <div
-          class="driver-card"
-          routerLink="/drivers/details/{{ driver.Driver.driverId }}"
-        >
-          <div class="listing-standing">
-            <div class="rank">{{ driver.position }}</div>
-            <div class="points-wrapper">
-              <div class="points">{{ driver.points }}</div>
-              <div class="pts">PTS</div>
-            </div>
-          </div>
-          <div class="driver-info-wrapper">
-            <div class="driver-name-div">
-              <span class="decorator"></span>
-              <span class="driver-name">{{ driver.Driver.familyName }}</span>
-            </div>
-            <div class="team-logo">
-              <img
-                class="flag-image"
-                src="/assets/flags/{{ driver.Driver.nationality }}.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="driver-image">
-            <div id="driver-team-name">{{ driver.Constructors[0].name }}</div>
-            <img
-              id="driver-image"
-              src="/assets/drivers/{{ driver.Driver.driverId }}.png"
-              alt=""
-            />
-          </div>
+  <img
+    class="cover"
+    src="/assets/cover-images/drivers-page.jpg"
+    alt="car-image"
+  />
+  <div class="under-cover-text-div">
+    <div *ngIf="drivers">
+      <div class="title-text">
+        <h1 id="title">F1 DRIVERS {{ drivers[0].season }}</h1>
+        <div class="additional-info">
+          Check out this season's official F1 line-up. Full breakdown of
+          drivers, biographical information and more. Follow your favourite F1
+          drivers on and off the track.
         </div>
       </div>
     </div>
   </div>
-  
+  <div class="drivers-cards-wrapper" *ngIf="drivers">
+    <div
+      *ngFor="let driver of drivers[0].StandingsLists[0].DriverStandings"
+      @fade
+    >
+      <div
+        class="driver-card"
+        routerLink="/drivers/details/{{ driver.Driver.driverId }}"
+      >
+        <div class="listing-standing">
+          <div class="rank">{{ driver.position }}</div>
+          <div class="points-wrapper">
+            <div class="points">{{ driver.points }}</div>
+            <div class="pts">PTS</div>
+          </div>
+        </div>
+        <div class="driver-info-wrapper">
+          <div class="driver-name-div">
+            <span class="decorator"></span>
+            <span class="driver-name">{{ driver.Driver.familyName }}</span>
+          </div>
+          <div class="team-logo">
+            <img
+              class="flag-image"
+              src="/assets/flags/{{ driver.Driver.nationality }}.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="driver-image">
+          <div id="driver-team-name">{{ driver.Constructors[0].name }}</div>
+          <img
+            id="driver-image"
+            src="/assets/drivers/{{ driver.Driver.driverId }}.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

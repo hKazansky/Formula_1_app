@@ -1,3 +1,6 @@
+<div *ngIf="!raceDetails">
+  <app-loader></app-loader>
+</div>
 <body class="body">
   <div *ngIf="raceDetails">
     <div *ngFor="let race of raceDetails">

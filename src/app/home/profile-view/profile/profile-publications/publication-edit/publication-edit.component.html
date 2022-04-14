@@ -1,4 +1,7 @@
 <app-profile></app-profile>
+<div *ngIf="!post">
+  <app-loader></app-loader>
+</div>
 <div class="outer-wrapper">
   <div *ngIf="post">
     <form

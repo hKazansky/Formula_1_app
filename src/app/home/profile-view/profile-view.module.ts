@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 import { PostService } from 'src/app/home/profile-view/services/post.service';
 import { PublicationCommentsComponent } from './profile/profile-publications/publication-comments/publication-comments.component';
 import { CommentsService } from './services/comments.service';
+import { LoaderModuleModule } from 'src/app/shared/loader-module/loader-module.module';
 
 
 
@@ -31,6 +32,7 @@ import { CommentsService } from './services/comments.service';
     CommonModule,
     ProfileRoutingModule,
     ReactiveFormsModule,
+    LoaderModuleModule
   ],
   providers: [
     UserService,

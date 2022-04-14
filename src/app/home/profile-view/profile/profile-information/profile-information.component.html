@@ -1,4 +1,7 @@
 <app-profile></app-profile>
+<div *ngIf="!currentUser">
+  <app-loader></app-loader>
+</div>
 <body class="body">
   <div *ngIf="currentUser">
     <div class="card">

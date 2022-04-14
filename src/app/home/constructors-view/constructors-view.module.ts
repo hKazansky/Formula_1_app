@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ConstructorsComponent } from './constructors/constructors.component';
 import { ConstructorsRoutingModule } from './constructors-routing.module';
 import { ConstructorsService } from './services/constructors.service';
+import { LoaderModuleModule } from 'src/app/shared/loader-module/loader-module.module';
 
 
 
@@ -12,7 +13,8 @@ import { ConstructorsService } from './services/constructors.service';
   ],
   imports: [
     CommonModule,
-    ConstructorsRoutingModule
+    ConstructorsRoutingModule,
+    LoaderModuleModule
   ],
   providers: [
     ConstructorsService

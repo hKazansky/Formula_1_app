@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ForumComponent } from './forum/forum.component';
 import { ForumRouterModule } from './forum-router.module';
-import { PostService } from 'src/app/home/profile-view/services/post.service';
-
-
+import { PostService } from '../profile-view/services/post.service';
+import { LoaderModuleModule } from 'src/app/shared/loader-module/loader-module.module';
 
 @NgModule({
   declarations: [
-    ForumComponent
+    ForumComponent,
   ],
   imports: [
     CommonModule,
-    ForumRouterModule
+    ForumRouterModule,
+    LoaderModuleModule
   ],
   providers: [
     PostService

@@ -6,16 +6,18 @@ import { CalendarService } from 'src/app/services/calendar.service';
 import { DateTimeFormatterService } from 'src/app/services/date-time-formatter.service';
 import { GoogleMapsService } from './services/google-maps.service';
 import { RacePropertiesOverriderService } from './services/race-properties-overrider.service';
+import { LoaderModuleModule } from 'src/app/shared/loader-module/loader-module.module';
 
 
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
   ],
   imports: [
     CommonModule,
-    MainRouterModule
+    MainRouterModule,
+    LoaderModuleModule
   ],
   providers: [
     CalendarService,

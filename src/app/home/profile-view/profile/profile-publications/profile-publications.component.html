@@ -1,4 +1,7 @@
 <app-profile></app-profile>
+<div *ngIf="!userPosts">
+  <app-loader></app-loader>
+</div>
 <body class="body">
   <div *ngIf="userPosts" class="outer-wrapper">
     <div *ngFor="let post of userPosts">

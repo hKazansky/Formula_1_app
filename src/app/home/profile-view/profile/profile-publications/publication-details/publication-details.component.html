@@ -1,4 +1,7 @@
 <app-profile></app-profile>
+<div *ngIf="!currentPost">
+  <app-loader></app-loader>
+</div>
 <body style="min-height: 100rem">
   <div style="margin-top: 3rem" *ngIf="currentPost">
     <div class="post-wrapper">
