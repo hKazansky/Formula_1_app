@@ -73,6 +73,8 @@
   font-size: 80%;
   font-weight: bold;
   display: grid;
+  text-align: center;
+  width: 9rem;
 }
 #location {
   font-size: 80%;
@@ -86,8 +88,10 @@
 }
 
 #person-image {
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
   height: 3rem;
+  margin-left: 25%;
+  /* width: 100%; */
 }
 
 #user-location-image {
