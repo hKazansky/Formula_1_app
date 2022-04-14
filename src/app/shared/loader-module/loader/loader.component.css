@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Work+Sans&display=swap");
+
+.loader-div {
+  width: 100%;
+  margin-top: 10rem;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+
+}
+
+#loading-text {
+  border-radius: 0.75rem;
+  font-weight: 800;
+}
