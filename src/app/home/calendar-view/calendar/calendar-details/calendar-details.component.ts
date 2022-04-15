@@ -24,6 +24,7 @@ export class CalendarDetailsComponent implements OnInit {
   sprintOrPractice: string = '';
 
 
+
   constructor(private calendarService: CalendarService, private activatedRoute: ActivatedRoute, private racePropertiesOverrider: RacePropertiesOverriderService) { }
 
   ngOnInit(): void {
@@ -37,7 +38,9 @@ export class CalendarDetailsComponent implements OnInit {
       this.allRaces = data;
       this.raceDetails = this.allRaces?.filter((race) => race.round === this.raceRound)[0];
 
-      this.racePropertiesOverrider.racePropertiesOverrider(this.raceDetails)
+      this.racePropertiesOverrider.racePropertiesOverrider(this.raceDetails);
+      this.raceDetails.ThirdPractice ? this.sprintOrPractice = 'PRACTICE 3' : this.sprintOrPractice = 'SPRINT';
+
     })
   }
 
