@@ -47,13 +47,13 @@ export class MainComponent implements OnInit, OnDestroy {
 
   loadNextRace(): void {
     let [month, date, year] = this.dateTimeFormatter.dateTimeFormatter();
+    this.today = `${year}/${+month < 10 ? `0${month}` : `${month}`}/${+date < 10 ? `0${date}` : `${date}`}`
+    this.todayAsNumber = +this.today.split('/').join('');
 
     this.nextRaceLoader = this.service.loadRaceSchedule().subscribe((data) => {
       this.calendar = data;
       this.calendar?.forEach(race => this.nextRace?.push(race.date.split('-').join('/')));
 
-      this.today = `${year}/${+month < 10 ? `0${month}` : `${month}`}/${+date < 10 ? `0${date}` : `${date}`}`
-      this.todayAsNumber = +this.today.split('/').join('');
 
       this.upcomingRaceDate = this.nextRace
         .map(date => Number(date.split('/').join('')))
