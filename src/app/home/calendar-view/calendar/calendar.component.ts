@@ -23,9 +23,8 @@ export class CalendarComponent implements OnInit, OnDestroy {
     this.loadRaces();
   }
 
-  loadRaces(): any {
+  loadRaces(): void {
     this.getRaces = this.service.loadRaceSchedule().subscribe((races) => this.calendar = races);
-
   }
 
   ngOnDestroy(): void {
