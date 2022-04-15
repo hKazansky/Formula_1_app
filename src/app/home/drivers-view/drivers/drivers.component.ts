@@ -20,8 +20,6 @@ export class DriversComponent implements OnInit {
     this.getDrivers();
   }
 
-  //Make an OUTPUT / INPUT to the details component, so i've no need of fetching the drivers one more time
-
   getDrivers(): void {
 
     this.driversService.loadDrivers().subscribe((drivers) => {
